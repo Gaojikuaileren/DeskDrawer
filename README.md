@@ -75,7 +75,7 @@ Each board has a compact widget in its **bottom-right corner**: `[▾ arrow] [na
 |:---:|---|
 | ![new](docs/icons/new.png) | **New board** |
 | ![reset](docs/icons/reset.png) | **Fix misplaced boards** — boards that are off-screen, under the taskbar, or overlapping get re-placed (snapped next to other boards); well-placed boards are not moved |
-| ![monitor](docs/icons/monitor.png) | **Show/hide the native desktop icons** (checked = hidden, DeskDrawer is your desktop) |
+| ![monitor](docs/icons/monitor.png) | **Switch view** — toggle between your boards and the plain Windows desktop. Checked = board view (boards shown, native icons hidden); unchecked = the normal desktop (boards hidden, native icons back). The two are never shown at once, and creating a new board switches back to board view |
 | ![rocket](docs/icons/rocket.png) | **Run at startup** (also manageable in Task Manager → Startup apps) |
 | ![folder](docs/icons/folder.png) | **Open the configuration folder** (your layout lives in `config.json` there) |
 | ![help](docs/icons/help.png) | **Help & feedback** — opens this page |
@@ -85,7 +85,7 @@ Each board has a compact widget in its **bottom-right corner**: `[▾ arrow] [na
 
 | Gesture / key | Effect |
 |---|---|
-| Drag on empty board space | **Rubber-band select** — the band spans multiple boards; hold `Ctrl` to add to the selection |
+| Drag on empty board space **or the bare desktop** | **Rubber-band select** — the band spans multiple boards; hold `Ctrl` to add to the selection |
 | Drag selected icons | Move them between boards (or reorder within one); drag **out** to an Explorer window to copy/move the real files |
 | Drag files **from** Explorer onto a board | The files land on the desktop and join that board |
 | Right-click an icon | The real Windows context menu (Open with, Send to, and extensions included) |
