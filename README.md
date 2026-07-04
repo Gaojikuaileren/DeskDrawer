@@ -120,11 +120,14 @@ Full policy: [PRIVACY.md](PRIVACY.md)
 
 DeskDrawer does not move your desktop files. If you uninstall DeskDrawer, your files remain on the desktop.
 
-To remove DeskDrawer, uninstall it from Windows Settings. If you use a portable build, delete the executable and its local configuration folder.
+To remove DeskDrawer, first quit it from the tray menu (![power](docs/icons/power.png) — this
+restores the native icons), then uninstall it from Windows Settings. If you use a portable
+build, delete the executable and its local configuration folder.
 
 If the desktop happens to look empty right after uninstalling while DeskDrawer was still running,
 don't worry: the native icons come back automatically at your next sign-in. To bring them back
-immediately, right-click the desktop → **View** → **Show desktop icons**.
+immediately, right-click the desktop → **View** → **Show desktop icons** (click it twice if it
+already shows a check mark).
 
 ## FAQ
 

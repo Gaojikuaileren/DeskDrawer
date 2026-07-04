@@ -14,4 +14,5 @@ device — in the app's per-user data folder for the Store version, or in `%APPD
 for portable builds — and never leaves it. Uninstalling the Store version removes its data
 automatically; for portable builds, delete the folder.
 
-Contact: please use this repository's Issues page.
+Contact: please use this repository's Issues page, or email
+[freeketchup@icloud.com](mailto:freeketchup@icloud.com).
