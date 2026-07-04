@@ -32,23 +32,79 @@ DeskDrawer is built for people who want a cleaner desktop without installing a h
 - This page is the product's home for documentation, changelog and support
   ([issues](../../issues)).
 
-## The icon menus
+## Visual guide
 
-The interface is icon-only. Cheat sheet:
+The interface is icon-only — every control below is shown exactly as it appears in the app.
 
-| Board menu (right-click a board's name) | | Tray menu | |
-|---|---|---|---|
-| ➕ | new board | ➕ | new board |
-| ✏️ | rename (inline) | ↻ | re-tile all boards (rescue) |
-| ✕ | delete board | 🖥 | show/hide native desktop icons |
-| ⇅ | sorting (grip = manual · T = name · shapes = type · bars = size · calendar = date · ↑/↓ direction) | 🚀 | run at startup |
-| ⤢ | icon size | 📁 | open config folder |
-| ▢ / ◻ | outline / rounded corners | ⏻ | quit (restores native icons) |
-| 🖥 / ⏻ | native icons / quit | | |
+### The board
 
-Gestures: drag the **name block** to move a board, the **corner grip** to resize, the **▾ arrow**
-to fold/unfold. With outlines hidden, these controls appear only while hovering the board.
-Keyboard: `Enter` open · `F2` rename · `Delete` recycle · `Ctrl+A/C/X/V` · `Esc` deselect.
+Each board has a compact widget in its **bottom-right corner**: `[▾ arrow] [name] [corner grip]`.
+
+- **▾ arrow** — fold the board into a compact square / unfold it back
+- **name block** — drag to move the board · double-click to rename it · **right-click for the board menu**
+- **corner grip** — drag to resize (snaps to the icon grid, and flush against screen edges and other boards)
+- With outlines hidden, the widget appears only while your mouse is over the board.
+
+### Board menu — right-click the board's name
+
+| Button | Action |
+|:---:|---|
+| ![new](docs/icons/new.png) | **New board** |
+| ![rename](docs/icons/rename.png) | **Rename** this board (edits in place) |
+| ![delete](docs/icons/delete.png) | **Delete** this board — its icons return to the default board; files are never touched |
+| ![sort](docs/icons/sort.png) | **Sorting** submenu (below) |
+| ![iconsize](docs/icons/iconsize.png) | **Icon size** submenu — four sizes ![size1](docs/icons/size1.png) ![size2](docs/icons/size2.png) ![size3](docs/icons/size3.png) ![size4](docs/icons/size4.png) |
+| ![outline](docs/icons/outline.png) | Toggle the board **outline** |
+| ![rounded](docs/icons/rounded.png) | Toggle **rounded corners** |
+| ![power](docs/icons/power.png) | **Quit DeskDrawer** (native desktop icons come back) |
+
+### Sorting submenu
+
+| Button | Order |
+|:---:|---|
+| ![manual](docs/icons/manual.png) | **Manual** — your drag order (drag icons to rearrange) |
+| ![name](docs/icons/name.png) | By **name** |
+| ![type](docs/icons/type.png) | By **type** |
+| ![size](docs/icons/size.png) | By **file size** |
+| ![date](docs/icons/date.png) | By **date created** |
+| ![asc](docs/icons/asc.png) ![desc](docs/icons/desc.png) | Direction: **ascending / descending** |
+
+### Tray menu — right-click the DeskDrawer tray icon
+
+| Button | Action |
+|:---:|---|
+| ![new](docs/icons/new.png) | **New board** |
+| ![reset](docs/icons/reset.png) | **Fix misplaced boards** — boards that are off-screen, under the taskbar, or overlapping get re-placed (snapped next to other boards); well-placed boards are not moved |
+| ![monitor](docs/icons/monitor.png) | **Show/hide the native desktop icons** (checked = hidden, DeskDrawer is your desktop) |
+| ![rocket](docs/icons/rocket.png) | **Run at startup** (also manageable in Task Manager → Startup apps) |
+| ![folder](docs/icons/folder.png) | **Open the configuration folder** (your layout lives in `config.json` there) |
+| ![help](docs/icons/help.png) | **Help & feedback** — opens this page |
+| ![power](docs/icons/power.png) | **Quit** (restores the native desktop icons) |
+
+### Mouse & keyboard
+
+| Gesture / key | Effect |
+|---|---|
+| Drag on empty board space | **Rubber-band select** — the band spans multiple boards; hold `Ctrl` to add to the selection |
+| Drag selected icons | Move them between boards (or reorder within one); drag **out** to an Explorer window to copy/move the real files |
+| Drag files **from** Explorer onto a board | The files land on the desktop and join that board |
+| Right-click an icon | The real Windows context menu (Open with, Send to, and extensions included) |
+| Right-click empty board space | The real Windows **desktop** menu — "New" files are created in that board |
+| Mouse wheel over a board | Scroll the board |
+| `Enter` / double-click | Open |
+| `F2` | Rename file |
+| `Delete` | Recycle (with Windows' confirmation for permanent deletes) |
+| `Ctrl+A` / `Ctrl+C` / `Ctrl+X` / `Ctrl+V` | Select all in board / copy / cut / paste (paste lands in the board under your pointer) |
+| `Esc` | Clear selection |
+
+## Support & feedback
+
+- 🐛 **Bug reports & feature requests:** [GitHub Issues](../../issues)
+- ✉️ **Email:** [freeketchup@icloud.com](mailto:freeketchup@icloud.com)
+
+When reporting a problem, attaching `error.log` from the configuration folder (tray menu →
+![folder](docs/icons/folder.png)) helps a lot. DeskDrawer has no telemetry — these two channels
+are the only way we learn about issues, so every report genuinely matters.
 
 ## Privacy
 
@@ -65,6 +121,10 @@ Full policy: [PRIVACY.md](PRIVACY.md)
 DeskDrawer does not move your desktop files. If you uninstall DeskDrawer, your files remain on the desktop.
 
 To remove DeskDrawer, uninstall it from Windows Settings. If you use a portable build, delete the executable and its local configuration folder.
+
+If the desktop happens to look empty right after uninstalling while DeskDrawer was still running,
+don't worry: the native icons come back automatically at your next sign-in. To bring them back
+immediately, right-click the desktop → **View** → **Show desktop icons**.
 
 ## FAQ
 
