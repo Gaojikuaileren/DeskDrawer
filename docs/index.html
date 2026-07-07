@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DeskDrawer — Lightweight Windows Desktop Organizer</title>
-<meta name="description" content="DeskDrawer is a lightweight Windows desktop organizer for grouping desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, lifetime use — no subscription, no telemetry." />
+<meta name="description" content="Lightweight Windows desktop organizer that groups desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, no subscription, no telemetry." />
 <meta name="theme-color" content="#090a0e" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://gaojikuaileren.github.io/DeskDrawer/" />
@@ -16,17 +16,21 @@
 <meta property="og:description" content="Organize Windows desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, lifetime use — a lightweight Fences alternative." />
 <meta property="og:url" content="https://gaojikuaileren.github.io/DeskDrawer/" />
 <meta property="og:image" content="https://gaojikuaileren.github.io/DeskDrawer/before-after.png" />
+<meta property="og:image:alt" content="DeskDrawer reorganizing a cluttered Windows desktop into clean, transparent drawers of icons" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="DeskDrawer — Lightweight Windows Desktop Organizer" />
 <meta name="twitter:description" content="Organize Windows desktop icons, files, folders, and shortcuts into clean drawers. Buy once, use for life." />
 <meta name="twitter:image" content="https://gaojikuaileren.github.io/DeskDrawer/before-after.png" />
+<meta name="twitter:image:alt" content="DeskDrawer reorganizing a cluttered Windows desktop into clean, transparent drawers of icons" />
 
 <!-- Favicon: the DeskDrawer two-board glyph, inline so there are no extra requests -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23090a0e'/%3E%3Crect x='6' y='7' width='8.5' height='18' rx='2.4' fill='none' stroke='%237aa9ff' stroke-width='2'/%3E%3Crect x='17.5' y='7' width='8.5' height='18' rx='2.4' fill='none' stroke='%2357cfa2' stroke-width='2'/%3E%3C/svg%3E" />
 
 <!-- Structured data: this is software, not an article. No aggregateRating is declared
      because there are no real ratings yet (adding a fake one violates Google's guidelines).
-     NOTE: update the offers price/currency if the Store price changes. -->
+     No price is declared in the Offer: the Store price varies by market and over time, and
+     the visible page shows no price, so a hardcoded figure would go stale / mismatch content.
+     The Microsoft Store listing is the single source of truth for price. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,8 +54,6 @@
   ],
   "offers": {
     "@type": "Offer",
-    "price": "3.09",
-    "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
     "url": "https://apps.microsoft.com/detail/9n904wfphzfz"
   },
@@ -65,7 +67,7 @@
     --bg:#090a0e; --bg2:#0d0f16;
     --card:rgba(255,255,255,.035); --card-hi:rgba(255,255,255,.06);
     --border:rgba(255,255,255,.09); --border-hi:rgba(255,255,255,.16);
-    --text:#f4f6fa; --muted:#9aa2b2; --muted2:#727a8a;
+    --text:#f4f6fa; --muted:#9aa2b2; --muted2:#828a9a;
     --a1:#7aa9ff; --a2:#57cfa2; --glow:rgba(122,169,255,.30);
     --grad:linear-gradient(125deg,#7aa9ff 0%,#57cfa2 100%);
     --radius:20px; --radius-sm:12px;
@@ -83,6 +85,10 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   ::selection{background:rgba(122,169,255,.28)}
+  /* keyboard focus: visible, high-contrast ring on the dark custom UI */
+  :focus-visible{outline:2px solid var(--a1);outline-offset:3px;border-radius:inherit}
+  /* offset anchored sections so the sticky nav doesn't cover their headings */
+  section[id]{scroll-margin-top:84px}
 
   /* atmospheric background glows */
   body::before{
@@ -193,7 +199,6 @@
   .shot img{width:100%;height:100%;object-fit:cover;display:block}
   .shot .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;font-size:14px;color:var(--text);
     background:linear-gradient(0deg,rgba(6,7,10,.9),transparent);font-weight:500}
-  .shot-tall{grid-row:span 2}
 
   /* comparison */
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:0 auto}
@@ -255,6 +260,8 @@
     html{scroll-behavior:auto}
   }
 </style>
+<!-- If JS is disabled/blocked, the scroll-reveal never runs — show everything so the page is never blank. -->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -306,7 +313,7 @@
     </div>
 
     <div class="frame float reveal d5">
-      <img src="before-after.png" width="2612" height="850"
+      <img src="before-after.png" width="2612" height="850" fetchpriority="high"
            alt="DeskDrawer before and after — a cluttered Windows desktop reorganized into clean, transparent drawers of icons" />
     </div>
   </section>
@@ -363,11 +370,11 @@
     </div>
     <div class="shots" style="margin-top:18px">
       <div class="shot reveal">
-        <img src="boards-closeup.png" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders, and shortcuts" />
+        <img src="boards-closeup.png" width="1200" height="740" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders, and shortcuts" />
         <div class="cap">Clean drawers, up close — grouped icons, folders and shortcuts</div>
       </div>
       <div class="shot reveal d1">
-        <img src="menu-dark.png" loading="lazy" alt="DeskDrawer's compact icon-only dark context menu for sorting and arranging" />
+        <img src="menu-dark.png" width="460" height="470" loading="lazy" alt="DeskDrawer's compact icon-only dark context menu for sorting and arranging" />
         <div class="cap">Compact, icon-only menus</div>
       </div>
     </div>
@@ -510,13 +517,16 @@
   // scroll reveal
   var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   var els = document.querySelectorAll('.reveal');
+  var showAll = function(){ els.forEach(function(e){ e.classList.add('in'); }); };
   if (reduce || !('IntersectionObserver' in window)) {
-    els.forEach(function(e){ e.classList.add('in'); });
+    showAll();
   } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
-    els.forEach(function(e){ io.observe(e); });
+    try {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
+      els.forEach(function(e){ io.observe(e); });
+    } catch (err) { showAll(); }  // never leave content stuck at opacity:0
   }
 </script>
 </body>
