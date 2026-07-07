@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2
+- Win+D and the taskbar "Show desktop" corner no longer collapse your boards. Because the
+  boards are your desktop, showing the desktop now keeps them in place instead of hiding them.
+  (To bring minimized windows back, use the taskbar or Alt+Tab.)
+
 ## 1.1.1 — Microsoft Store release
 - DeskDrawer is now available on the Microsoft Store
 - Streamlined the app's Windows permissions for Store certification (the app requests
