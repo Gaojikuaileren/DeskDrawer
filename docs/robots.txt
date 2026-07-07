@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gaojikuaileren.github.io/DeskDrawer/sitemap.xml
+Sitemap: https://deskdrawer.pages.dev/sitemap.xml
