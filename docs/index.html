@@ -172,6 +172,10 @@
 
   /* section scaffolding */
   section{padding:88px 0}
+  /* every content section also carries class="wrap", whose `padding:0 24px` shorthand was
+     overriding the vertical padding above (headings crowded the previous section). Restore it
+     with higher specificity; keep .wrap's 24px sides; leave the hero's own padding intact. */
+  section.wrap:not(.hero){padding-top:88px;padding-bottom:88px}
   .sec-head{text-align:center;max-width:60ch;margin:0 auto 52px}
   .sec-head h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.03em;font-weight:800}
   .sec-head p{color:var(--muted);font-size:17px;margin-top:16px}
