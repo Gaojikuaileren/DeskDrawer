@@ -83,7 +83,8 @@
     overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
+  /* height:auto so the width/height attributes act only as an aspect-ratio hint (no stretching) */
+  img{max-width:100%;display:block;height:auto}
   ::selection{background:rgba(122,169,255,.28)}
   /* keyboard focus: visible, high-contrast ring on the dark custom UI */
   :focus-visible{outline:2px solid var(--a1);outline-offset:3px;border-radius:inherit}
@@ -165,7 +166,7 @@
     background:linear-gradient(120deg,rgba(122,169,255,.5),transparent 40%,transparent 60%,rgba(87,207,162,.4));
     -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
   }
-  .frame img{border-radius:12px;width:100%}
+  .frame img{border-radius:12px;width:100%;height:auto}
   .float{animation:float 7s ease-in-out infinite}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
