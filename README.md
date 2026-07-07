@@ -4,6 +4,8 @@ DeskDrawer is a lightweight desktop organizer for Windows. It lets you group des
 
 It is designed to be quiet, local-first, and clean: one-time purchase, no ads, no telemetry, no subscriptions, and no bundled plugins or extensions.
 
+**Website: [deskdrawer.pages.dev](https://deskdrawer.pages.dev/)** · **[Get it on the Microsoft Store](https://apps.microsoft.com/detail/9n904wfphzfz)**
+
 ![Before / after](docs/before-after.png)
 
 ![DeskDrawer](docs/hero-desktop.png)
@@ -27,8 +29,9 @@ DeskDrawer is built for people who want a cleaner desktop without installing a h
 
 ## Get it
 
-- **Microsoft Store** — *coming soon.* One-time purchase; installed and updated through the
-  Store (signed by Microsoft). Launch discount at release.
+- **[Get it on the Microsoft Store](https://apps.microsoft.com/detail/9n904wfphzfz)** — one-time
+  purchase; installed and updated through the Store (signed by Microsoft).
+- **Website:** [deskdrawer.pages.dev](https://deskdrawer.pages.dev/)
 - This page is the product's home for documentation, changelog and support
   ([issues](../../issues)).
 
