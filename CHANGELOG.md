@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.4
+- Refinements to the drag-a-file-into-a-folder feature from 1.1.3:
+  - Dragging a file across drives now **copies** it (exactly as the desktop does) instead of moving
+    it, so a file is never accidentally removed from a USB stick or a network drive.
+  - The folder you're about to drop into now highlights while you drag, so it's clear whether you're
+    reordering icons or dropping the file inside a folder.
+  - A file only leaves its drawer once it has actually moved — a cancelled move now keeps it put.
+- Hovering a file no longer risks a pause when it points to an offline network share or a
+  not-yet-downloaded cloud file — the Windows info tip now loads in the background.
+
 ## 1.1.3
 - You can now drag a file onto a folder shown on a board to move it into that folder — the
   same drag-into-a-folder behavior as the real desktop. Works both for files dragged in from
