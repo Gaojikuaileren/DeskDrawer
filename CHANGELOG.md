@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.3
+- You can now drag a file onto a folder shown on a board to move it into that folder — the
+  same drag-into-a-folder behavior as the real desktop. Works both for files dragged in from
+  another window and for files already sitting on a board.
+- Hovering over a file on a board now shows the standard Windows info tip (type, size, date
+  modified, a shortcut's target, an image's dimensions), just as it does on the desktop.
+
 ## 1.1.2
 - Win+D and the taskbar "Show desktop" corner no longer collapse your boards. Because the
   boards are your desktop, showing the desktop now keeps them in place instead of hiding them.
