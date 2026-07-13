@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.5
+- A reliability and safety pass — 18 fixes from a full code audit:
+  - Icons now load in the background, so boards no longer freeze while fetching thumbnails on a
+    large desktop or for cloud / network files.
+  - Rename, the right-click menu, and folder drops are hardened so an action always targets the
+    file you meant — a rename can no longer accidentally move a file off the desktop.
+  - Your board organization is better protected in edge cases (a busy disk at startup, reordering
+    a board that has hidden items) that could previously misplace a file's board.
+  - Memory, startup, and shared-PC (multi-user) robustness fixes.
+
 ## 1.1.4
 - Refinements to the drag-a-file-into-a-folder feature from 1.1.3:
   - Dragging a file across drives now **copies** it (exactly as the desktop does) instead of moving
