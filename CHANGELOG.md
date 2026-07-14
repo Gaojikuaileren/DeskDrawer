@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.6
+- You can now drag a file onto a **folder shortcut** (not only a real folder) to move it inside,
+  just like on the desktop.
+- A broad reliability & quality pass from a second full code audit: icon loading no longer leaves a
+  large or cloud desktop showing grey placeholders (and a file that's still downloading gets its real
+  icon once it finishes), plus fixes across file/config safety, renaming, drag-and-drop, autostart,
+  and multi-user edge cases — including a few issues the previous release's own fixes had introduced.
+
 ## 1.1.5
 - A reliability and safety pass — 18 fixes from a full code audit:
   - Icons now load in the background, so boards no longer freeze while fetching thumbnails on a
