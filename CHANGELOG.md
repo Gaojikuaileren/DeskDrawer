@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.6.1
+## 1.2.0.0
 - Fixed the desktop **New** menu misbehaving while the icons are hidden: a new Text Document or
   Bitmap Image could fail with "file system error (16389)", and a New item created right after a
   New Folder could land *inside* that folder instead of on the desktop. Creating items — including
