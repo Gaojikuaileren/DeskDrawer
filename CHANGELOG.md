@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.2
+- A stability and reliability release — no new features, just a thorough hardening pass over the whole app.
+- Creating several **New** items in a row on the desktop is now dependable on every path, including the
+  classic "Show more options" menu: items reliably land on the desktop (never nested, never a "16389" error).
+- Removed a rare freeze that could happen when a shortcut on a board pointed at a network location that
+  was offline (a disconnected VPN or sleeping NAS), which could also make the mouse wheel stop working.
+- Tightened up many smaller edge cases around renaming, drag-and-drop between boards, autostart, and icon
+  refreshing so they behave correctly in more situations.
+
 ## 1.2.1
 - Right-clicking an icon on a board now gives the **full** Windows menu — the same one the real desktop
   shows under "Show more options". Entries that were previously missing are back, including Open with,
