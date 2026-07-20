@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.1
+- Right-clicking an icon on a board now gives the **full** Windows menu — the same one the real desktop
+  shows under "Show more options". Entries that were previously missing are back, including Open with,
+  Send to, Copy as path, Share, Restore previous versions, and any right-click add-ins you have
+  installed (7-Zip, Git, your editor, and so on).
+- A shortcut whose target has been deleted no longer does nothing when you click it. Windows' own
+  "Problem with Shortcut — do you want to delete it?" prompt appears, exactly as on the real desktop.
+  As a side effect, other things Windows normally tells you about are no longer swallowed either —
+  e.g. the "How do you want to open this file?" picker for a file type with no associated app.
+
 ## 1.2.0.0
 - Fixed the desktop **New** menu misbehaving while the icons are hidden: a new Text Document or
   Bitmap Image could fail with "file system error (16389)", and a New item created right after a
