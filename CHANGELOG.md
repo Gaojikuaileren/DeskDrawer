@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.3
+- Another stability and reliability release — no new features, a deep hardening pass over the areas the
+  1.2.2 work touched.
+- Removed several rare ways the app could briefly freeze or stop responding to the mouse wheel when a
+  board held a shortcut to an offline network location, or during large paste/drag operations.
+- In single-click-launch mode, clicking a board's title bar, resize corner, or collapse arrow no longer
+  ever launches the icon sitting behind it.
+- Your board layout is safer: an interrupted save can no longer be mistaken for a first run, and autostart
+  now reflects exactly what you (or Task Manager) set, in both directions.
+- Many smaller correctness fixes around renaming, drag-and-drop, icon refresh, and a clean exit.
+
 ## 1.2.2
 - A stability and reliability release — no new features, just a thorough hardening pass over the whole app.
 - Creating several **New** items in a row on the desktop is now dependable on every path, including the
