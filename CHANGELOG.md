@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.5
+- A stability release fixing issues found in a further code audit — no new features.
+- Fixed a rare freeze (and mouse-wheel stall) that could happen when a mapped network drive was offline
+  and you deleted a desktop file or hovered the Recycle Bin — the bin state is now read only from local
+  drives, so an unreachable network drive can no longer stall the app.
+- Fixed two edge cases with desktop folders/shortcuts that are junctions or symbolic links to a local
+  location: board membership and live desktop refresh now behave correctly for them again.
+- Double-clicking a board's collapse arrow or resize handle no longer accidentally opens an icon behind it.
+
 ## 1.2.4
 - A stability release fixing issues found in a deep code audit — no new features.
 - Fixed a rare case where clearing the desktop selection after a "New" item (on a busy PC — e.g. while
