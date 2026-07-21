@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.4
+- A stability release fixing issues found in a deep code audit — no new features.
+- Fixed a rare case where clearing the desktop selection after a "New" item (on a busy PC — e.g. while
+  OneDrive or antivirus was scanning the desktop) could crash Windows Explorer and briefly restart the
+  desktop. This is the most important fix in this release.
+- A shortcut pointing at an offline network location (via a symbolic link on a local drive) no longer
+  risks freezing the app when you drag onto it.
+- Your board layout is a little safer against an unlucky crash mid-save.
+- A minor rename glitch (renaming a board by double-click could swallow the next file's rename click) is gone.
+
 ## 1.2.3
 - Another stability and reliability release — no new features, a deep hardening pass over the areas the
   1.2.2 work touched.
