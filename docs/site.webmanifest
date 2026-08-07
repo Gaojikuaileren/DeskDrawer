@@ -26,8 +26,18 @@
       "type": "image/png"
     },
     {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
       "src": "/favicon-96x96.png",
       "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     },
     {
@@ -56,11 +66,11 @@
   ],
   "screenshots": [
     {
-      "src": "/hero-desktop.png",
+      "src": "/windows-11-desktop-boards.png",
       "sizes": "2560x1380",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "DeskDrawer organising a Windows 11 desktop into transparent boards"
+      "label": "A Windows 11 desktop with its icons grouped into labelled transparent DeskDrawer boards"
     }
   ]
 }

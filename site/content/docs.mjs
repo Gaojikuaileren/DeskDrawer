@@ -18,7 +18,7 @@ export const DOC_GROUPS = [
           "What happens the first time you run DeskDrawer, and the four things worth doing in your first five minutes.",
         related: ["boards", "menus", "keyboard-and-mouse"],
         body: `DeskDrawer has no setup wizard, no account and no first-run questionnaire. You start it and
-your desktop is already organised into one board. Everything after that is optional.
+your desktop is already organized into one board. Everything after that is optional.
 
 ## What happens on first run
 
@@ -68,7 +68,7 @@ Drag a file out to an Explorer window and it copies or moves for real. See [[men
 [[keyboard-and-mouse]].
 
 **<kbd>Win</kbd>+<kbd>D</kbd> does not hide your boards.** Boards *are* the desktop now, so showing
-the desktop shows them. Use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd> to get minimised windows
+the desktop shows them. Use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd> to get minimized windows
 back.
 
 ## Where to go next
@@ -565,7 +565,7 @@ using it depends very little on translation.
 
 ## What is honestly still in English
 
-DeskDrawer is not a fully localised application and this page will not pretend otherwise:
+DeskDrawer is not a fully localized application and this page will not pretend otherwise:
 
 - The application ships without satellite resource assemblies — the few strings it does own are
   English.
@@ -860,7 +860,7 @@ rather than reimplementing it.**
 The cost is a lot of interop code and a lot of care about threading. The benefit is that DeskDrawer
 inherits correct behaviour it did not write, including the parts nobody remembers to implement:
 [[shortcut]] repair prompts, "how do you want to open this file", per-extension menu entries, and
-localisation. See [[languages]].
+localization. See [[languages]].
 
 ## Threading
 
@@ -878,8 +878,8 @@ including, memorably, the mouse wheel. See [[offline-network-shares]].
 ## Boards are not ordinary windows
 
 Board windows sit at desktop level rather than in the normal window stack. That is what produces the
-behaviours in [[boards]]: <kbd>Win</kbd>+<kbd>D</kbd> does not hide them, "minimise all" does not
-minimise them, <kbd>Alt</kbd>+<kbd>F4</kbd> gives the shutdown dialog, and applications launched over
+behaviours in [[boards]]: <kbd>Win</kbd>+<kbd>D</kbd> does not hide them, "Minimize all" does not
+minimize them, <kbd>Alt</kbd>+<kbd>F4</kbd> gives the shutdown dialog, and applications launched over
 them still come to the front.
 
 ## State
@@ -916,16 +916,16 @@ whose desktop icons are gone and who has no idea which setting to change.
 
 ## Show desktop
 
-<kbd>Win</kbd>+<kbd>D</kbd> and the taskbar's "Show desktop" corner minimise everything to reveal the
+<kbd>Win</kbd>+<kbd>D</kbd> and the taskbar's "Show desktop" corner minimize everything to reveal the
 desktop. For DeskDrawer that is backwards: the boards *are* the desktop, so hiding them is the
 opposite of what was asked. Since 1.1.2 both gestures leave boards in place.
 
 The trade is stated in the changelog: use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd> to restore
-minimised windows.
+minimized windows.
 
-## Minimise all
+## Minimize all
 
-Boards do not minimise with other windows either, for the same reason — fixed in 1.0.8.
+Boards do not minimize with other windows either, for the same reason — fixed in 1.0.8.
 
 ## Alt+F4
 
@@ -1231,7 +1231,7 @@ there. Unfold it, or run **Fix misplaced boards**.
 ## Win+D hides my windows but not my boards
 
 That is intended. Boards *are* the desktop, so showing the desktop shows them. Use the taskbar or
-<kbd>Alt</kbd>+<kbd>Tab</kbd> to bring minimised windows back. See [[windows-integration]].
+<kbd>Alt</kbd>+<kbd>Tab</kbd> to bring minimized windows back. See [[windows-integration]].
 
 ## I want to see the plain Windows desktop for a moment
 

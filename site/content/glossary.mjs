@@ -15,7 +15,7 @@ export const TERMS = [
       "A desktop organizer is a utility that groups the icons on a computer's desktop into labelled containers so the desktop stays readable without files being moved or deleted.",
     related: ["board", "deskdrawer", "board-membership", "compare"],
     body: `A desktop organizer solves a specific problem: a desktop accumulates icons far faster than
-anyone reorganises them, and once there are more than about thirty the desktop stops working as a
+anyone reorganizes them, and once there are more than about thirty the desktop stops working as a
 place you can find things. Folders are the obvious answer, but a folder hides its contents behind a
 double-click, which is exactly what people were trying to avoid by putting the file on the desktop.
 
@@ -24,7 +24,7 @@ top of the desktop, so icons stay one click away but are no longer a single undi
 
 ## What separates one organizer from another
 
-The category is broad. Some products are large personalisation suites where icon grouping is one
+The category is broad. Some products are large personalization suites where icon grouping is one
 feature among many — themes, docks, widgets, wallpaper engines, window management. Others, like
 DeskDrawer, do only the grouping and try to be invisible otherwise.
 
@@ -77,7 +77,7 @@ reason the application stays small enough to run from the tray without a backgro
 ## How it behaves at a glance
 
 - Boards are drawn as part of the desktop, not as ordinary windows, so <kbd>Win</kbd>+<kbd>D</kbd>
-  and "minimise all" leave them alone.
+  and "Minimize all" leave them alone.
 - The [[native-icon-layer]] is hidden only while DeskDrawer is running, and only for the current
   session.
 - Right-clicking anything on a board opens the [[shell-context-menu]] — the real one, including
@@ -200,7 +200,7 @@ Items arrive on it in three ways:
 1. **On first run**, when every existing desktop icon needs a home.
 2. **When something new appears on the desktop** — a download, an installer's shortcut, a file you
    saved there, an item created through the desktop **New** menu outside a board.
-3. **When you delete a board.** Deleting a board is purely an organisational action: its icons return
+3. **When you delete a board.** Deleting a board is purely an organizational action: its icons return
    to the default board and no file is touched. See [[board-membership]].
 
 The default board is an ordinary board in every other respect. You can rename it, resize it, sort it,
@@ -261,7 +261,7 @@ it; the icons are simply not drawn. Unfolding restores the board at its previous
 
 Fold a board with the arrow at the left of the [[board-widget]].
 
-Typical use is a board you want to keep organised but rarely open — an archive of installers, a
+Typical use is a board you want to keep organized but rarely open — an archive of installers, a
 project you have finished — sitting folded in a corner while the boards you use daily stay expanded.
 
 Folding is per board and is remembered in [[config-json]] across restarts.`,

@@ -42,37 +42,37 @@ export function buildPages(ctx) {
       ic: I('<rect x="3" y="3" width="7" height="18" rx="1.5"/><rect x="14" y="3" width="7" height="11" rx="1.5"/>'),
       h: "Drawers for everything",
       p: "Group desktop icons, files, folders and shortcuts into clean boards. Drag to move them, fold a board to a compact square when you need the room.",
-      href: "/docs/boards/",
+      href: "/docs/boards/", more: "How boards work",
     },
     {
       ic: I('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>'),
       h: "Your files never move",
       p: "A board stores which icons belong to it — not the files. Every path, shortcut and backup rule keeps working, and uninstalling changes nothing.",
-      href: "/docs/boards/",
+      href: "/docs/boards/", more: "Why your files stay put",
     },
     {
       ic: I('<path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/>'),
       h: "The real Windows menu",
       p: "Right-click an icon and you get the genuine shell menu — Open with, Send to, Share, and every extension you have installed. Not an imitation.",
-      href: "/docs/menus/",
+      href: "/docs/menus/", more: "How the menus work",
     },
     {
       ic: I('<path d="M5 8h14M5 12h9M5 16h5"/><path d="m17 14 3 3 3-3"/>', 2),
       h: "16 languages, almost no language barrier",
       p: "The Store listing is available in 16 languages — and the app itself is icon-driven, so using it barely depends on reading text in any of them.",
-      href: "/docs/languages/",
+      href: "/docs/languages/", more: "Languages in detail",
     },
     {
       ic: I('<path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>'),
       h: "Genuinely lightweight",
-      p: "One tray process. No background services, no shell extensions, no plugin host, no polling loop. It organises your desktop and does nothing else.",
-      href: "/docs/architecture/",
+      p: "One tray process. No background services, no shell extensions, no plugin host, no polling loop. It organizes your desktop and does nothing else.",
+      href: "/docs/architecture/", more: "How it is built",
     },
     {
       ic: I('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>'),
       h: "No wasted height",
       p: "Board controls live in one small widget in the corner instead of a title bar on every board. With six boards open, that is a tenth of your screen back.",
-      href: "/notes/why-boards-have-no-title-bar/",
+      href: "/notes/why-boards-have-no-title-bar/", more: "Why there is no title bar",
     },
   ];
 
@@ -88,13 +88,13 @@ export function buildPages(ctx) {
     title: "DeskDrawer — Lightweight Windows Desktop Organizer",
     metaTitle: "DeskDrawer — Lightweight Windows Desktop Organizer",
     description:
-      "DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files. One-time purchase, no telemetry, 16 languages on the Microsoft Store.",
-    ogAlt: "DeskDrawer reorganising a cluttered Windows desktop into clean transparent drawers",
+      "DeskDrawer groups the icons, files and shortcuts on a cluttered Windows desktop into clean transparent drawers, without moving a single file. One-time purchase.",
+    ogAlt: "DeskDrawer social card: the DeskDrawer mark above the words \"Lightweight Windows desktop organizer — group desktop icons into clean drawers. Buy once, use for life.\"",
     body: `
   <section class="hero wrap">
     <span class="eyebrow reveal"><span class="dot"></span> Windows desktop organizer · One-time purchase</span>
-    <h1 class="reveal d1">A tidy desktop, <span class="grad-text">without moving a single file</span></h1>
-    <p class="sub reveal d2">DeskDrawer groups your Windows desktop icons into clean transparent drawers. Your files stay exactly where they are, your desktop still works like your desktop. <b>Buy once, keep it for life.</b></p>
+    <h1 class="reveal d1">Organize your Windows desktop, <span class="grad-text">without moving a single file</span></h1>
+    <p class="sub reveal d2">DeskDrawer groups your Windows desktop icons, files and shortcuts into clean transparent drawers. Your files stay exactly where they are, your desktop still works like your desktop. <b>Buy once, keep it for life.</b></p>
     <div class="cta-row reveal d3">
       <a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get it on the Microsoft Store</a>
       <a class="btn btn-ghost btn-lg" href="/download/">Requirements &amp; details</a>
@@ -106,8 +106,8 @@ export function buildPages(ctx) {
       <span>${CHECK} 16 languages on the Store</span>
     </div>
     <div class="frame float reveal d5">
-      <img src="/before-after.png" width="2612" height="850" fetchpriority="high"
-           alt="A cluttered Windows desktop on the left, and the same desktop on the right organised into clean transparent DeskDrawer boards" />
+      <img src="/messy-desktop-before-after.png" width="2612" height="850" fetchpriority="high"
+           alt="The same Windows desktop twice: on the left a messy field of desktop icons, on the right the identical icons grouped into labelled transparent DeskDrawer boards" />
     </div>
   </section>
 
@@ -115,11 +115,11 @@ export function buildPages(ctx) {
     <div class="grid reveal" style="gap:18px">
       <article class="card">
         <h3>What it is</h3>
-        <p>A single-purpose Windows utility that draws transparent boards on your desktop and lets you decide which icons go in which board. It runs from the system tray and nothing else.</p>
+        <p>A single-purpose desktop organizer for Windows. It draws transparent boards onto your wallpaper and lets you decide which icons go in which board, running from the system tray and nothing else.</p>
       </article>
       <article class="card">
         <h3>Who it is for</h3>
-        <p>People whose desktop is a working surface — current projects, downloads, this week's files — who want it readable without installing a large personalisation suite.</p>
+        <p>People whose desktop is a working surface — current projects, downloads, this week's files — who want it readable without installing a large personalization suite.</p>
       </article>
       <article class="card">
         <h3>What it deliberately is not</h3>
@@ -138,7 +138,7 @@ export function buildPages(ctx) {
         <div class="ic">${c.ic}</div>
         <h3>${c.h}</h3>
         <p>${c.p}</p>
-        <span class="more">Learn more ${ARROW}</span>
+        <span class="more">${c.more} ${ARROW}</span>
       </a>`).join("")}
     </div>
   </section>
@@ -149,25 +149,46 @@ export function buildPages(ctx) {
       <p>Transparent boards sit on your wallpaper. Your files never move — DeskDrawer just remembers which drawer each icon belongs to.</p>
     </div>
     <div class="frame reveal" style="margin-top:0">
-      <img src="/hero-desktop.png" width="2560" height="1380" loading="lazy"
-           alt="DeskDrawer organising a Windows 11 desktop's icons into several transparent boards" />
+      <img src="/windows-11-desktop-boards.png" width="2560" height="1380" loading="lazy"
+           alt="A Windows 11 desktop with its icons grouped into labelled transparent DeskDrawer boards for apps, media and files, with a fourth board folded into a small square" />
     </div>
     <div class="shots" style="margin-top:18px">
       <div class="shot reveal">
-        <img src="/boards-closeup.png" width="1200" height="740" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders and shortcuts" />
-        <div class="cap">Clean drawers, up close — grouped icons, folders and shortcuts</div>
+        <img src="/boards-closeup.png" width="1200" height="740" loading="lazy" alt="Three DeskDrawer boards up close — app shortcuts in Apps, images in Media, folders and documents in Files — beside a fourth board folded to a small square labelled Tools" />
+        <div class="cap">Boards up close — one for apps, one for images, one for working files</div>
       </div>
       <div class="shot reveal d1">
-        <img src="/menu-dark.png" width="460" height="470" loading="lazy" alt="DeskDrawer's compact icon-only dark menu for sorting and arranging boards" />
+        <img src="/board-menu.png" width="460" height="470" loading="lazy" alt="DeskDrawer's board menu — a narrow dark column of icon-only commands for creating, renaming, deleting, sorting and restyling a board" />
         <div class="cap">Icon-only menus — nothing to translate, nothing to read</div>
       </div>
+    </div>
+  </section>
+
+  <section id="vs-folders" class="wrap">
+    <div class="sec-head reveal">
+      <h2>Why not just make folders?</h2>
+      <p>It is the obvious way to deal with a cluttered desktop, and sometimes it is the right answer. Here is where it stops working.</p>
+    </div>
+    <div class="grid reveal">
+      <article class="card">
+        <h3>A folder hides what you filed</h3>
+        <p>The reason a file is on your desktop is that you want to see it. Dragging it into a folder puts it one double-click away, which is the problem you were trying to solve. A drawer groups your desktop icons while leaving every one of them visible.</p>
+      </article>
+      <article class="card">
+        <h3>Folders change where things live</h3>
+        <p>Filing moves files, so every path that pointed at them now points somewhere else. A drawer records only which icons belong together, so nothing on disk moves and nothing that referenced it has to be updated.</p>
+      </article>
+      <article class="card">
+        <h3>Tidying by hand does not stay tidy</h3>
+        <p>A desktop you sort into folders on Monday is loose again by Friday, because downloads and screenshots keep landing on it. New items simply join a drawer, so the arrangement holds without you maintaining it.</p>
+      </article>
     </div>
   </section>
 
   <section id="compare" class="wrap">
     <div class="sec-head reveal">
       <h2>A lightweight alternative to heavy desktop suites</h2>
-      <p>Most desktop-organising tools are large all-in-one suites. DeskDrawer does one job. Here is an honest way to choose.</p>
+      <p>Most desktop organization tools are large all-in-one suites. DeskDrawer does one job. Here is an honest way to choose.</p>
     </div>
     <div class="compare">
       <div class="col hi reveal">
@@ -183,10 +204,10 @@ export function buildPages(ctx) {
       </div>
       <div class="col reveal d1">
         <h3>Full desktop suites</h3>
-        <p>Choose one if you want deep customisation and a toolkit that goes well beyond grouping icons.</p>
+        <p>Choose one if you want deep customization and a toolkit that goes well beyond grouping icons.</p>
         <ul>
           <li class="neutral">${DOT} Large, feature-rich all-in-one tools</li>
-          <li class="neutral">${DOT} Deep customisation and auto-organising rules</li>
+          <li class="neutral">${DOT} Deep customization and automatic filing rules</li>
           <li class="neutral">${DOT} Theming, docks, widgets and more</li>
         </ul>
       </div>
@@ -209,7 +230,7 @@ export function buildPages(ctx) {
   <section class="wrap">
     <div class="cta-band reveal">
       <h2>Clean up your Windows desktop today</h2>
-      <p>Group your cluttered desktop into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
+      <p>Group your cluttered desktop icons into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
       <div class="cta-row" style="margin-top:30px">
         <a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get DeskDrawer on the Microsoft Store</a>
         <a class="btn btn-ghost btn-lg" href="/docs/getting-started/">Read the docs</a>
@@ -224,12 +245,12 @@ export function buildPages(ctx) {
   prose({
     path: "features/", section: "features", title: "Everything DeskDrawer does",
     description:
-      "The complete capability list for DeskDrawer — boards, native Windows behaviour, sorting, multi-monitor support and language independence — plus what it deliberately leaves out.",
+      "Every DeskDrawer feature — grouping desktop icons into boards, native Windows behaviour, sorting, multi-monitor support — plus what it deliberately leaves out.",
     lede: "A complete list, including the things it deliberately does not do. If you are deciding whether it fits, the second half of this page matters as much as the first.",
     body: `## Boards
 
 - Group desktop icons, files, folders and shortcuts into transparent [[board|boards]]
-- Boards are drawn on the desktop, not as windows: <kbd>Win</kbd>+<kbd>D</kbd> and "minimise all" leave them alone
+- Boards are drawn on the desktop, not as windows: <kbd>Win</kbd>+<kbd>D</kbd> and "Minimize all" leave them alone
 - No title bars — all controls in one compact corner widget
 - Fold any board into a compact square and unfold it again
 - Optional outline and rounded corners, per board
@@ -309,7 +330,7 @@ The reasoning for each, and the known rough edges, is in [[limitations]].`,
   prose({
     path: "download/", section: "download", title: "Download DeskDrawer",
     description:
-      "Get DeskDrawer from the Microsoft Store. System requirements, what installing puts on your machine, licensing, and the 16 languages the Store listing is available in.",
+      "Get DeskDrawer from the Microsoft Store: system requirements, what installing puts on your machine, licensing, and the 16 languages the listing comes in.",
     lede: "DeskDrawer is distributed through the Microsoft Store as a one-time purchase.",
     cta: `<p style="margin:0 0 34px"><a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get it on the Microsoft Store</a></p>`,
     body: `## Requirements
@@ -370,12 +391,12 @@ and what is still rough, which is more likely to decide whether it suits you tha
     description:
       "An honest comparison between a focused desktop organizer and a full desktop suite, including the cases where DeskDrawer is the wrong choice.",
     lede: "No competitor is named here, because the useful comparison is between two categories rather than two brands.",
-    body: `Desktop-organising tools fall broadly into two groups. Knowing which group you want settles the
+    body: `Desktop-organizing tools fall broadly into two groups. Knowing which group you want settles the
 question faster than any feature table.
 
 ## The two categories
 
-**Full desktop suites** are large personalisation products. Icon grouping is one feature among many:
+**Full desktop suites** are large personalization products. Icon grouping is one feature among many:
 themes, docks, widgets, wallpaper engines, window management, automatic filing rules. They are
 powerful, and if you want to redesign how your whole desktop looks and behaves, that power is the
 point.
@@ -402,7 +423,7 @@ Stated plainly, because a purchase that does not fit helps nobody:
 - **You rely on a screen reader.** Boards are custom-painted surfaces and their contents are not
   exposed through UI Automation. DeskDrawer would not serve you well.
 - **You are on ARM64.** There is no build.
-- **You need a fully localised application interface.** DeskDrawer's own strings are English; it works
+- **You need a fully localized application interface.** DeskDrawer's own strings are English; it works
   around that with an icon-driven interface rather than translation — see [[languages]].
 - **You want it free.** It is a paid application with no free tier.
 
@@ -430,7 +451,7 @@ sold on the Microsoft Store and is not affiliated with or endorsed by Microsoft.
 There is no company behind it, no team and no investors. That is relevant information when you are
 deciding whether to depend on a tool, so it is stated rather than implied.
 
-- Source and issue tracker: [github.com/Gaojikuaileren/DeskDrawer](${SITE.github})
+- Issue tracker and documentation source: [github.com/Gaojikuaileren/DeskDrawer](${SITE.github})
 - Email: [${SITE.email}](mailto:${SITE.email})
 
 ## The principles
@@ -447,7 +468,7 @@ no idea why. See [[hiding-the-desktop-icon-layer]].
 
 **Delegate to Windows.** Where the shell already has behaviour — context menus, the clipboard, info
 tips, opening files, naming system icons — call it rather than reimplementing it. The application
-inherits correctness and localisation it did not write. See [[architecture]].
+inherits correctness and localization it did not write. See [[architecture]].
 
 **Have no mechanism, not just no intent.** DeskDrawer contains no code that opens a network
 connection, which makes its privacy claim checkable instead of promised. See
@@ -455,8 +476,10 @@ connection, which makes its privacy claim checkable instead of promised. See
 
 ## How it is developed
 
-Nine of the last releases were stability releases with no new features. That is not a stall; it is
-what a program that paints over the whole desktop and handles your files ought to spend its time on.
+Twenty-three versions have shipped. Twelve of them fixed things rather than adding them, and the
+four most recent — 1.2.2 through 1.2.5 — added no features at all. That is not a stall; it is what a
+program that paints over the whole desktop and handles your files ought to spend its time on. The
+[[changelog|release notes]] list every one of them, so the claim is checkable rather than asserted.
 
 With no telemetry there are no crash reports and no usage data, so the substitute is repeated
 full-codebase review — eight rounds so far, each through a different lens. What each one found,
@@ -500,7 +523,7 @@ Not commitments — things that are genuinely open.
 - **Accessibility for board contents.** Boards are custom-painted, so a screen reader sees nothing
   useful. Exposing them through UI Automation is a substantial piece of work and it is the limitation
   that most clearly excludes people.
-- **Localised application strings.** The interface is icon-driven so the surface is small, but error
+- **Localized application strings.** The interface is icon-driven so the surface is small, but error
   text is English. See [[languages]].
 
 ## Unlikely
@@ -568,7 +591,7 @@ No identifiers of any kind.
 
 Nothing. There is no code in DeskDrawer that opens a network connection. This is verifiable with any
 firewall or network monitor, which is the reason it is built that way rather than as reduced or
-anonymised collection. The reasoning is in [[no-telemetry-by-default]].
+anonymized collection. The reasoning is in [[no-telemetry-by-default]].
 
 ## Diagnostics
 
@@ -604,8 +627,11 @@ that makes them.
     lede: "Two channels, both read by the developer directly.",
     body: `## Where to write
 
-- **Bugs and feature requests:** [GitHub Issues](${SITE.issues})
-- **Email:** [${SITE.email}](mailto:${SITE.email})
+- **Bugs and feature requests:** [GitHub Issues](${SITE.issues}) — public, and needs a GitHub account
+- **Email:** [${SITE.email}](mailto:${SITE.email}) — private, and needs nothing
+
+Both are read by the person who writes the code. Feature requests are as welcome as bug reports:
+with no telemetry there is no other way to learn what people actually want changed.
 
 ## Before writing
 
@@ -634,7 +660,9 @@ practical consequence is that your report may be the only signal a problem exist
 
 ## Response
 
-DeskDrawer is built by one person, so replies are not instant. Every report is read.
+DeskDrawer is built by one person, so replies are not instant. Every report is read by the person who
+writes the code — there is no queue in between. When a report leads to a fix, that fix ships through
+the Microsoft Store and the [[changelog|release notes]] name the version it landed in.
 
 ## Refunds
 
@@ -672,7 +700,7 @@ Microsoft account rather than from the developer. See [[licensing]].`,
     body:
       docHeader({
         title: "Release notes",
-        lede: `Every released version of DeskDrawer, newest first. Dates come from the public repository, which is why the earliest releases have none — they predate it.`,
+        lede: `Every released version of DeskDrawer, newest first — ${RELEASES.length} of them, of which ${RELEASES.filter((r) => r.kind === "Fix" || r.kind === "Stability").length} fixed things rather than adding them. Dates come from the public repository, which is why the earliest releases have none — they predate it.`,
         meta: [`Current version ${SITE.version}`, `Updated ${fmtDate(SITE.updated)}`],
       }) + `<ul class="rel-list">${relHtml}</ul>`,
     schema: {
@@ -704,7 +732,7 @@ Microsoft account rather than from the developer. See [[licensing]].`,
   pages.push({
     path: "docs/", section: "docs",
     title: "DeskDrawer documentation",
-    description: `Complete documentation for DeskDrawer: getting started, boards, menus, sorting, multi-monitor layout, languages, privacy, architecture, performance and troubleshooting.`,
+    description: `Complete documentation for DeskDrawer: getting started, boards, menus, sorting, multi-monitor layout, privacy, architecture and troubleshooting.`,
     crumbs: [{ name: "Documentation", href: "/docs/" }],
     sidebar: docSidebar(null),
     body:
@@ -756,7 +784,7 @@ Microsoft account rather than from the developer. See [[licensing]].`,
     path: "faq/", section: "faq",
     title: "DeskDrawer questions & answers",
     description:
-      "Straight answers about DeskDrawer: whether it moves your files, what it stores, which languages it supports, how the one-time purchase works, and what to do when something goes wrong.",
+      "Straight answers about DeskDrawer: whether it moves your files, what it stores, how the one-time purchase works, and what to do when something goes wrong.",
     crumbs: [{ name: "Questions & answers", href: "/faq/" }],
     body:
       docHeader({

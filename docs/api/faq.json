@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-07",
-  "count": 66,
+  "count": 70,
   "categories": [
     {
       "id": "basics",
@@ -48,15 +48,22 @@
       "slug": "what-is-deskdrawer",
       "question": "What is DeskDrawer?",
       "category": "basics",
-      "answer": "DeskDrawer is a lightweight desktop organizer for Windows 10 and 11. It groups the icons on your desktop into transparent boards — labelled containers drawn straight onto your wallpaper — so a crowded desktop becomes readable without anything being moved into folders. It is a single-purpose tool. It does not launch things, theme anything, manage windows or replace Explorer. It groups desktop icons, and it is sold as a One-time purchase with no ads, telemetry or subscription.",
+      "answer": "DeskDrawer is a lightweight desktop organizer for Windows 10 and 11. It groups the icons, files, folders and shortcuts on your desktop into transparent boards — labelled containers drawn straight onto your wallpaper — so a crowded desktop becomes readable without anything being moved into folders. It is a single-purpose tool. It does not launch things, theme anything, manage windows or replace Explorer. It groups desktop icons, and it is sold as a One-time purchase with no ads, telemetry or subscription.",
       "url": "https://deskdrawer.pages.dev/faq/#what-is-deskdrawer"
     },
     {
       "slug": "who-is-it-for",
       "question": "Who is DeskDrawer for?",
       "category": "basics",
-      "answer": "People whose desktop is a working surface rather than an empty wallpaper: current projects, downloads in progress, files that will be dealt with this week, tools reached daily. It fits if you want a cleaner desktop but do not want to install a large personalisation suite, and if you would rather your files stayed exactly where they are. It does not fit if you want automatic filing rules, a launcher, widgets or theming — those are all deliberately out of scope, as listed in Limitations.",
+      "answer": "People whose desktop is a working surface rather than an empty wallpaper: current projects, downloads in progress, files that will be dealt with this week, tools reached daily. It fits if you want a cleaner desktop but do not want to install a large personalization suite, and if you would rather your files stayed exactly where they are. It does not fit if you want automatic filing rules, a launcher, widgets or theming — those are all deliberately out of scope, as listed in Limitations.",
       "url": "https://deskdrawer.pages.dev/faq/#who-is-it-for"
+    },
+    {
+      "slug": "why-not-just-use-folders",
+      "question": "Why not just put everything into folders?",
+      "category": "basics",
+      "answer": "Folders work, and if a folder solves your problem you do not need this. But the reason a file ends up on a desktop in the first place is usually that you want to see it, and a folder hides its contents behind a double-click — which is the thing you were avoiding. A board groups your desktop icons while leaving every one of them visible. There are two other differences. Filing moves files, so every path that pointed at them now points somewhere else; a board records only which icons belong together, so nothing on disk moves — see Board membership. And a desktop you sort by hand on Monday is untidy again by Friday, because downloads and screenshots keep arriving; new items simply join the Default board instead.",
+      "url": "https://deskdrawer.pages.dev/faq/#why-not-just-use-folders"
     },
     {
       "slug": "how-is-it-different",
@@ -64,6 +71,13 @@
       "category": "basics",
       "answer": "Three concrete differences. No title bars. Board controls sit in one small widget in the bottom-right corner instead of a strip along the top of every board. With six boards on screen, that is roughly a tenth of your display returned to you. The reasoning is in Why DeskDrawer's boards have no title bar. One process, no services. DeskDrawer runs from the tray with no background services, no shell extension and no plugin host. See Architecture. No network access at all. Not reduced telemetry — none, and no code that could send anything. See Privacy & data. A fuller comparison against the \"full desktop suite\" category is on the Why DeskDrawer page.",
       "url": "https://deskdrawer.pages.dev/faq/#how-is-it-different"
+    },
+    {
+      "slug": "fences-alternative",
+      "question": "Is DeskDrawer an alternative to Stardock Fences?",
+      "category": "basics",
+      "answer": "Only in a narrow sense, and it is worth being straight about that before you spend anything. Fences, by Stardock, has been the established tool in this category since 2009, and it does considerably more than DeskDrawer does: rules that sort new icons into groups by themselves, folder portals that mirror a folder onto the desktop, several pages of groups to move between, and a wide set of appearance options. None of that is planned here — see Limitations and the Roadmap. DeskDrawer covers the smaller part of the same ground. It groups desktop icons into boards, and that is the entire product: one tray process, nothing to configure beyond the boards themselves. Neither tool files your desktop away into folders on disk — both group icons visually and leave the files in your Desktop folder — so the choice between them is about scope, not about safety. If grouping icons was the only part you wanted, DeskDrawer is the smaller tool. If you wanted the rules and the portals, buy the one that has them. For what Fences currently costs and includes, check Stardock — that changes, and a figure repeated here would go stale.",
+      "url": "https://deskdrawer.pages.dev/faq/#fences-alternative"
     },
     {
       "slug": "is-it-free",
@@ -97,7 +111,7 @@
       "slug": "does-deleting-a-board-delete-files",
       "question": "If I delete a board, do I lose the files in it?",
       "category": "files",
-      "answer": "No. Deleting a board is purely organisational: its icons return to the Default board and not one file is touched. A board never contained your files in the first place — it contained a list of which icons belong to it. There is no way for deleting a board to lose data.",
+      "answer": "No. Deleting a board is purely organizational: its icons return to the Default board and not one file is touched. A board never contained your files in the first place — it contained a list of which icons belong to it. There is no way for deleting a board to lose data.",
       "url": "https://deskdrawer.pages.dev/faq/#does-deleting-a-board-delete-files"
     },
     {
@@ -111,7 +125,7 @@
       "slug": "can-i-recover-my-layout",
       "question": "Can I back up or move my board layout?",
       "category": "files",
-      "answer": "Yes — copy one file. config.json in the Configuration folder holds every board, its geometry, its settings and its icon assignments. Tray menu → Open the configuration folder takes you there. Restoring is the same in reverse: quit DeskDrawer, put the file back, start it again. Moving to a PC with a different display arrangement works too, though board positions will need Fix misplaced boards afterwards. See Backup & restore.",
+      "answer": "Yes — copy one file. config.json in the Configuration folder holds every board, its geometry, its settings and its icon assignments. Tray menu → Open the configuration folder takes you there. Restoring is the same in reverse: quit DeskDrawer, put the file back, start it again. Carrying your layout to a new PC works the same way — if its monitors are arranged differently, Fix misplaced boards settles the positions afterwards. Setting up a fresh Windows install is the easiest time to do this, since the desktop starts empty. See Backup & restore.",
       "url": "https://deskdrawer.pages.dev/faq/#can-i-recover-my-layout"
     },
     {
@@ -127,6 +141,13 @@
       "category": "files",
       "answer": "Yes. Be aware that a target which is offline — a disconnected VPN, a sleeping NAS, a mapped drive that is gone — cannot produce an icon or a tooltip until Windows gives up waiting for it. DeskDrawer does that work off the interface thread so the application stays responsive, but that one item will be slow. If you are seeing outright freezes, make sure you are on the current version: The same bug, five times: offline network locations lists five separate fixes in this area.",
       "url": "https://deskdrawer.pages.dev/faq/#network-drives"
+    },
+    {
+      "slug": "where-do-i-start",
+      "question": "My desktop is a mess. Where do I start?",
+      "category": "using",
+      "answer": "By doing nothing, first. DeskDrawer reads your desktop on its first run and puts everything it finds on one board, so the clutter is already contained before you have made a single decision. From there the useful order is: make a second board, drag a related group of icons onto it, then size and place the two boards. Repeat until what is left on the first board is genuinely miscellaneous — that board becomes your inbox rather than a failure. Most desktops settle at three to six boards. You do not have to get it right immediately, because nothing you do here touches a file. See Getting started.",
+      "url": "https://deskdrawer.pages.dev/faq/#where-do-i-start"
     },
     {
       "slug": "how-do-i-create-a-board",
@@ -160,7 +181,7 @@
       "slug": "how-do-i-fold-a-board",
       "question": "What does folding a board do?",
       "category": "using",
-      "answer": "The ▾ arrow collapses the board to a small square showing only its name, freeing the space its icons used. Nothing is lost: a Folded board keeps every icon assigned to it and unfolds to its previous size and position. It is the right state for a board you want to keep organised but rarely open.",
+      "answer": "The ▾ arrow collapses the board to a small square showing only its name, freeing the space its icons used. Nothing is lost: a Folded board keeps every icon assigned to it and unfolds to its previous size and position. It is the right state for a board you want to keep organized but rarely open.",
       "url": "https://deskdrawer.pages.dev/faq/#how-do-i-fold-a-board"
     },
     {
@@ -328,7 +349,7 @@
       "slug": "win-d-does-not-hide-boards",
       "question": "Why does Win+D not hide my boards?",
       "category": "windows",
-      "answer": "Because your boards are the desktop now, so showing the desktop shows them — hiding them would be the opposite of what you asked for. This changed in 1.1.2. To bring minimised windows back, use the taskbar or Alt+Tab. See Windows integration.",
+      "answer": "Because your boards are the desktop now, so showing the desktop shows them — hiding them would be the opposite of what you asked for. This changed in 1.1.2. To bring minimized windows back, use the taskbar or Alt+Tab. See Windows integration.",
       "url": "https://deskdrawer.pages.dev/faq/#win-d-does-not-hide-boards"
     },
     {
@@ -370,7 +391,7 @@
       "slug": "does-it-collect-data",
       "question": "Does DeskDrawer collect any data?",
       "category": "privacy",
-      "answer": "No. There is no analytics SDK, no telemetry, no crash reporting, no account system, no advertising identifier and no licence phone-home. Stronger than that: DeskDrawer opens no network connections of its own at all. That is a claim you can verify yourself with any firewall or network monitor, which is precisely why it was built that way rather than as \"anonymised analytics\". See Privacy & data.",
+      "answer": "No. There is no analytics SDK, no telemetry, no crash reporting, no account system, no advertising identifier and no licence phone-home. Stronger than that: DeskDrawer opens no network connections of its own at all. That is a claim you can verify yourself with any firewall or network monitor, which is precisely why it was built that way rather than as \"anonymized analytics\". See Privacy & data.",
       "url": "https://deskdrawer.pages.dev/faq/#does-it-collect-data"
     },
     {
@@ -398,7 +419,7 @@
       "slug": "why-no-telemetry",
       "question": "Why does DeskDrawer have no telemetry at all, not even anonymous?",
       "category": "privacy",
-      "answer": "Because a desktop organizer sees the name of every file on your desktop, and that is a surprisingly complete picture of what someone is working on. No anonymisation scheme makes that harmless. So the rule is not \"collect less\" but \"have no mechanism\" — there is no code that opens a socket, so there is nothing to misconfigure or leak later. The cost is real and paid by the developer: no crash reports, no usage data, no idea when something breaks. That trade is written up honestly in Shipping with no telemetry, and what it costs.",
+      "answer": "Because a desktop organizer sees the name of every file on your desktop, and that is a surprisingly complete picture of what someone is working on. No anonymization scheme makes that harmless. So the rule is not \"collect less\" but \"have no mechanism\" — there is no code that opens a socket, so there is nothing to misconfigure or leak later. The cost is real and paid by the developer: no crash reports, no usage data, no idea when something breaks. That trade is written up honestly in Shipping with no telemetry, and what it costs.",
       "url": "https://deskdrawer.pages.dev/faq/#why-no-telemetry"
     },
     {
@@ -435,6 +456,13 @@
       "category": "buying",
       "answer": "Updates arrive through the Microsoft Store and are included — there is no upgrade fee. DeskDrawer contains no update checker of its own, because it makes no network connections; updating is entirely the Store's job.",
       "url": "https://deskdrawer.pages.dev/faq/#how-do-updates-work"
+    },
+    {
+      "slug": "is-it-actively-maintained",
+      "question": "Is DeskDrawer actively maintained, and are bug reports welcome?",
+      "category": "buying",
+      "answer": "Yes to both, and the release notes are the evidence rather than the claim: every version is listed there with what changed in it. Twenty-three have shipped so far, twelve of them fixing things rather than adding them, and the codebase has been through eight full review rounds — what those found is written up in Eight rounds of code audits on a small app, and what each one found. Bug reports and feature requests are genuinely wanted. Because DeskDrawer has no Telemetry, the developer learns about a problem only when somebody writes in, so your report may be the only signal that it exists. Both channels on the Support page go straight to the person who writes the code, and when a report leads to a fix the release notes name the version it landed in.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-it-actively-maintained"
     },
     {
       "slug": "is-there-a-trial",

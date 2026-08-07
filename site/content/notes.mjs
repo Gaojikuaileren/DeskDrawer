@@ -17,7 +17,7 @@ export const NOTES = [
     date: D,
     keywords: ["desktop organizer design", "screen space", "interface density"],
     description:
-      "Every desktop organizer puts a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.",
+      "Most desktop organizers put a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.",
     body: `The first prototype had title bars, because that is what containers have. It looked
 professional and it was wrong, and it took a full-screen screenshot to see why.
 
@@ -126,9 +126,9 @@ asked for would be invisible.
 
 Once boards *are* the desktop, several Windows behaviours become wrong by default:
 
-- <kbd>Win</kbd>+<kbd>D</kbd> minimises everything to reveal the desktop — but boards are the
+- <kbd>Win</kbd>+<kbd>D</kbd> minimizes everything to reveal the desktop — but boards are the
   desktop, so hiding them is the opposite of the request. Fixed in 1.1.2.
-- "Minimise all" had the same problem. Fixed in 1.0.8.
+- "Minimize all" had the same problem. Fixed in 1.0.8.
 - <kbd>Alt</kbd>+<kbd>F4</kbd> on the desktop opens **Shut Down Windows**. On a board it was closing
   the board — a destructive-feeling action triggered by muscle memory. Fixed in 1.1.0.
 - Applications launched while boards were on screen got stuck behind them. Also 1.1.0.
@@ -213,7 +213,7 @@ Each was a real fix. None was the last one.
 The first fix was the obvious one: move info-tip resolution off the interface thread. Correct, and it
 solved the reported symptom completely.
 
-It did not generalise, because the problem is not one call site. It is that *a large number of
+It did not generalize, because the problem is not one call site. It is that *a large number of
 ordinary-looking operations end in a file-system call*, and the dangerous ones are not obviously
 dangerous when you read them. Resolving an icon reads the file. Building a tooltip reads the file.
 Deciding whether a drop target is a folder reads the file. Deciding whether a drag should copy or
@@ -352,7 +352,7 @@ The wider pattern of fixes introducing regressions is in [[eight-rounds-of-audit
     description:
       "DeskDrawer makes no network connections at all. That is a stronger promise than 'privacy-friendly', and it has a real price the developer pays.",
     body: `DeskDrawer contains no analytics, no crash reporting, no update check of its own, no account
-system and no licence phone-home. It opens no network connections. Not anonymised ones, not
+system and no licence phone-home. It opens no network connections. Not anonymized ones, not
 aggregated ones, not opt-out ones.
 
 This page is about why, and about what it costs, because the second half is usually left out.
@@ -364,7 +364,7 @@ This page is about why, and about what it costs, because the second half is usua
 
 That difference is the entire reason for the decision. A desktop organizer sees the name of every
 file on your desktop — which is a surprisingly complete picture of what someone is working on, who
-they work for, what they are applying for, what they are ill with. There is no anonymisation scheme
+they work for, what they are applying for, what they are ill with. There is no anonymization scheme
 that makes that data harmless, and no privacy policy that makes "trust us" as good as "it cannot
 happen".
 
@@ -416,14 +416,14 @@ The precise inventory of what is and is not stored is in [[privacy-and-data]].`,
     title: "Designing an interface that barely needs language",
     tag: "Design decision",
     date: D,
-    keywords: ["localisation", "icon-only interface", "internationalisation", "Windows shell"],
+    keywords: ["localization", "icon-only interface", "internationalization", "Windows shell"],
     description:
       "DeskDrawer's Store listing is in 16 languages. The application itself is built so that using it depends very little on reading text in any of them.",
     body: `The DeskDrawer listing on the Microsoft Store is available in 16 languages. The application
 underneath it is not translated into 16 languages, and mostly does not need to be — which is a
 consequence of how it is built rather than a claim about it.
 
-## The starting point was not localisation
+## The starting point was not localization
 
 The menus became icon-only for a different reason: they had to be small. A menu that appears when you
 right-click a board's name sits directly on top of your desktop, and a list of eight text commands is
@@ -432,7 +432,7 @@ a large opaque rectangle covering the thing you are working with.
 Icons made the menu roughly a third of the size. Sorting is an arrow and a symbol; icon size is four
 squares of increasing size; outline is a rectangle; quit is a power symbol.
 
-The localisation benefit was noticed afterwards, and it turned out to be the larger one.
+The localization benefit was noticed afterwards, and it turned out to be the larger one.
 
 ## Three decisions that removed language from the interface
 
@@ -461,7 +461,7 @@ installed. But it also means the most language-dense part of the interface arriv
 translated**, in your Windows display language, including third-party entries, at no cost and with no
 translation to keep current.
 
-This is the pattern behind all of it: delegating to Windows means inheriting Windows' localisation.
+This is the pattern behind all of it: delegating to Windows means inheriting Windows' localization.
 Reimplementing means owning the translation forever.
 
 ## What is left in English, honestly

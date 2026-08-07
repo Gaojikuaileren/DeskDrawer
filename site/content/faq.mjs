@@ -1,7 +1,7 @@
 /**
  * Questions and answers.
  *
- * These live on ONE well-organised page, grouped by topic and linkable by anchor.
+ * These live on ONE well-organized page, grouped by topic and linkable by anchor.
  * They are deliberately not split into a page each: most are two-paragraph answers,
  * and a page per question would be a hundred thin pages competing with the
  * documentation that actually explains the subject. Where a question needs depth,
@@ -24,9 +24,10 @@ export const FAQS = [
   {
     slug: "what-is-deskdrawer", cat: "basics",
     q: "What is DeskDrawer?",
-    a: `DeskDrawer is a lightweight desktop organizer for Windows 10 and 11. It groups the icons on your
-desktop into transparent [[board|boards]] — labelled containers drawn straight onto your wallpaper —
-so a crowded desktop becomes readable without anything being moved into folders.
+    a: `DeskDrawer is a lightweight [[desktop-organizer|desktop organizer]] for Windows 10 and 11. It
+groups the icons, files, folders and shortcuts on your desktop into transparent [[board|boards]] —
+labelled containers drawn straight onto your wallpaper — so a crowded desktop becomes readable
+without anything being moved into folders.
 
 It is a single-purpose tool. It does not launch things, theme anything, manage windows or replace
 Explorer. It groups desktop icons, and it is sold as a [[one-time-purchase]] with no ads, telemetry
@@ -38,10 +39,24 @@ or subscription.`,
     a: `People whose desktop is a working surface rather than an empty wallpaper: current projects,
 downloads in progress, files that will be dealt with this week, tools reached daily.
 
-It fits if you want a cleaner desktop but do not want to install a large personalisation suite, and
+It fits if you want a cleaner desktop but do not want to install a large personalization suite, and
 if you would rather your files stayed exactly where they are. It does not fit if you want automatic
 filing rules, a launcher, widgets or theming — those are all deliberately out of scope, as listed in
 [[limitations]].`,
+  },
+  {
+    slug: "why-not-just-use-folders", cat: "basics",
+    q: "Why not just put everything into folders?",
+    a: `Folders work, and if a folder solves your problem you do not need this.
+
+But the reason a file ends up on a desktop in the first place is usually that you want to see it, and
+a folder hides its contents behind a double-click — which is the thing you were avoiding. A board
+groups your desktop icons while leaving every one of them visible.
+
+There are two other differences. Filing moves files, so every path that pointed at them now points
+somewhere else; a board records only which icons belong together, so nothing on disk moves — see
+[[board-membership]]. And a desktop you sort by hand on Monday is untidy again by Friday, because
+downloads and screenshots keep arriving; new items simply join the [[default-board]] instead.`,
   },
   {
     slug: "how-is-it-different", cat: "basics",
@@ -60,6 +75,27 @@ extension and no plugin host. See [[architecture]].
 
 A fuller comparison against the "full desktop suite" category is on the [[compare|Why DeskDrawer]]
 page.`,
+  },
+  {
+    slug: "fences-alternative", cat: "basics",
+    q: "Is DeskDrawer an alternative to Stardock Fences?",
+    a: `Only in a narrow sense, and it is worth being straight about that before you spend anything.
+
+Fences, by Stardock, has been the established tool in this category since 2009, and it does
+considerably more than DeskDrawer does: rules that sort new icons into groups by themselves, folder
+portals that mirror a folder onto the desktop, several pages of groups to move between, and a wide
+set of appearance options. None of that is planned here — see [[limitations]] and the [[roadmap]].
+
+DeskDrawer covers the smaller part of the same ground. It groups desktop icons into boards, and that
+is the entire product: one tray process, nothing to configure beyond the boards themselves.
+
+Neither tool files your desktop away into folders on disk — both group icons visually and leave the
+files in your Desktop folder — so the choice between them is about scope, not about safety. If
+grouping icons was the only part you wanted, DeskDrawer is the smaller tool. If you wanted the rules
+and the portals, buy the one that has them.
+
+For what Fences currently costs and includes, check Stardock — that changes, and a figure repeated
+here would go stale.`,
   },
   {
     slug: "is-it-free", cat: "basics",
@@ -93,7 +129,6 @@ still points at it.
 
 The one exception is deliberate and matches the real desktop: dropping a file **onto a folder icon**
 moves it into that folder. See [[drag-and-drop]].`,
-    related: ["what-happens-if-i-uninstall", "does-deleting-a-board-delete-files"],
   },
   {
     slug: "what-happens-if-i-uninstall", cat: "files",
@@ -108,7 +143,7 @@ desktop icons**. The full procedure is in [[uninstall]].`,
   {
     slug: "does-deleting-a-board-delete-files", cat: "files",
     q: "If I delete a board, do I lose the files in it?",
-    a: `No. Deleting a board is purely organisational: its icons return to the [[default-board]] and not
+    a: `No. Deleting a board is purely organizational: its icons return to the [[default-board]] and not
 one file is touched.
 
 A board never contained your files in the first place — it contained a list of which icons belong to
@@ -131,9 +166,10 @@ is session-scoped and never written to a Windows setting.`,
 geometry, its settings and its icon assignments. Tray menu → **Open the configuration folder** takes
 you there.
 
-Restoring is the same in reverse: quit DeskDrawer, put the file back, start it again. Moving to a PC
-with a different display arrangement works too, though board positions will need **Fix misplaced
-boards** afterwards. See [[backup-and-restore]].`,
+Restoring is the same in reverse: quit DeskDrawer, put the file back, start it again. Carrying your
+layout to a new PC works the same way — if its monitors are arranged differently, **Fix misplaced
+boards** settles the positions afterwards. Setting up a fresh Windows install is the easiest time to
+do this, since the desktop starts empty. See [[backup-and-restore]].`,
   },
   {
     slug: "does-it-work-with-onedrive", cat: "files",
@@ -160,6 +196,19 @@ item will be slow. If you are seeing outright freezes, make sure you are on the 
   },
 
   /* ------------------------------------------------------------------ using */
+  {
+    slug: "where-do-i-start", cat: "using",
+    q: "My desktop is a mess. Where do I start?",
+    a: `By doing nothing, first. DeskDrawer reads your desktop on its first run and puts everything it
+finds on one board, so the clutter is already contained before you have made a single decision.
+
+From there the useful order is: make a second board, drag a related group of icons onto it, then size
+and place the two boards. Repeat until what is left on the first board is genuinely miscellaneous —
+that board becomes your inbox rather than a failure. Most desktops settle at three to six boards.
+
+You do not have to get it right immediately, because nothing you do here touches a file. See
+[[getting-started]].`,
+  },
   {
     slug: "how-do-i-create-a-board", cat: "using",
     q: "How do I create a new board?",
@@ -200,7 +249,7 @@ the intended resting state — the tool disappears and your icons remain. See [[
 its icons used. Nothing is lost: a [[folded-board]] keeps every icon assigned to it and unfolds to its
 previous size and position.
 
-It is the right state for a board you want to keep organised but rarely open.`,
+It is the right state for a board you want to keep organized but rarely open.`,
   },
   {
     slug: "can-i-sort-boards-differently", cat: "using",
@@ -344,7 +393,6 @@ The application itself is a different matter, and a more interesting one: its in
 so there is very little text in it to translate in the first place. Most of the words you *do* see —
 system icon names, the whole right-click menu — come from Windows in your own display language. The
 distinction is explained in [[languages]].`,
-    related: ["can-i-use-it-if-my-language-is-not-supported", "is-the-store-page-localized"],
   },
   {
     slug: "can-i-use-it-if-my-language-is-not-supported", cat: "languages",
@@ -422,7 +470,7 @@ That also means DeskDrawer adds nothing to your right-click menus anywhere else 
     a: `Because your boards *are* the desktop now, so showing the desktop shows them — hiding them would
 be the opposite of what you asked for. This changed in 1.1.2.
 
-To bring minimised windows back, use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd>. See
+To bring minimized windows back, use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd>. See
 [[windows-integration]].`,
   },
   {
@@ -477,8 +525,7 @@ advertising identifier and no licence phone-home.
 
 Stronger than that: **DeskDrawer opens no network connections of its own at all.** That is a claim you
 can verify yourself with any firewall or network monitor, which is precisely why it was built that way
-rather than as "anonymised analytics". See [[privacy-and-data]].`,
-    related: ["does-it-show-ads", "what-does-it-store-locally"],
+rather than as "anonymized analytics". See [[privacy-and-data]].`,
   },
   {
     slug: "does-it-show-ads", cat: "privacy",
@@ -510,7 +557,7 @@ leave your machine.`,
     slug: "why-no-telemetry", cat: "privacy",
     q: "Why does DeskDrawer have no telemetry at all, not even anonymous?",
     a: `Because a desktop organizer sees the name of every file on your desktop, and that is a
-surprisingly complete picture of what someone is working on. No anonymisation scheme makes that
+surprisingly complete picture of what someone is working on. No anonymization scheme makes that
 harmless.
 
 So the rule is not "collect less" but "have no mechanism" — there is no code that opens a socket, so
@@ -555,6 +602,19 @@ are authoritative on the specifics.`,
     a: `Updates arrive through the Microsoft Store and are included — there is no upgrade fee.
 DeskDrawer contains no update checker of its own, because it makes no network connections; updating is
 entirely the Store's job.`,
+  },
+  {
+    slug: "is-it-actively-maintained", cat: "buying",
+    q: "Is DeskDrawer actively maintained, and are bug reports welcome?",
+    a: `Yes to both, and the [[changelog|release notes]] are the evidence rather than the claim: every
+version is listed there with what changed in it. Twenty-three have shipped so far, twelve of them
+fixing things rather than adding them, and the codebase has been through eight full review rounds —
+what those found is written up in [[eight-rounds-of-audits]].
+
+Bug reports and feature requests are genuinely wanted. Because DeskDrawer has no [[telemetry]], the
+developer learns about a problem only when somebody writes in, so your report may be the only signal
+that it exists. Both channels on the [[support]] page go straight to the person who writes the code,
+and when a report leads to a fix the release notes name the version it landed in.`,
   },
   {
     slug: "is-there-a-trial", cat: "buying",

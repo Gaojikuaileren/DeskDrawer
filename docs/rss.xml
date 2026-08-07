@@ -68,7 +68,7 @@
     <link>https://deskdrawer.pages.dev/changelog/#v1-0-8</link>
     <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-8</guid>
     <pubDate>Invalid Date</pubDate>
-    <description>Show or hide native icons from the tray; boards stop minimising.</description>
+    <description>Show or hide native icons from the tray; boards stop minimizing.</description>
   </item>
   <item>
     <title>DeskDrawer 1.0.9</title>
@@ -138,7 +138,7 @@
     <link>https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/</link>
     <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/</guid>
     <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Every desktop organizer puts a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.</description>
+    <description>Most desktop organizers put a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.</description>
   </item>
   <item>
     <title>DeskDrawer 1.2.3</title>

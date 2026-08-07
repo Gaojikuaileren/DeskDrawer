@@ -18,13 +18,13 @@ It is designed to be quiet, local-first, and clean: one-time purchase, no ads, n
 > [Release notes](https://deskdrawer.pages.dev/changelog/) ·
 > [Engineering notes](https://deskdrawer.pages.dev/notes/)
 
-![Before / after](docs/before-after.png)
+![The same Windows desktop before and after: a messy field of icons on the left, the identical icons grouped into labelled transparent boards on the right](docs/messy-desktop-before-after.png)
 
-![DeskDrawer](docs/hero-desktop.png)
+![A Windows 11 desktop with its icons grouped into labelled transparent DeskDrawer boards](docs/windows-11-desktop-boards.png)
 
 | Boards up close | Icon-only menu |
 |---|---|
-| ![Boards](docs/boards-closeup.png) | ![Menu](docs/menu-dark.png) |
+| ![Three DeskDrawer boards up close, grouping app shortcuts, images, folders and documents](docs/boards-closeup.png) | ![DeskDrawer's icon-only board menu](docs/board-menu.png) |
 
 ## Why DeskDrawer?
 

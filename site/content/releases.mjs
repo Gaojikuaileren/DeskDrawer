@@ -79,7 +79,7 @@ export const RELEASES = [
     notes: [
       "Icons now load in the background, so boards no longer freeze while fetching thumbnails on a large desktop or for cloud and network files.",
       "Rename, the right-click menu and folder drops are hardened so an action always targets the file you meant — a rename can no longer accidentally move a file off the desktop.",
-      "Board organisation is better protected in edge cases — a busy disk at startup, reordering a board with hidden items — that could previously misplace a file's board.",
+      "Board organization is better protected in edge cases — a busy disk at startup, reordering a board with hidden items — that could previously misplace a file's board.",
       "Memory, startup and shared-PC robustness fixes.",
     ],
   },
@@ -106,7 +106,7 @@ export const RELEASES = [
     version: "1.1.2", date: "2026-07-07", kind: "Fix",
     summary: "Show desktop stopped hiding the boards.",
     notes: [
-      "Win+D and the taskbar \"Show desktop\" corner no longer collapse your boards. Because the boards are your desktop, showing the desktop now keeps them in place instead of hiding them. To bring minimised windows back, use the taskbar or Alt+Tab.",
+      "Win+D and the taskbar \"Show desktop\" corner no longer collapse your boards. Because the boards are your desktop, showing the desktop now keeps them in place instead of hiding them. To bring minimized windows back, use the taskbar or Alt+Tab.",
     ],
     reading: ["hiding-the-desktop-icon-layer"],
   },
@@ -143,11 +143,11 @@ export const RELEASES = [
   },
   {
     version: "1.0.8", kind: "Feature",
-    summary: "Show or hide native icons from the tray; boards stop minimising.",
+    summary: "Show or hide native icons from the tray; boards stop minimizing.",
     notes: [
       "Show or hide the native desktop icons directly from the tray menu.",
       "The reset button now only re-tiles misplaced boards — your boards and their contents are left untouched.",
-      "Boards no longer minimise along with other windows (Win+D / minimise all).",
+      "Boards no longer minimize along with other windows (Win+D / minimize all).",
     ],
   },
   {

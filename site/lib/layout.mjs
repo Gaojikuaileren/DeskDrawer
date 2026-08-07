@@ -50,6 +50,27 @@ function link({ label, href, external }) {
  */
 const PRODUCT_PAGES = new Set(["", "features/", "download/", "compare/", "changelog/", "docs/"]);
 
+/**
+ * The site-name declaration Google reads to label the result — emitted on the HOME PAGE ONLY,
+ * as its own top-level object rather than inside the @graph, matching the shape in Google's
+ * "Site names in Google Search" documentation exactly.
+ *
+ * This exists because Google was labelling the site "Cloudflare": with no WebSite markup at all
+ * on the previous site, Search fell back to the provider identity of the pages.dev parent domain
+ * — the same fallback that produced the generic Cloudflare favicon. `url` must be the canonical
+ * home page *including the trailing slash*, or it does not match the canonical we declare.
+ */
+function websiteJsonLd() {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE.origin}/#website`,
+    name: SITE.name,
+    alternateName: ["DeskDrawer - Desktop Organizer", "DeskDrawer for Windows"],
+    url: `${SITE.origin}/`,
+  }).replace(/</g, "\\u003c");
+}
+
 function graph(page) {
   const pageUrl = url(page.path);
   const image = url(`assets/${OG_BY_SECTION[page.section] || "og.png"}`);
@@ -65,20 +86,6 @@ function graph(page) {
       founder: { "@type": "Person", name: SITE.author.name, url: SITE.author.url },
       email: SITE.email,
       sameAs: [SITE.github, SITE.store],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE.origin}/#website`,
-      url: SITE.origin,
-      name: SITE.name,
-      description: SITE.boilerplate,
-      publisher: { "@id": `${SITE.origin}/#organization` },
-      inLanguage: "en",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: `${SITE.origin}/faq/?q={search_term_string}` },
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "SoftwareApplication",
@@ -103,7 +110,7 @@ function graph(page) {
             downloadUrl: SITE.store,
             installUrl: SITE.store,
             releaseNotes: url("changelog/"),
-            screenshot: url("hero-desktop.png"),
+            screenshot: url("windows-11-desktop-boards.png"),
             softwareHelp: { "@id": `${SITE.origin}/docs/#webpage` },
             offers: {
               "@type": "Offer",
@@ -235,9 +242,13 @@ function footer() {
 export function shell(page) {
   const pageUrl = url(page.path);
   const ogImage = url(`assets/${OG_BY_SECTION[page.section] || "og.png"}`);
-  // Suffix the brand only while the result still fits a search result's title line.
+  // Suffix the brand only when the title does not already say it, and only while the result
+  // still fits a search result's title line. Without the first condition seven pages rendered
+  // it twice ("Download DeskDrawer · DeskDrawer"), which wastes the line and muddies the
+  // site-name signal Google reads from titles.
   const suffixed = `${page.title} · DeskDrawer`;
-  const title = page.metaTitle || (page.path === "" || suffixed.length > 65 ? page.title : suffixed);
+  const saysBrand = /deskdrawer/i.test(page.title);
+  const title = page.metaTitle || (page.path === "" || saysBrand || suffixed.length > 65 ? page.title : suffixed);
   const desc = clip(page.description);
 
   const main = page.wide
@@ -263,11 +274,16 @@ ${page.aside || ""}
 <meta name="author" content="${esc(SITE.author.name)}" />
 <meta name="generator" content="DeskDrawer site builder" />
 
-<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
-     which is why search results previously fell back to a generic icon. -->
-<link rel="icon" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<!-- Real icon files at real, stable URLs. Google's favicon crawler cannot use a data: URI —
+     that is why Search fell back to the pages.dev provider icon. Google resizes whatever it
+     picks but documents a square image larger than 48x48, so every multiple of 48 it renders
+     at is offered natively. Only rel="icon" and rel="apple-touch-icon" are read by Search. -->
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 96x96 144x144 256x256" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
 <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="icon" href="/favicon-144x144.png" type="image/png" sizes="144x144" />
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="msapplication-TileColor" content="#090a0e" />
@@ -295,7 +311,7 @@ ${page.aside || ""}
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <link rel="stylesheet" href="/assets/site.css" />
 ${page.head || ""}
-<script type="application/ld+json">${graph(page)}</script>
+${page.path === "" ? `<script type="application/ld+json">${websiteJsonLd()}</script>\n` : ""}<script type="application/ld+json">${graph(page)}</script>
 </head>
 <body${page.section ? ` data-section="${page.section}"` : ""}>
 <a class="skip" href="#main">Skip to content</a>

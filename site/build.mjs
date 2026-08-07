@@ -352,15 +352,17 @@ write(
       icons: [
         { src: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
         { src: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { src: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
         { src: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+        { src: "/favicon-144x144.png", sizes: "144x144", type: "image/png" },
         { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
         { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
         { src: "/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
         { src: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
       ],
       screenshots: [
-        { src: "/hero-desktop.png", sizes: "2560x1380", type: "image/png", form_factor: "wide",
-          label: "DeskDrawer organising a Windows 11 desktop into transparent boards" },
+        { src: "/windows-11-desktop-boards.png", sizes: "2560x1380", type: "image/png", form_factor: "wide",
+          label: "A Windows 11 desktop with its icons grouped into labelled transparent DeskDrawer boards" },
       ],
     },
     null,
@@ -551,6 +553,15 @@ write("api/docs.json", JSON.stringify({
 }, null, 2));
 
 write("api/releases.json", JSON.stringify({ current: SITE.version, releases: RELEASES }, null, 2));
+
+/* The three screenshots were renamed to describe what they show. Their old paths were already
+   published — in the live webmanifest, in JSON-LD and in the README — so they redirect rather
+   than 404. Favicon URLs are deliberately absent from this list: Google asks that favicon URLs
+   stay stable, so those files were never renamed. */
+write("_redirects", `/before-after.png  /messy-desktop-before-after.png  301
+/hero-desktop.png  /windows-11-desktop-boards.png  301
+/menu-dark.png     /board-menu.png                 301
+`);
 
 /* Cloudflare Pages: long-lived caching for immutable assets, sane defaults elsewhere */
 write("_headers", `/assets/*

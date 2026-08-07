@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DeskDrawer — Lightweight Windows Desktop Organizer</title>
-<meta name="description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
+<meta name="description" content="DeskDrawer groups the icons, files and shortcuts on a cluttered Windows desktop into clean transparent drawers, without moving a single file. One-time purchase." />
 <link rel="canonical" href="https://deskdrawer.pages.dev/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#090a0e" />
@@ -13,11 +13,16 @@
 <meta name="author" content="Shipeng Ouyang" />
 <meta name="generator" content="DeskDrawer site builder" />
 
-<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
-     which is why search results previously fell back to a generic icon. -->
-<link rel="icon" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<!-- Real icon files at real, stable URLs. Google's favicon crawler cannot use a data: URI —
+     that is why Search fell back to the pages.dev provider icon. Google resizes whatever it
+     picks but documents a square image larger than 48x48, so every multiple of 48 it renders
+     at is offered natively. Only rel="icon" and rel="apple-touch-icon" are read by Search. -->
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 96x96 144x144 256x256" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
 <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="icon" href="/favicon-144x144.png" type="image/png" sizes="144x144" />
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="msapplication-TileColor" content="#090a0e" />
@@ -29,23 +34,24 @@
 <meta property="og:site_name" content="DeskDrawer" />
 <meta property="og:locale" content="en" />
 <meta property="og:title" content="DeskDrawer — Lightweight Windows Desktop Organizer" />
-<meta property="og:description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
+<meta property="og:description" content="DeskDrawer groups the icons, files and shortcuts on a cluttered Windows desktop into clean transparent drawers, without moving a single file. One-time purchase." />
 <meta property="og:url" content="https://deskdrawer.pages.dev/" />
 <meta property="og:image" content="https://deskdrawer.pages.dev/assets/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="DeskDrawer reorganising a cluttered Windows desktop into clean transparent drawers" />
+<meta property="og:image:alt" content="DeskDrawer social card: the DeskDrawer mark above the words &quot;Lightweight Windows desktop organizer — group desktop icons into clean drawers. Buy once, use for life.&quot;" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="DeskDrawer — Lightweight Windows Desktop Organizer" />
-<meta name="twitter:description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
+<meta name="twitter:description" content="DeskDrawer groups the icons, files and shortcuts on a cluttered Windows desktop into clean transparent drawers, without moving a single file. One-time purchase." />
 <meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og.png" />
-<meta name="twitter:image:alt" content="DeskDrawer reorganising a cluttered Windows desktop into clean transparent drawers" />
+<meta name="twitter:image:alt" content="DeskDrawer social card: the DeskDrawer mark above the words &quot;Lightweight Windows desktop organizer — group desktop icons into clean drawers. Buy once, use for life.&quot;" />
 
 <link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 <link rel="stylesheet" href="/assets/site.css" />
 
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false,"datePublished":"2026-06-20","dateModified":"2026-07-25","downloadUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","installUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","releaseNotes":"https://deskdrawer.pages.dev/changelog/","screenshot":"https://deskdrawer.pages.dev/hero-desktop.png","softwareHelp":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://apps.microsoft.com/detail/9n904wfphzfz","seller":{"@id":"https://deskdrawer.pages.dev/#organization"}},"featureList":["Group desktop icons, files, folders and shortcuts into transparent boards","Files never move — boards store membership, not locations","Native Windows right-click menu, drag and drop, rename, delete","Sort each board by name, type, size, date or manual order","Fold a board into a compact square","Four icon sizes per board","Runs from the system tray with no background services","One-time purchase, no subscription","No ads, no telemetry, no accounts, no network calls"]},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/#webpage","url":"https://deskdrawer.pages.dev/","name":"DeskDrawer — Lightweight Windows Desktop Organizer","description":"DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files. One-time purchase, no telemetry, 16 languages on the Microsoft Store.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","name":"DeskDrawer","alternateName":["DeskDrawer - Desktop Organizer","DeskDrawer for Windows"],"url":"https://deskdrawer.pages.dev/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false,"datePublished":"2026-06-20","dateModified":"2026-07-25","downloadUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","installUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","releaseNotes":"https://deskdrawer.pages.dev/changelog/","screenshot":"https://deskdrawer.pages.dev/windows-11-desktop-boards.png","softwareHelp":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://apps.microsoft.com/detail/9n904wfphzfz","seller":{"@id":"https://deskdrawer.pages.dev/#organization"}},"featureList":["Group desktop icons, files, folders and shortcuts into transparent boards","Files never move — boards store membership, not locations","Native Windows right-click menu, drag and drop, rename, delete","Sort each board by name, type, size, date or manual order","Fold a board into a compact square","Four icon sizes per board","Runs from the system tray with no background services","One-time purchase, no subscription","No ads, no telemetry, no accounts, no network calls"]},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/#webpage","url":"https://deskdrawer.pages.dev/","name":"DeskDrawer — Lightweight Windows Desktop Organizer","description":"DeskDrawer groups the icons, files and shortcuts on a cluttered Windows desktop into clean transparent drawers, without moving a single file. One-time purchase.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og.png"}}]}</script>
 </head>
 <body data-section="home">
 <a class="skip" href="#main">Skip to content</a>
@@ -73,8 +79,8 @@
 
   <section class="hero wrap">
     <span class="eyebrow reveal"><span class="dot"></span> Windows desktop organizer · One-time purchase</span>
-    <h1 class="reveal d1">A tidy desktop, <span class="grad-text">without moving a single file</span></h1>
-    <p class="sub reveal d2">DeskDrawer groups your Windows desktop icons into clean transparent drawers. Your files stay exactly where they are, your desktop still works like your desktop. <b>Buy once, keep it for life.</b></p>
+    <h1 class="reveal d1">Organize your Windows desktop, <span class="grad-text">without moving a single file</span></h1>
+    <p class="sub reveal d2">DeskDrawer groups your Windows desktop icons, files and shortcuts into clean transparent drawers. Your files stay exactly where they are, your desktop still works like your desktop. <b>Buy once, keep it for life.</b></p>
     <div class="cta-row reveal d3">
       <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg> Get it on the Microsoft Store</a>
       <a class="btn btn-ghost btn-lg" href="/download/">Requirements &amp; details</a>
@@ -86,8 +92,8 @@
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 16 languages on the Store</span>
     </div>
     <div class="frame float reveal d5">
-      <img src="/before-after.png" width="2612" height="850" fetchpriority="high"
-           alt="A cluttered Windows desktop on the left, and the same desktop on the right organised into clean transparent DeskDrawer boards" />
+      <img src="/messy-desktop-before-after.png" width="2612" height="850" fetchpriority="high"
+           alt="The same Windows desktop twice: on the left a messy field of desktop icons, on the right the identical icons grouped into labelled transparent DeskDrawer boards" />
     </div>
   </section>
 
@@ -95,11 +101,11 @@
     <div class="grid reveal" style="gap:18px">
       <article class="card">
         <h3>What it is</h3>
-        <p>A single-purpose Windows utility that draws transparent boards on your desktop and lets you decide which icons go in which board. It runs from the system tray and nothing else.</p>
+        <p>A single-purpose desktop organizer for Windows. It draws transparent boards onto your wallpaper and lets you decide which icons go in which board, running from the system tray and nothing else.</p>
       </article>
       <article class="card">
         <h3>Who it is for</h3>
-        <p>People whose desktop is a working surface — current projects, downloads, this week's files — who want it readable without installing a large personalisation suite.</p>
+        <p>People whose desktop is a working surface — current projects, downloads, this week's files — who want it readable without installing a large personalization suite.</p>
       </article>
       <article class="card">
         <h3>What it deliberately is not</h3>
@@ -118,32 +124,32 @@
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="18" rx="1.5"/><rect x="14" y="3" width="7" height="11" rx="1.5"/></svg></div>
         <h3>Drawers for everything</h3>
         <p>Group desktop icons, files, folders and shortcuts into clean boards. Drag to move them, fold a board to a compact square when you need the room.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more">How boards work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d1" href="/docs/boards/">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Your files never move</h3>
         <p>A board stores which icons belong to it — not the files. Every path, shortcut and backup rule keeps working, and uninstalling changes nothing.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more">Why your files stay put <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d2" href="/docs/menus/">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
         <h3>The real Windows menu</h3>
         <p>Right-click an icon and you get the genuine shell menu — Open with, Send to, Share, and every extension you have installed. Not an imitation.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more">How the menus work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal" href="/docs/languages/">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h9M5 16h5"/><path d="m17 14 3 3 3-3"/></svg></div>
         <h3>16 languages, almost no language barrier</h3>
         <p>The Store listing is available in 16 languages — and the app itself is icon-driven, so using it barely depends on reading text in any of them.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more">Languages in detail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d1" href="/docs/architecture/">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
         <h3>Genuinely lightweight</h3>
-        <p>One tray process. No background services, no shell extensions, no plugin host, no polling loop. It organises your desktop and does nothing else.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <p>One tray process. No background services, no shell extensions, no plugin host, no polling loop. It organizes your desktop and does nothing else.</p>
+        <span class="more">How it is built <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d2" href="/notes/why-boards-have-no-title-bar/">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
         <h3>No wasted height</h3>
         <p>Board controls live in one small widget in the corner instead of a title bar on every board. With six boards open, that is a tenth of your screen back.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more">Why there is no title bar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
   </section>
@@ -154,25 +160,46 @@
       <p>Transparent boards sit on your wallpaper. Your files never move — DeskDrawer just remembers which drawer each icon belongs to.</p>
     </div>
     <div class="frame reveal" style="margin-top:0">
-      <img src="/hero-desktop.png" width="2560" height="1380" loading="lazy"
-           alt="DeskDrawer organising a Windows 11 desktop's icons into several transparent boards" />
+      <img src="/windows-11-desktop-boards.png" width="2560" height="1380" loading="lazy"
+           alt="A Windows 11 desktop with its icons grouped into labelled transparent DeskDrawer boards for apps, media and files, with a fourth board folded into a small square" />
     </div>
     <div class="shots" style="margin-top:18px">
       <div class="shot reveal">
-        <img src="/boards-closeup.png" width="1200" height="740" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders and shortcuts" />
-        <div class="cap">Clean drawers, up close — grouped icons, folders and shortcuts</div>
+        <img src="/boards-closeup.png" width="1200" height="740" loading="lazy" alt="Three DeskDrawer boards up close — app shortcuts in Apps, images in Media, folders and documents in Files — beside a fourth board folded to a small square labelled Tools" />
+        <div class="cap">Boards up close — one for apps, one for images, one for working files</div>
       </div>
       <div class="shot reveal d1">
-        <img src="/menu-dark.png" width="460" height="470" loading="lazy" alt="DeskDrawer's compact icon-only dark menu for sorting and arranging boards" />
+        <img src="/board-menu.png" width="460" height="470" loading="lazy" alt="DeskDrawer's board menu — a narrow dark column of icon-only commands for creating, renaming, deleting, sorting and restyling a board" />
         <div class="cap">Icon-only menus — nothing to translate, nothing to read</div>
       </div>
+    </div>
+  </section>
+
+  <section id="vs-folders" class="wrap">
+    <div class="sec-head reveal">
+      <h2>Why not just make folders?</h2>
+      <p>It is the obvious way to deal with a cluttered desktop, and sometimes it is the right answer. Here is where it stops working.</p>
+    </div>
+    <div class="grid reveal">
+      <article class="card">
+        <h3>A folder hides what you filed</h3>
+        <p>The reason a file is on your desktop is that you want to see it. Dragging it into a folder puts it one double-click away, which is the problem you were trying to solve. A drawer groups your desktop icons while leaving every one of them visible.</p>
+      </article>
+      <article class="card">
+        <h3>Folders change where things live</h3>
+        <p>Filing moves files, so every path that pointed at them now points somewhere else. A drawer records only which icons belong together, so nothing on disk moves and nothing that referenced it has to be updated.</p>
+      </article>
+      <article class="card">
+        <h3>Tidying by hand does not stay tidy</h3>
+        <p>A desktop you sort into folders on Monday is loose again by Friday, because downloads and screenshots keep landing on it. New items simply join a drawer, so the arrangement holds without you maintaining it.</p>
+      </article>
     </div>
   </section>
 
   <section id="compare" class="wrap">
     <div class="sec-head reveal">
       <h2>A lightweight alternative to heavy desktop suites</h2>
-      <p>Most desktop-organising tools are large all-in-one suites. DeskDrawer does one job. Here is an honest way to choose.</p>
+      <p>Most desktop organization tools are large all-in-one suites. DeskDrawer does one job. Here is an honest way to choose.</p>
     </div>
     <div class="compare">
       <div class="col hi reveal">
@@ -188,10 +215,10 @@
       </div>
       <div class="col reveal d1">
         <h3>Full desktop suites</h3>
-        <p>Choose one if you want deep customisation and a toolkit that goes well beyond grouping icons.</p>
+        <p>Choose one if you want deep customization and a toolkit that goes well beyond grouping icons.</p>
         <ul>
           <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Large, feature-rich all-in-one tools</li>
-          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Deep customisation and auto-organising rules</li>
+          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Deep customization and automatic filing rules</li>
           <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Theming, docks, widgets and more</li>
         </ul>
       </div>
@@ -208,7 +235,7 @@
       <a class="card reveal" href="/docs/">
         <h3>Documentation</h3><p>21 pages covering every board, menu, gesture and setting.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d1" href="/faq/">
-        <h3>Questions & answers</h3><p>66 straight answers about files, privacy, licensing and Windows behaviour.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <h3>Questions & answers</h3><p>70 straight answers about files, privacy, licensing and Windows behaviour.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d2" href="/glossary/">
         <h3>Glossary</h3><p>35 canonical definitions for every concept in the app.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a><a class="card reveal d3" href="/notes/">
@@ -220,7 +247,7 @@
   <section class="wrap">
     <div class="cta-band reveal">
       <h2>Clean up your Windows desktop today</h2>
-      <p>Group your cluttered desktop into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
+      <p>Group your cluttered desktop icons into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
       <div class="cta-row" style="margin-top:30px">
         <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg> Get DeskDrawer on the Microsoft Store</a>
         <a class="btn btn-ghost btn-lg" href="/docs/getting-started/">Read the docs</a>

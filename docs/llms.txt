@@ -80,7 +80,7 @@ source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pa
 
 ## Engineering notes
 
-- [Why DeskDrawer's boards have no title bar](https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/): Every desktop organizer puts a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.
+- [Why DeskDrawer's boards have no title bar](https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/): Most desktop organizers put a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.
 - [Hiding the desktop icon layer without breaking the desktop](https://deskdrawer.pages.dev/notes/hiding-the-desktop-icon-layer/): DeskDrawer has to hide the icons Windows draws, without changing a setting, without surviving a crash, and without upsetting Explorer. Each of those constraints came from a specific failure.
 - [The same bug, five times: offline network locations](https://deskdrawer.pages.dev/notes/offline-network-shares/): One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.
 - [Three attempts at one check: reparse points, OneDrive and the desktop](https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/): A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.
@@ -90,7 +90,7 @@ source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pa
 
 ## Questions and answers
 
-- [All questions](https://deskdrawer.pages.dev/faq/): 66 answers on one page, grouped by topic
+- [All questions](https://deskdrawer.pages.dev/faq/): 70 answers on one page, grouped by topic
 - [The basics](https://deskdrawer.pages.dev/faq/#basics): What DeskDrawer is and who it is for.
 - [Your files and safety](https://deskdrawer.pages.dev/faq/#files): What happens to the files on your desktop. The short answer is: nothing.
 - [Using it day to day](https://deskdrawer.pages.dev/faq/#using): Boards, menus, sorting, dragging and the small things people ask about first.

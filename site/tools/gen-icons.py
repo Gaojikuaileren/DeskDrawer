@@ -177,10 +177,16 @@ ico_path = os.path.join(OUT, "favicon.ico")
 write_ico([tile(s) for s in (16, 24, 32, 48, 64, 128, 256)], ico_path)
 print(f"  {'favicon.ico':34s} {os.path.getsize(ico_path):>8,} B")
 
-# ---- PNG favicons (Google prefers these too; some crawlers ignore .ico entirely)
-save(tile(32), "favicon-32x32.png")
+# ---- PNG favicons.
+# Google resizes whatever it finds, but documents that the favicon should be square and
+# recommends larger than 48x48. 48/96/144/192 are the multiples of 48 that Search actually
+# renders at, so each is emitted at its native size rather than being upscaled by Google.
+# These URLs must now stay stable — Google explicitly asks that favicon URLs not change.
 save(tile(16), "favicon-16x16.png")
+save(tile(32), "favicon-32x32.png")
+save(tile(48), "favicon-48x48.png")
 save(tile(96), "favicon-96x96.png")
+save(tile(144), "favicon-144x144.png")
 
 # ---- Apple touch icon: full-bleed, iOS applies its own mask
 save(tile(180, radius_ratio=0.0, glyph_scale=0.74), "apple-touch-icon.png")

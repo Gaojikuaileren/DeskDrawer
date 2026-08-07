@@ -122,14 +122,49 @@ for (const f of htmlFiles) {
 
 /* ---- required files (this is the Google-favicon fix, so assert it) ---- */
 const REQUIRED = [
-  "/favicon.ico", "/favicon.svg", "/favicon-16x16.png", "/favicon-32x32.png", "/favicon-96x96.png",
+  "/favicon.ico", "/favicon.svg", "/favicon-16x16.png", "/favicon-32x32.png", "/favicon-48x48.png",
+  "/favicon-96x96.png", "/favicon-144x144.png",
   "/apple-touch-icon.png", "/icon-192.png", "/icon-512.png", "/icon-maskable-512.png",
   "/site.webmanifest", "/robots.txt", "/sitemap.xml", "/rss.xml", "/llms.txt", "/llms-full.txt",
-  "/404.html", "/_headers", "/assets/site.css", "/assets/site.js", "/assets/og.png",
-  "/before-after.png", "/hero-desktop.png", "/boards-closeup.png", "/menu-dark.png",
+  "/404.html", "/_headers", "/_redirects", "/assets/site.css", "/assets/site.js", "/assets/og.png",
+  "/messy-desktop-before-after.png", "/windows-11-desktop-boards.png", "/boards-closeup.png", "/board-menu.png",
   "/google05253daa0cdd748f.html",
 ];
 for (const r of REQUIRED) if (!fileSet.has(r)) fail(`missing required file: ${r}`);
+
+/* ---- site identity in Google Search ----
+   Google labelled this site "Cloudflare" because the home page carried no WebSite markup and
+   Search fell back to the pages.dev provider identity. These assertions exist so that cannot
+   silently regress: the home page must declare WebSite as its own top-level object, named, with
+   the canonical home-page URL (trailing slash included), and no other page may declare one. */
+{
+  const home = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
+  const blocks = [...home.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, raw]) => JSON.parse(raw));
+  const site = blocks.find((b) => b["@type"] === "WebSite");
+
+  if (!site) fail("home page: no top-level WebSite structured data (Google uses this for the site name)");
+  else {
+    if (site.name !== "DeskDrawer") fail(`home page: WebSite.name is "${site.name}", expected "DeskDrawer"`);
+    const canonical = (home.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
+    if (site.url !== canonical) fail(`home page: WebSite.url "${site.url}" != canonical "${canonical}"`);
+    const og = (home.match(/<meta property="og:site_name" content="([^"]*)"/) || [])[1];
+    if (og !== site.name) fail(`home page: og:site_name "${og}" disagrees with WebSite.name "${site.name}"`);
+    if (!((home.match(/<title>([^<]*)</) || [])[1] || "").startsWith(site.name))
+      warn("home page: <title> does not begin with the site name");
+  }
+
+  for (const f of htmlFiles.filter((f) => f !== "/index.html")) {
+    if (/"@type":"WebSite"/.test(fs.readFileSync(path.join(OUT, f), "utf8")))
+      fail(`${f}: declares WebSite structured data — Google wants it on the home page only`);
+  }
+
+  // Google reads only rel=icon / rel=apple-touch-icon, and wants a square raster above 48x48.
+  const rels = [...home.matchAll(/<link rel="(?:icon|apple-touch-icon)"[^>]*href="([^"]+)"/g)].map((m) => m[1]);
+  if (!rels.includes("/favicon.ico")) fail("home page: no <link rel=icon> pointing at /favicon.ico");
+  if (!rels.some((r) => /96x96|144x144|192/.test(r))) fail("home page: no favicon link above 48x48 declared");
+  for (const r of rels) if (!fileSet.has(r)) fail(`home page: favicon link ${r} does not exist`);
+}
 
 /* ---- sitemap sanity ---- */
 const sitemap = fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8");

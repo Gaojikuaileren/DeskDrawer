@@ -69,6 +69,34 @@ site/
 - **Run `check.mjs` before committing.** It is the only thing standing between a typo and a
   broken link in production.
 
+## Search intent, and how to check whether we guessed right
+
+The copy is aligned to three search intents. They are **hypotheses**, not findings — nothing here has
+been validated against real query data yet.
+
+| Intent | Where it is served |
+|---|---|
+| A — "my desktop is a mess", "organize desktop icons", "clean up desktop" | homepage H1 and the *Why not just make folders?* section; FAQ `where-do-i-start`, `why-not-just-use-folders` |
+| B — "desktop organizer for Windows", "Windows 11 desktop organizer" | `<title>`, hero eyebrow, the *What it is* card, `/features/`, `/compare/` |
+| C — "new PC setup" | deliberately **not** on the homepage — only inside FAQ `can-i-recover-my-layout` and `/docs/backup-and-restore/` |
+
+To validate, in Google Search Console:
+
+1. **Performance → Queries** — which of the three actually produce impressions. If intent C produces
+   nothing, stop spending words on it; if it produces a lot, it earns its own page.
+2. **Performance → Pages** — whether the homepage or a docs page is the landing page. Documentation
+   pages ranking for product queries usually means the homepage is under-explaining something.
+3. **CTR per query** — a high-impression, low-CTR query means the `<title>`/description for that page
+   is answering the wrong question. That is a copy fix, not a ranking problem.
+4. Compare against Partner Center acquisitions for the same period. Search Console counts clicks; only
+   Partner Center knows which of them bought anything.
+
+Store-side attribution is **not** wired up. Every Store link on the site comes from `SITE.store` in
+`content/site.mjs`, so adding a campaign ID is a one-line change — but `utm_*` parameters do nothing
+on a Microsoft Store URL. The link has to be generated in Partner Center, which appends a `cid` it
+reports on. See `marketing/utm_tracking.md` in the app repo; that file is the owner's own convention
+and deliberately says not to hand-write the query string.
+
 ## Regenerating after a release
 
 1. Bump `version` and `released` in `content/site.mjs`.
