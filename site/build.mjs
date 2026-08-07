@@ -27,7 +27,7 @@ import { buildPages } from "./content/pages.mjs";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.dirname(HERE);
 const OUT = path.join(ROOT, "docs");
-const MANIFEST = path.join(OUT, ".build-manifest.json");
+const MANIFEST = path.join(HERE, ".build-manifest.json"); // build state, kept out of the published output
 
 const written = new Set();
 

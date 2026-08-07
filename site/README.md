@@ -11,11 +11,31 @@ python site/tools/gen-icons.py   # regenerate favicons and social cards (needs P
 
 Or, from this directory, `npm run build`, `npm run check`, `npm run serve`.
 
+## Deploying
+
+**Pushing to GitHub does not deploy the site.** The Cloudflare Pages project `deskdrawer` is a
+*direct upload* project — `wrangler pages project list` shows `Git Provider: No` — so nothing
+watches this repository. A push updates the source of truth and nothing else.
+
+To publish:
+
+```bash
+node site/build.mjs && node site/check.mjs
+npx wrangler pages deploy docs --project-name=deskdrawer --branch=main --commit-dirty=true
+```
+
+`--branch=main` is what makes it a **Production** deployment rather than a preview; the
+`<hash>.deskdrawer.pages.dev` URL wrangler prints is the immutable alias for that deployment, and
+production deployments get one too, so seeing it does not mean the deploy went to a preview.
+
+Cloudflare's edge may serve the previous response for a minute or two on paths that were requested
+recently. Appending a throwaway query string (`?cb=1`) bypasses that and shows the truth.
+
 ## Why it works this way
 
-No framework, no npm dependencies, no build step on the server. The generator is ~400 lines of
-plain Node; the output is plain HTML, CSS and one small progressive-enhancement script. Pushing to
-`main` deploys, because Cloudflare Pages is only ever serving files that are already in the repo.
+No framework, no npm dependencies, no build step on the server. The generator is ~450 lines of
+plain Node; the output is plain HTML, CSS and one small progressive-enhancement script. The
+committed `docs/` directory is exactly what gets uploaded, so what you review is what ships.
 
 ## Layout
 

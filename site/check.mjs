@@ -34,7 +34,7 @@ const fileSet = new Set(files);
 // Only pages this build produced are subject to the page checks. Files that live in
 // docs/ for other reasons — the Google Search Console verification token, for example —
 // are deliberately left alone and must not be "fixed" into valid pages.
-const generated = new Set(JSON.parse(fs.readFileSync(path.join(OUT, ".build-manifest.json"), "utf8")).map((r) => "/" + r));
+const generated = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, "site", ".build-manifest.json"), "utf8")).map((r) => "/" + r));
 const htmlFiles = files.filter((f) => f.endsWith(".html") && generated.has(f));
 const foreignHtml = files.filter((f) => f.endsWith(".html") && !generated.has(f));
 if (foreignHtml.length) console.log(`(not checked, not generated: ${foreignHtml.join(", ")})`);

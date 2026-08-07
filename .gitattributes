@@ -1,0 +1,6 @@
+# The site is generated on Windows but served as-is. Normalise to LF in the repository so
+# regenerating docs/ does not produce a diff consisting entirely of line endings.
+* text=auto eol=lf
+
+*.png binary
+*.ico binary
