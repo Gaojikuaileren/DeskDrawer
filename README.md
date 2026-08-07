@@ -6,6 +6,18 @@ It is designed to be quiet, local-first, and clean: one-time purchase, no ads, n
 
 **Website: [deskdrawer.pages.dev](https://deskdrawer.pages.dev/)** · **[Get it on the Microsoft Store](https://apps.microsoft.com/detail/9n904wfphzfz)**
 
+> **Full documentation is on the website.** This README is a quick visual guide; the site has the
+> complete manual, and it is the canonical source for how DeskDrawer behaves.
+>
+> [Getting started](https://deskdrawer.pages.dev/docs/getting-started/) ·
+> [All documentation](https://deskdrawer.pages.dev/docs/) ·
+> [Questions & answers](https://deskdrawer.pages.dev/faq/) ·
+> [Glossary](https://deskdrawer.pages.dev/glossary/) ·
+> [Troubleshooting](https://deskdrawer.pages.dev/docs/troubleshooting/) ·
+> [Limitations](https://deskdrawer.pages.dev/docs/limitations/) ·
+> [Release notes](https://deskdrawer.pages.dev/changelog/) ·
+> [Engineering notes](https://deskdrawer.pages.dev/notes/)
+
 ![Before / after](docs/before-after.png)
 
 ![DeskDrawer](docs/hero-desktop.png)

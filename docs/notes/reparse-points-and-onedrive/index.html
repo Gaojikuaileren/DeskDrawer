@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three attempts at one check: reparse points, OneDrive and the desktop</title>
+<meta name="description" content="A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed." />
+<link rel="canonical" href="https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Three attempts at one check: reparse points, OneDrive and the desktop" />
+<meta property="og:description" content="A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed." />
+<meta property="og:url" content="https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Three attempts at one check: reparse points, OneDrive and the desktop — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Three attempts at one check: reparse points, OneDrive and the desktop" />
+<meta name="twitter:description" content="A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta name="twitter:image:alt" content="Three attempts at one check: reparse points, OneDrive and the desktop — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/#webpage","url":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/","name":"Three attempts at one check: reparse points, OneDrive and the desktop","description":"A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-08-07","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-notes.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://deskdrawer.pages.dev/notes/"},{"@type":"ListItem","position":3,"name":"Three attempts at one check: reparse points, OneDrive and the desktop","item":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/"}]},{"@type":"TechArticle","@id":"https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/#article","headline":"Three attempts at one check: reparse points, OneDrive and the desktop","description":"A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.","datePublished":"2026-08-07","dateModified":"2026-08-07","keywords":"reparse point, junction, symbolic link, OneDrive, regression","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"image":"https://deskdrawer.pages.dev/assets/og-notes.png","inLanguage":"en"}]}</script>
+</head>
+<body data-section="notes">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link" href="/docs/">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link is-active" href="/notes/" aria-current="page">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell">
+
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/notes/">Engineering notes</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Three attempts at one check: reparse points, OneDrive and the desktop</span></nav><h1>Three attempts at one check: reparse points, OneDrive and the desktop</h1><p class="lede">A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.</p><div class="meta"><span>Engineering lesson</span><span>7 August 2026</span><span>by Shipeng Ouyang</span></div><p>This is a small story about a small check, and it is here because it is the clearest example in this product of a fix causing worse damage than the bug.</p>
+<h2 id="the-setup">The setup<a class="hlink" href="#the-setup" aria-label="Link to this section">#</a></h2>
+<p>Following the rule from <a href="/notes/offline-network-shares/">The same bug, five times: offline network locations</a> — never touch the file system from the interface thread — DeskDrawer needs to know whether a desktop item might live somewhere slow, so it can route that work to a background thread.</p>
+<p>The obvious way to ask is a straightforward Windows call for the item&#39;s attributes. That works, until the item is a <a href="/glossary/cloud-placeholder/">Cloud placeholder</a>: asking that particular question about an online-only OneDrive file can force it to download. Now browsing your desktop pulls files out of the cloud, which is exactly what &quot;files on demand&quot; exists to prevent.</p>
+<p><strong>Attempt one</strong> replaced the attribute call with a directory-enumeration call that returns the same information without hydrating the file. Correct.</p>
+<h2 id="attempt-two-too-broad">Attempt two: too broad<a class="hlink" href="#attempt-two-too-broad" aria-label="Link to this section">#</a></h2>
+<p>The same work introduced a check for <em>reparse points</em> — the Windows mechanism behind junctions and symbolic links — because a redirect can point at a network location, and that is precisely the slow case worth avoiding.</p>
+<p>The check flagged <strong>any</strong> reparse point.</p>
+<p>This broke something specific and common: a Desktop folder that OneDrive has backed up is itself a redirect. Flagging it as potentially remote meant DeskDrawer stopped attaching its live file-system watcher to it. For anyone with OneDrive desktop backup — a large share of Windows users — the desktop silently stopped updating. Create a file, nothing appears until a manual refresh.</p>
+<p><strong>Attempt three</strong> narrowed the check to <em>name-surrogate</em> reparse points, the subclass that actually represents a directory redirect, which restored the watcher.</p>
+<h2 id="attempt-three-still-wrong-in-the-other-direction">Attempt three: still wrong, in the other direction<a class="hlink" href="#attempt-three-still-wrong-in-the-other-direction" aria-label="Link to this section">#</a></h2>
+<p>Narrowing fixed the OneDrive case and introduced two new ones, both shipped and both found in the next audit round.</p>
+<p>The remaining error was conceptual. The check still conflated two different questions:</p>
+<ol><li><em>Is this item a redirect?</em></li><li><em>Does this item&#39;s redirect point somewhere slow?</em></li></ol>
+<p>A junction to a folder on the same physical disk answers <strong>yes</strong> to the first and <strong>no</strong> to the second. It is local, it is fast, and it wants the ordinary code path with a live watcher — but it was still being treated as suspect. The consequences:</p>
+<ul><li>A cancelled move onto a local junction dropped the item&#39;s <a href="/glossary/board-membership/">Board membership</a>, so an icon disappeared from its board after an operation the user had cancelled.</li><li>A Desktop folder reached through a local junction — the standard arrangement when a user profile has been moved to another drive — lost its watcher again, for a different reason than before.</li></ul>
+<h2 id="what-finally-worked">What finally worked<a class="hlink" href="#what-finally-worked" aria-label="Link to this section">#</a></h2>
+<p>Stop inferring from the presence of a redirect and read the redirect <strong>target</strong>.</p>
+<p>DeskDrawer now opens the reparse point without following it, reads the reparse data, extracts the actual target path, and classifies on that. A name-surrogate reparse point whose target is local is treated as local. Only one whose target is genuinely remote takes the careful path.</p>
+<p>That shipped in 1.2.5, and it is the version that answers the right question. The first two attempts were answering a proxy question that happened to correlate with the right one most of the time.</p>
+<h2 id="the-lesson">The lesson<a class="hlink" href="#the-lesson" aria-label="Link to this section">#</a></h2>
+<p>Both regressions came from a fix, not from original code. Both were introduced while making the product <em>more</em> correct. And the second one was introduced by the fix for the first.</p>
+<p>The general shape:</p>
+<blockquote><p>When a safety check uses a proxy for the property you care about, it will be wrong for every case where the proxy and the property come apart — and those cases are, by construction, the ones you did not think of.</p></blockquote>
+<p>&quot;Is it a reparse point&quot; was a proxy for &quot;is it slow&quot;. A local junction is exactly where those two diverge, and a local junction is not exotic — it is what you get when Windows moves a user profile.</p>
+<p>The wider pattern of fixes introducing regressions is in <a href="/notes/eight-rounds-of-audits/">Eight rounds of code audits on a small app, and what each one found</a>.</p><nav class="pager" aria-label="Pagination"><a class="prev" href="/notes/offline-network-shares/"><div class="dir">Previous</div><div class="t">The same bug, five times: offline network locations</div></a><a class="next" href="/notes/no-telemetry-by-default/"><div class="dir">Next</div><div class="t">Shipping with no telemetry, and what it costs</div></a></nav></article>
+<nav class="doc-toc" aria-label="On this page"><h2>On this page</h2><a class="lvl-2" href="#the-setup">The setup</a><a class="lvl-2" href="#attempt-two-too-broad">Attempt two: too broad</a><a class="lvl-2" href="#attempt-three-still-wrong-in-the-other-direction">Attempt three: still wrong, in the other direction</a><a class="lvl-2" href="#what-finally-worked">What finally worked</a><a class="lvl-2" href="#the-lesson">The lesson</a></nav>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

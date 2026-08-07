@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Layout and multiple monitors · DeskDrawer</title>
+<meta name="description" content="How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves." />
+<link rel="canonical" href="https://deskdrawer.pages.dev/docs/layout-and-monitors/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Layout and multiple monitors · DeskDrawer" />
+<meta property="og:description" content="How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves." />
+<meta property="og:url" content="https://deskdrawer.pages.dev/docs/layout-and-monitors/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-docs.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Layout and multiple monitors — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Layout and multiple monitors · DeskDrawer" />
+<meta name="twitter:description" content="How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-docs.png" />
+<meta name="twitter:image:alt" content="Layout and multiple monitors — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/docs/layout-and-monitors/#webpage","url":"https://deskdrawer.pages.dev/docs/layout-and-monitors/","name":"Layout and multiple monitors","description":"How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-docs.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/docs/layout-and-monitors/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/docs/layout-and-monitors/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://deskdrawer.pages.dev/docs/"},{"@type":"ListItem","position":3,"name":"Layout & monitors","item":"https://deskdrawer.pages.dev/docs/layout-and-monitors/"}]},{"@type":"TechArticle","@id":"https://deskdrawer.pages.dev/docs/layout-and-monitors/#article","headline":"Layout and multiple monitors","description":"How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.","articleSection":"Using DeskDrawer","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"dateModified":"2026-08-07","isPartOf":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","proficiencyLevel":"Beginner"}]}</script>
+</head>
+<body data-section="docs">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link is-active" href="/docs/" aria-current="page">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link" href="/notes/">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell has-side">
+<nav class="doc-side" aria-label="Documentation"><h2>Start here</h2><a href="/docs/getting-started/">Getting started</a><a href="/docs/installation/">Installation</a><a href="/docs/boards/">Boards</a><h2>Using DeskDrawer</h2><a href="/docs/menus/">Menus</a><a href="/docs/sorting/">Sorting</a><a href="/docs/icon-sizes/">Icon sizes</a><a href="/docs/keyboard-and-mouse/">Keyboard &amp; mouse</a><a href="/docs/drag-and-drop/">Drag &amp; drop</a><a href="/docs/layout-and-monitors/" class="is-active" aria-current="page">Layout &amp; monitors</a><a href="/docs/languages/">Languages</a><h2>Your data</h2><a href="/docs/configuration-file/">Configuration file</a><a href="/docs/backup-and-restore/">Backup &amp; restore</a><a href="/docs/privacy-and-data/">Privacy &amp; data</a><a href="/docs/uninstall/">Uninstalling</a><h2>Under the hood</h2><a href="/docs/architecture/">Architecture</a><a href="/docs/windows-integration/">Windows integration</a><a href="/docs/performance/">Performance</a><a href="/docs/memory-usage/">Memory usage</a><a href="/docs/limitations/">Limitations</a><h2>Help</h2><a href="/docs/troubleshooting/">Troubleshooting</a><a href="/docs/licensing/">Licensing</a></nav>
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/docs/">Documentation</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Layout &amp; monitors</span></nav><h1>Layout and multiple monitors</h1><p class="lede">How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.</p><div class="meta"><span>Using DeskDrawer</span><span>Updated 7 August 2026</span><span>DeskDrawer 1.2.5</span></div><p>Multiple monitors is where desktop tools usually break, because the desktop is one logical surface spanning displays that can have different sizes, scaling factors and arrangements — and that arrangement changes whenever a cable is unplugged.</p>
+<h2 id="boards-on-several-displays">Boards on several displays<a class="hlink" href="#boards-on-several-displays" aria-label="Link to this section">#</a></h2>
+<p>Boards can be placed on any monitor and dragged between monitors. Each is positioned within the <a href="/glossary/work-area/">Work area</a> of the display it is on, so a board is never placed under the taskbar, whichever edge the taskbar is on.</p>
+<h2 id="mixed-dpi">Mixed DPI<a class="hlink" href="#mixed-dpi" aria-label="Link to this section">#</a></h2>
+<p>DeskDrawer declares <a href="/glossary/per-monitor-dpi/">per-monitor v2 DPI awareness</a>. A laptop at 150% scaling next to an external display at 100% is the ordinary case, and an application that is not per-monitor aware gets bitmap-scaled by Windows and goes blurry on one of them.</p>
+<p>Declaring PerMonitorV2 means DeskDrawer is told about the DPI change and redraws at the correct scale — including mid-drag, when a board crosses from one display to the other.</p>
+<h2 id="when-the-display-arrangement-changes">When the display arrangement changes<a class="hlink" href="#when-the-display-arrangement-changes" aria-label="Link to this section">#</a></h2>
+<p>Unplugging a monitor, changing resolution, or moving the taskbar can leave boards outside the visible area. <strong>Fix misplaced boards</strong> in the <a href="/glossary/tray-menu/">Tray menu</a> handles this:</p>
+<ul><li>Boards that are off-screen, under the taskbar or overlapping are re-placed, snapped beside other boards.</li><li>Boards that are in a valid position are <strong>not</strong> moved.</li></ul>
+<p>It never changes board contents, names or sizes. If your layout was fine and one board went astray, only that board moves.</p>
+<h2 id="what-is-not-stored-per-monitor">What is not stored per monitor<a class="hlink" href="#what-is-not-stored-per-monitor" aria-label="Link to this section">#</a></h2>
+<p>A board&#39;s rectangle is stored in screen coordinates, not as &quot;monitor 2, offset x&quot;. Moving a configuration to a machine with a different display arrangement will therefore need a tidy-up; see <a href="/docs/backup-and-restore/">Backup &amp; restore</a>. This is a real limitation and it is listed in <a href="/docs/limitations/">Limitations</a>.</p><section class="related"><h2>Related</h2><ul><li><a href="/docs/boards/">Boards</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li><li><a href="/docs/windows-integration/">Windows integration</a></li></ul></section><nav class="pager" aria-label="Pagination"><a class="prev" href="/docs/drag-and-drop/"><div class="dir">Previous</div><div class="t">Drag and drop</div></a><a class="next" href="/docs/languages/"><div class="dir">Next</div><div class="t">Languages and language independence</div></a></nav></article>
+<nav class="doc-toc" aria-label="On this page"><h2>On this page</h2><a class="lvl-2" href="#boards-on-several-displays">Boards on several displays</a><a class="lvl-2" href="#mixed-dpi">Mixed DPI</a><a class="lvl-2" href="#when-the-display-arrangement-changes">When the display arrangement changes</a><a class="lvl-2" href="#what-is-not-stored-per-monitor">What is not stored per monitor</a></nav>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

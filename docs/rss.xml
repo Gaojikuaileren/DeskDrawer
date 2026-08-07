@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>DeskDrawer — engineering notes and releases</title>
+  <link>https://deskdrawer.pages.dev/</link>
+  <atom:link href="https://deskdrawer.pages.dev/rss.xml" rel="self" type="application/rss+xml" />
+  <description>DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</description>
+  <language>en</language>
+  <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>DeskDrawer 1.0.0</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-0</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-0</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>First release.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.1</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-1</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-1</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Double-click reliability and hover-only controls.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.2</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-2</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-2</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Special desktop icons can be removed from a board.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.3</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-3</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-3</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Drag out to Explorer, and clipboard both directions.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.4</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-4</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-4</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Live Recycle Bin icon, and elastic drag between boards.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.5</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-5</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-5</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Auto-arranging layout, and numbered board names.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.6</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-6</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-6</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Store packaging, and system icon names taken from Windows.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.7</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-7</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-7</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Cross-board marquee selection.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.8</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-8</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-8</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Show or hide native icons from the tray; boards stop minimising.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.0.9</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-0-9</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-0-9</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Share pane, better clipboard, and the board/desktop view switch.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.0</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-0</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-0</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>Desktop-level behaviours corrected, and lower idle CPU.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.1</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-1</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-1</guid>
+    <pubDate>Invalid Date</pubDate>
+    <description>The Microsoft Store release.</description>
+  </item>
+  <item>
+    <title>Eight rounds of code audits on a small app, and what each one found</title>
+    <link>https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Nine of DeskDrawer&#39;s releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up, including how often a fix caused the next bug.</description>
+  </item>
+  <item>
+    <title>Designing an interface that barely needs language</title>
+    <link>https://deskdrawer.pages.dev/notes/designing-for-language-independence/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/designing-for-language-independence/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>DeskDrawer&#39;s Store listing is in 16 languages. The application itself is built so that using it depends very little on reading text in any of them.</description>
+  </item>
+  <item>
+    <title>Shipping with no telemetry, and what it costs</title>
+    <link>https://deskdrawer.pages.dev/notes/no-telemetry-by-default/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/no-telemetry-by-default/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>DeskDrawer makes no network connections at all. That is a stronger promise than &#39;privacy-friendly&#39;, and it has a real price the developer pays.</description>
+  </item>
+  <item>
+    <title>Three attempts at one check: reparse points, OneDrive and the desktop</title>
+    <link>https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.</description>
+  </item>
+  <item>
+    <title>The same bug, five times: offline network locations</title>
+    <link>https://deskdrawer.pages.dev/notes/offline-network-shares/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/offline-network-shares/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.</description>
+  </item>
+  <item>
+    <title>Hiding the desktop icon layer without breaking the desktop</title>
+    <link>https://deskdrawer.pages.dev/notes/hiding-the-desktop-icon-layer/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/hiding-the-desktop-icon-layer/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>DeskDrawer has to hide the icons Windows draws, without changing a setting, without surviving a crash, and without upsetting Explorer. Each of those constraints came from a specific failure.</description>
+  </item>
+  <item>
+    <title>Why DeskDrawer&#39;s boards have no title bar</title>
+    <link>https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Every desktop organizer puts a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.3</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-3</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-3</guid>
+    <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+    <description>A hardening pass over everything 1.2.2 touched.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.4</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-4</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-4</guid>
+    <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Fixes from a seventh audit, including the most serious bug in the product&#39;s history.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.5</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-5</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-5</guid>
+    <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Fixes from an eighth code audit. Two of the four were regressions caused by the previous round&#39;s own fix.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.1</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-1</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-1</guid>
+    <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+    <description>The full Windows context menu, and Windows&#39; own dialogs stopped being swallowed.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.2</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-2</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-2</guid>
+    <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+    <description>A thorough hardening pass over the whole application.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.5</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-5</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-5</guid>
+    <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Eighteen fixes from the first full code audit.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.6</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-6</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-6</guid>
+    <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Drag onto folder shortcuts, and a broad reliability pass from a second full audit.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.0</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-0</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-0</guid>
+    <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+    <description>The desktop New menu, fixed for the case where native icons are hidden.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.3</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-3</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-3</guid>
+    <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Drag files into folders, and standard Windows info tips.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.4</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-4</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-4</guid>
+    <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Safer drag-into-folder, and the first of five fixes for offline network locations.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.1.2</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-1-2</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-2</guid>
+    <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Show desktop stopped hiding the boards.</description>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Release notes · DeskDrawer</title>
+<meta name="description" content="Every DeskDrawer release through version 1.2.5, what changed in it, and the engineering notes behind the significant ones." />
+<link rel="canonical" href="https://deskdrawer.pages.dev/changelog/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Release notes · DeskDrawer" />
+<meta property="og:description" content="Every DeskDrawer release through version 1.2.5, what changed in it, and the engineering notes behind the significant ones." />
+<meta property="og:url" content="https://deskdrawer.pages.dev/changelog/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-changelog.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Release notes — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Release notes · DeskDrawer" />
+<meta name="twitter:description" content="Every DeskDrawer release through version 1.2.5, what changed in it, and the engineering notes behind the significant ones." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-changelog.png" />
+<meta name="twitter:image:alt" content="Release notes — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false,"datePublished":"2026-06-20","dateModified":"2026-07-25","downloadUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","installUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","releaseNotes":"https://deskdrawer.pages.dev/changelog/","screenshot":"https://deskdrawer.pages.dev/hero-desktop.png","softwareHelp":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://apps.microsoft.com/detail/9n904wfphzfz","seller":{"@id":"https://deskdrawer.pages.dev/#organization"}},"featureList":["Group desktop icons, files, folders and shortcuts into transparent boards","Files never move — boards store membership, not locations","Native Windows right-click menu, drag and drop, rename, delete","Sort each board by name, type, size, date or manual order","Fold a board into a compact square","Four icon sizes per board","Runs from the system tray with no background services","One-time purchase, no subscription","No ads, no telemetry, no accounts, no network calls"]},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/changelog/#webpage","url":"https://deskdrawer.pages.dev/changelog/","name":"Release notes","description":"Every DeskDrawer release through version 1.2.5, what changed in it, and the engineering notes behind the significant ones.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-changelog.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/changelog/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/changelog/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Release notes","item":"https://deskdrawer.pages.dev/changelog/"}]},{"@type":"ItemList","@id":"https://deskdrawer.pages.dev/changelog/#releases","name":"DeskDrawer release history","numberOfItems":23,"itemListOrder":"https://schema.org/ItemListOrderDescending","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.5","softwareVersion":"1.2.5","datePublished":"2026-07-21","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Fixes from an eighth code audit. Two of the four were regressions caused by the previous round's own fix.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-5"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.4","softwareVersion":"1.2.4","datePublished":"2026-07-21","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Fixes from a seventh audit, including the most serious bug in the product's history.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-4"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.3","softwareVersion":"1.2.3","datePublished":"2026-07-21","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"A hardening pass over everything 1.2.2 touched.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-3"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.2","softwareVersion":"1.2.2","datePublished":"2026-07-20","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"A thorough hardening pass over the whole application.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-2"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.1","softwareVersion":"1.2.1","datePublished":"2026-07-20","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"The full Windows context menu, and Windows' own dialogs stopped being swallowed.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-1"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.2.0","softwareVersion":"1.2.0","datePublished":"2026-07-14","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"The desktop New menu, fixed for the case where native icons are hidden.","url":"https://deskdrawer.pages.dev/changelog/#v1-2-0"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.6","softwareVersion":"1.1.6","datePublished":"2026-07-14","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Drag onto folder shortcuts, and a broad reliability pass from a second full audit.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-6"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.5","softwareVersion":"1.1.5","datePublished":"2026-07-14","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Eighteen fixes from the first full code audit.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-5"}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.4","softwareVersion":"1.1.4","datePublished":"2026-07-13","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Safer drag-into-folder, and the first of five fixes for offline network locations.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-4"}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.3","softwareVersion":"1.1.3","datePublished":"2026-07-13","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Drag files into folders, and standard Windows info tips.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-3"}},{"@type":"ListItem","position":11,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.2","softwareVersion":"1.1.2","datePublished":"2026-07-07","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Show desktop stopped hiding the boards.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-2"}},{"@type":"ListItem","position":12,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.1","softwareVersion":"1.1.1","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"The Microsoft Store release.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-1"}},{"@type":"ListItem","position":13,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.1.0","softwareVersion":"1.1.0","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Desktop-level behaviours corrected, and lower idle CPU.","url":"https://deskdrawer.pages.dev/changelog/#v1-1-0"}},{"@type":"ListItem","position":14,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.9","softwareVersion":"1.0.9","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Share pane, better clipboard, and the board/desktop view switch.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-9"}},{"@type":"ListItem","position":15,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.8","softwareVersion":"1.0.8","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Show or hide native icons from the tray; boards stop minimising.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-8"}},{"@type":"ListItem","position":16,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.7","softwareVersion":"1.0.7","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Cross-board marquee selection.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-7"}},{"@type":"ListItem","position":17,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.6","softwareVersion":"1.0.6","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Store packaging, and system icon names taken from Windows.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-6"}},{"@type":"ListItem","position":18,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.5","softwareVersion":"1.0.5","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Auto-arranging layout, and numbered board names.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-5"}},{"@type":"ListItem","position":19,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.4","softwareVersion":"1.0.4","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Live Recycle Bin icon, and elastic drag between boards.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-4"}},{"@type":"ListItem","position":20,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.3","softwareVersion":"1.0.3","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Drag out to Explorer, and clipboard both directions.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-3"}},{"@type":"ListItem","position":21,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.2","softwareVersion":"1.0.2","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Special desktop icons can be removed from a board.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-2"}},{"@type":"ListItem","position":22,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.1","softwareVersion":"1.0.1","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"Double-click reliability and hover-only controls.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-1"}},{"@type":"ListItem","position":23,"item":{"@type":"SoftwareApplication","name":"DeskDrawer 1.0.0","softwareVersion":"1.0.0","operatingSystem":"Windows 10, Windows 11","applicationCategory":"ProductivityApplication","releaseNotes":"First release.","url":"https://deskdrawer.pages.dev/changelog/#v1-0-0"}}]}]}</script>
+</head>
+<body data-section="changelog">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link" href="/docs/">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link" href="/notes/">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell">
+
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Release notes</span></nav><h1>Release notes</h1><p class="lede">Every released version of DeskDrawer, newest first. Dates come from the public repository, which is why the earliest releases have none — they predate it.</p><div class="meta"><span>Current version 1.2.5</span><span>Updated 7 August 2026</span></div><ul class="rel-list"><li id="v1-2-5">
+      <div class="rel-ver">
+        <span class="v">1.2.5</span>
+        <span class="badge">Current</span>
+        <span style="color:var(--muted2);font-size:14px">21 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Fixes from an eighth code audit. Two of the four were regressions caused by the previous round&#39;s own fix.</p>
+      <ul><li>Fixed a rare freeze — and a mouse-wheel stall — when a mapped network drive was offline and you deleted a desktop file or hovered the Recycle Bin. The Recycle Bin&#39;s state is now read only from local drives, so an unreachable network drive can no longer stall the app.</li><li>Fixed two edge cases with desktop folders and shortcuts that are junctions or symbolic links to a <strong>local</strong> location: board membership after a cancelled move, and live desktop refresh, both behave correctly again.</li><li>Double-clicking a board&#39;s collapse arrow or resize handle no longer opens an icon sitting behind it.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/reparse-points-and-onedrive/">Three attempts at one check: reparse points, OneDrive and the desktop</a> · <a href="/notes/offline-network-shares/">The same bug, five times: offline network locations</a></p>
+    </li><li id="v1-2-4">
+      <div class="rel-ver">
+        <span class="v">1.2.4</span>
+        
+        <span style="color:var(--muted2);font-size:14px">21 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Fixes from a seventh audit, including the most serious bug in the product&#39;s history.</p>
+      <ul><li>Fixed a rare case where clearing the desktop selection after a <strong>New</strong> item — on a busy PC, for example while OneDrive or antivirus was scanning the desktop — could crash Windows Explorer and briefly restart the desktop. This is the most important fix in this release.</li><li>A shortcut pointing at an offline network location through a symbolic link on a local drive no longer risks freezing the app when you drag onto it.</li><li>Board layout is safer against an unlucky crash mid-save.</li><li>Renaming a board by double-click no longer swallows the next file&#39;s rename click.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/hiding-the-desktop-icon-layer/">Hiding the desktop icon layer without breaking the desktop</a> · <a href="/notes/eight-rounds-of-audits/">Eight rounds of code audits on a small app, and what each one found</a></p>
+    </li><li id="v1-2-3">
+      <div class="rel-ver">
+        <span class="v">1.2.3</span>
+        
+        <span style="color:var(--muted2);font-size:14px">21 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">A hardening pass over everything 1.2.2 touched.</p>
+      <ul><li>Removed several rare ways the app could freeze or stop responding to the mouse wheel: a board holding a shortcut to an offline network location, and large paste or drag operations.</li><li>In single-click-launch mode, clicking a board&#39;s title bar, resize corner or collapse arrow no longer launches the icon behind it.</li><li>An interrupted save can no longer be mistaken for a first run, and autostart now reflects exactly what you — or Task Manager — set, in both directions.</li><li>Many smaller correctness fixes around renaming, drag-and-drop, icon refresh and clean exit.</li></ul>
+      
+    </li><li id="v1-2-2">
+      <div class="rel-ver">
+        <span class="v">1.2.2</span>
+        
+        <span style="color:var(--muted2);font-size:14px">20 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">A thorough hardening pass over the whole application.</p>
+      <ul><li>Creating several <strong>New</strong> items in a row on the desktop is dependable on every path, including the classic &quot;Show more options&quot; menu: items reliably land on the desktop, never nested, never a &quot;16389&quot; error.</li><li>Removed a rare freeze when a shortcut on a board pointed at an offline network location — a disconnected VPN or a sleeping NAS — which could also stop the mouse wheel working.</li><li>Tightened many smaller edge cases around renaming, drag-and-drop between boards, autostart and icon refreshing.</li></ul>
+      
+    </li><li id="v1-2-1">
+      <div class="rel-ver">
+        <span class="v">1.2.1</span>
+        
+        <span style="color:var(--muted2);font-size:14px">20 July 2026 · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">The full Windows context menu, and Windows&#39; own dialogs stopped being swallowed.</p>
+      <ul><li>Right-clicking an icon on a board now gives the <strong>full</strong> Windows menu — the same one the real desktop shows under &quot;Show more options&quot;. Entries that were missing are back: Open with, Send to, Copy as path, Share, Restore previous versions, and any right-click add-ins you have installed (7-Zip, Git, your editor, and so on).</li><li>A shortcut whose target has been deleted no longer does nothing. Windows&#39; own &quot;Problem with Shortcut — do you want to delete it?&quot; prompt appears, exactly as on the real desktop. As a side effect, other things Windows normally tells you about are no longer swallowed either — such as the &quot;How do you want to open this file?&quot; picker for a file type with no associated app.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/designing-for-language-independence/">Designing an interface that barely needs language</a></p>
+    </li><li id="v1-2-0">
+      <div class="rel-ver">
+        <span class="v">1.2.0</span>
+        
+        <span style="color:var(--muted2);font-size:14px">14 July 2026 · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">The desktop New menu, fixed for the case where native icons are hidden.</p>
+      <ul><li>Fixed the desktop <strong>New</strong> menu misbehaving while the icons are hidden: a new Text Document or Bitmap Image could fail with &quot;file system error (16389)&quot;, and a New item created right after a New Folder could land <em>inside</em> that folder instead of on the desktop. Creating items — including several in a row — now works reliably.</li></ul>
+      
+    </li><li id="v1-1-6">
+      <div class="rel-ver">
+        <span class="v">1.1.6</span>
+        
+        <span style="color:var(--muted2);font-size:14px">14 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Drag onto folder shortcuts, and a broad reliability pass from a second full audit.</p>
+      <ul><li>You can now drag a file onto a <strong>folder shortcut</strong>, not only a real folder, to move it inside — just like on the desktop.</li><li>Icon loading no longer leaves a large or cloud-backed desktop showing grey placeholders, and a file that is still downloading gets its real icon once it finishes.</li><li>Fixes across file and configuration safety, renaming, drag-and-drop, autostart and multi-user edge cases — including several the previous release&#39;s own fixes had introduced.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/eight-rounds-of-audits/">Eight rounds of code audits on a small app, and what each one found</a></p>
+    </li><li id="v1-1-5">
+      <div class="rel-ver">
+        <span class="v">1.1.5</span>
+        
+        <span style="color:var(--muted2);font-size:14px">14 July 2026 · Stability</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Eighteen fixes from the first full code audit.</p>
+      <ul><li>Icons now load in the background, so boards no longer freeze while fetching thumbnails on a large desktop or for cloud and network files.</li><li>Rename, the right-click menu and folder drops are hardened so an action always targets the file you meant — a rename can no longer accidentally move a file off the desktop.</li><li>Board organisation is better protected in edge cases — a busy disk at startup, reordering a board with hidden items — that could previously misplace a file&#39;s board.</li><li>Memory, startup and shared-PC robustness fixes.</li></ul>
+      
+    </li><li id="v1-1-4">
+      <div class="rel-ver">
+        <span class="v">1.1.4</span>
+        
+        <span style="color:var(--muted2);font-size:14px">13 July 2026 · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Safer drag-into-folder, and the first of five fixes for offline network locations.</p>
+      <ul><li>Dragging a file across drives now <strong>copies</strong> it, exactly as the desktop does, instead of moving it — so a file is never accidentally removed from a USB stick or a network drive.</li><li>The folder you are about to drop into highlights while you drag, so it is clear whether you are reordering icons or dropping the file inside.</li><li>A file only leaves its drawer once it has actually moved; a cancelled move now keeps it put.</li><li>Hovering a file no longer risks a pause when it points to an offline network share or a not-yet-downloaded cloud file — the Windows info tip now loads in the background.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/offline-network-shares/">The same bug, five times: offline network locations</a></p>
+    </li><li id="v1-1-3">
+      <div class="rel-ver">
+        <span class="v">1.1.3</span>
+        
+        <span style="color:var(--muted2);font-size:14px">13 July 2026 · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Drag files into folders, and standard Windows info tips.</p>
+      <ul><li>You can now drag a file onto a folder shown on a board to move it into that folder — the same drag-into-a-folder behaviour as the real desktop. Works for files dragged in from another window and for files already on a board.</li><li>Hovering a file on a board shows the standard Windows info tip: type, size, date modified, a shortcut&#39;s target, an image&#39;s dimensions.</li></ul>
+      
+    </li><li id="v1-1-2">
+      <div class="rel-ver">
+        <span class="v">1.1.2</span>
+        
+        <span style="color:var(--muted2);font-size:14px">7 July 2026 · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Show desktop stopped hiding the boards.</p>
+      <ul><li>Win+D and the taskbar &quot;Show desktop&quot; corner no longer collapse your boards. Because the boards are your desktop, showing the desktop now keeps them in place instead of hiding them. To bring minimised windows back, use the taskbar or Alt+Tab.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/hiding-the-desktop-icon-layer/">Hiding the desktop icon layer without breaking the desktop</a></p>
+    </li><li id="v1-1-1">
+      <div class="rel-ver">
+        <span class="v">1.1.1</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Release</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">The Microsoft Store release.</p>
+      <ul><li>DeskDrawer is now available on the Microsoft Store.</li><li>Streamlined the app&#39;s Windows permissions for Store certification — the app requests only what a packaged desktop app needs.</li><li>One behaviour change from that: deleting a special desktop icon (This PC, Recycle Bin…) from a board no longer also hides it on the real Windows desktop. Everything else works exactly as before.</li></ul>
+      
+    </li><li id="v1-1-0">
+      <div class="rel-ver">
+        <span class="v">1.1.0</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Desktop-level behaviours corrected, and lower idle CPU.</p>
+      <ul><li>Alt+F4 while boards are on screen now opens the standard Windows &quot;Shut Down Windows&quot; dialog — exactly like pressing Alt+F4 on the real desktop. It no longer closes a board.</li><li>Apps that open while boards are on screen no longer get stuck behind them — DeskDrawer steps aside so they come to the front.</li><li>Lighter on your PC: the Recycle Bin icon now updates the moment the bin changes, the old periodic background check is gone, and idle CPU use is lower.</li><li>Board pinning is more reliable right after sign-in.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/hiding-the-desktop-icon-layer/">Hiding the desktop icon layer without breaking the desktop</a></p>
+    </li><li id="v1-0-9">
+      <div class="rel-ver">
+        <span class="v">1.0.9</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Share pane, better clipboard, and the board/desktop view switch.</p>
+      <ul><li>Share files straight from a board using the Windows 11 Share pane.</li><li>More reliable copy, cut and paste of grouped items between boards and File Explorer.</li><li>Menus close cleanly when you click away.</li><li>Draw a marquee selection starting from an empty desktop.</li><li>Switch between board view and a plain desktop from the tray menu.</li></ul>
+      
+    </li><li id="v1-0-8">
+      <div class="rel-ver">
+        <span class="v">1.0.8</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Show or hide native icons from the tray; boards stop minimising.</p>
+      <ul><li>Show or hide the native desktop icons directly from the tray menu.</li><li>The reset button now only re-tiles misplaced boards — your boards and their contents are left untouched.</li><li>Boards no longer minimise along with other windows (Win+D / minimise all).</li></ul>
+      
+    </li><li id="v1-0-7">
+      <div class="rel-ver">
+        <span class="v">1.0.7</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Cross-board marquee selection.</p>
+      <ul><li>Marquee-select icons across several boards at once.</li><li>More reliable drag-and-drop from a board into File Explorer and other apps.</li><li>Keyboard shortcuts work immediately after a marquee selection.</li></ul>
+      
+    </li><li id="v1-0-6">
+      <div class="rel-ver">
+        <span class="v">1.0.6</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Release</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Store packaging, and system icon names taken from Windows.</p>
+      <ul><li>Microsoft Store packaging (MSIX); autostart now uses the official Windows startup task, manageable in Task Manager like any startup app.</li><li>System icons (Recycle Bin, This PC…) are named in your Windows display language.</li><li>Internal cleanup for a quieter, leaner app.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/designing-for-language-independence/">Designing an interface that barely needs language</a></p>
+    </li><li id="v1-0-5">
+      <div class="rel-ver">
+        <span class="v">1.0.5</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Auto-arranging layout, and numbered board names.</p>
+      <ul><li>Layout auto-arranges after icon-size changes: boards stay inside the work area — never under the taskbar — and never overlap.</li><li>New tray reset button re-tiles all boards as a rescue; boards and contents untouched.</li><li>New boards are numbered (1, 2, 3…) — no language-specific names anywhere.</li></ul>
+      <p style="font-size:14px;color:var(--muted2)">Background: <a href="/notes/designing-for-language-independence/">Designing an interface that barely needs language</a></p>
+    </li><li id="v1-0-4">
+      <div class="rel-ver">
+        <span class="v">1.0.4</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Live Recycle Bin icon, and elastic drag between boards.</p>
+      <ul><li>Recycle Bin icon refreshes automatically when the bin is emptied or filled.</li><li>Elastic drag: dragging between boards can no longer trigger Explorer&#39;s interrupted-operation dialog; drag out to Explorer and back seamlessly.</li></ul>
+      
+    </li><li id="v1-0-3">
+      <div class="rel-ver">
+        <span class="v">1.0.3</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Drag out to Explorer, and clipboard both directions.</p>
+      <ul><li>Drag files from a board straight into File Explorer, or any app.</li><li>Ctrl+C / Ctrl+X / Ctrl+V between boards and Explorer, both directions.</li></ul>
+      
+    </li><li id="v1-0-2">
+      <div class="rel-ver">
+        <span class="v">1.0.2</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Feature</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Special desktop icons can be removed from a board.</p>
+      <ul><li>Special desktop icons (This PC, Recycle Bin…) can be deleted from a board. At the time this also hid them on the real desktop, reversible from Windows Settings — the real-desktop part was later removed in 1.1.1.</li></ul>
+      
+    </li><li id="v1-0-1">
+      <div class="rel-ver">
+        <span class="v">1.0.1</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Fix</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">Double-click reliability and hover-only controls.</p>
+      <ul><li>Fixed double-click open being swallowed in some window arrangements.</li><li>With outlines hidden, board controls appear only while hovering the board.</li></ul>
+      
+    </li><li id="v1-0-0">
+      <div class="rel-ver">
+        <span class="v">1.0.0</span>
+        
+        <span style="color:var(--muted2);font-size:14px">before the public repository · Release</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:12px">First release.</p>
+      <ul><li>Transparent frameless boards, real desktop behaviour, per-board sorting, folding boards, marquee selection, icon-only interface.</li></ul>
+      
+    </li></ul></article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

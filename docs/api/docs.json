@@ -1,0 +1,153 @@
+{
+  "updated": "2026-08-07",
+  "count": 21,
+  "items": [
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "group": "Start here",
+      "description": "What happens the first time you run DeskDrawer, and the four things worth doing in your first five minutes.",
+      "url": "https://deskdrawer.pages.dev/docs/getting-started/"
+    },
+    {
+      "slug": "installation",
+      "title": "Installing DeskDrawer",
+      "group": "Start here",
+      "description": "System requirements, what installing actually puts on your machine, and how updates and autostart work.",
+      "url": "https://deskdrawer.pages.dev/docs/installation/"
+    },
+    {
+      "slug": "boards",
+      "title": "Boards",
+      "group": "Start here",
+      "description": "Creating, naming, moving, resizing, folding and deleting boards — and what a board stores.",
+      "url": "https://deskdrawer.pages.dev/docs/boards/"
+    },
+    {
+      "slug": "menus",
+      "title": "Menus",
+      "group": "Using DeskDrawer",
+      "description": "DeskDrawer has three menus: its own board menu, its tray menu, and the real Windows context menu. Knowing which is which explains most of the interface.",
+      "url": "https://deskdrawer.pages.dev/docs/menus/"
+    },
+    {
+      "slug": "sorting",
+      "title": "Sorting a board",
+      "group": "Using DeskDrawer",
+      "description": "Five sort modes, each ascending or descending, set independently per board.",
+      "url": "https://deskdrawer.pages.dev/docs/sorting/"
+    },
+    {
+      "slug": "icon-sizes",
+      "title": "Icon sizes",
+      "group": "Using DeskDrawer",
+      "description": "DeskDrawer offers four icon sizes, set independently for each board, and re-tiles the layout automatically when you change one.",
+      "url": "https://deskdrawer.pages.dev/docs/icon-sizes/"
+    },
+    {
+      "slug": "keyboard-and-mouse",
+      "title": "Keyboard and mouse reference",
+      "group": "Using DeskDrawer",
+      "description": "Every gesture and shortcut on a board. Most of them are the ones you already use on the Windows desktop.",
+      "url": "https://deskdrawer.pages.dev/docs/keyboard-and-mouse/"
+    },
+    {
+      "slug": "drag-and-drop",
+      "title": "Drag and drop",
+      "group": "Using DeskDrawer",
+      "description": "What each kind of drag does, when a file actually moves on disk, and the safeguards around that.",
+      "url": "https://deskdrawer.pages.dev/docs/drag-and-drop/"
+    },
+    {
+      "slug": "layout-and-monitors",
+      "title": "Layout and multiple monitors",
+      "group": "Using DeskDrawer",
+      "description": "How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.",
+      "url": "https://deskdrawer.pages.dev/docs/layout-and-monitors/"
+    },
+    {
+      "slug": "languages",
+      "title": "Languages and language independence",
+      "group": "Using DeskDrawer",
+      "description": "DeskDrawer's Store listing is available in 16 languages, and the application itself is designed so that using it depends very little on reading text at all.",
+      "url": "https://deskdrawer.pages.dev/docs/languages/"
+    },
+    {
+      "slug": "configuration-file",
+      "title": "The configuration file",
+      "group": "Your data",
+      "description": "Where DeskDrawer keeps your layout, what is in it, how it is written safely, and whether you should edit it.",
+      "url": "https://deskdrawer.pages.dev/docs/configuration-file/"
+    },
+    {
+      "slug": "backup-and-restore",
+      "title": "Backup, restore and moving to a new PC",
+      "group": "Your data",
+      "description": "Copying one file backs up your entire layout. What transfers cleanly to another machine and what does not.",
+      "url": "https://deskdrawer.pages.dev/docs/backup-and-restore/"
+    },
+    {
+      "slug": "privacy-and-data",
+      "title": "Privacy and local data",
+      "group": "Your data",
+      "description": "What DeskDrawer stores, what it transmits, and the specific list of things it does not contain.",
+      "url": "https://deskdrawer.pages.dev/docs/privacy-and-data/"
+    },
+    {
+      "slug": "uninstall",
+      "title": "Uninstalling",
+      "group": "Your data",
+      "description": "How to remove DeskDrawer cleanly, what is left behind (nothing), and how to get your desktop icons back.",
+      "url": "https://deskdrawer.pages.dev/docs/uninstall/"
+    },
+    {
+      "slug": "architecture",
+      "title": "Architecture",
+      "group": "Under the hood",
+      "description": "How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices.",
+      "url": "https://deskdrawer.pages.dev/docs/architecture/"
+    },
+    {
+      "slug": "windows-integration",
+      "title": "Windows integration",
+      "group": "Under the hood",
+      "description": "The specific Windows behaviours DeskDrawer hooks into — the desktop icon layer, Show desktop, Alt+F4, the Share pane, the Recycle Bin — and how each is made to behave correctly.",
+      "url": "https://deskdrawer.pages.dev/docs/windows-integration/"
+    },
+    {
+      "slug": "performance",
+      "title": "Performance",
+      "group": "Under the hood",
+      "description": "What DeskDrawer does to stay responsive on large, cloud-backed and network-connected desktops — and what can still make it slow.",
+      "url": "https://deskdrawer.pages.dev/docs/performance/"
+    },
+    {
+      "slug": "memory-usage",
+      "title": "Memory usage",
+      "group": "Under the hood",
+      "description": "What DeskDrawer holds in memory, the choices that keep that small, and how to measure it on your own machine.",
+      "url": "https://deskdrawer.pages.dev/docs/memory-usage/"
+    },
+    {
+      "slug": "limitations",
+      "title": "Limitations",
+      "group": "Under the hood",
+      "description": "What DeskDrawer does not do, what it will not do, and the rough edges that are known and unfixed.",
+      "url": "https://deskdrawer.pages.dev/docs/limitations/"
+    },
+    {
+      "slug": "troubleshooting",
+      "title": "Troubleshooting",
+      "group": "Help",
+      "description": "Fixes for the problems that actually come up: missing icons, misplaced boards, freezes, an empty desktop, and startup not sticking.",
+      "url": "https://deskdrawer.pages.dev/docs/troubleshooting/"
+    },
+    {
+      "slug": "licensing",
+      "title": "Licensing and purchase",
+      "group": "Help",
+      "description": "How the one-time purchase works, what it covers, how many machines it installs on, and why no price appears on this site.",
+      "url": "https://deskdrawer.pages.dev/docs/licensing/"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The same bug, five times: offline network locations · DeskDrawer</title>
+<meta name="description" content="One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood." />
+<link rel="canonical" href="https://deskdrawer.pages.dev/notes/offline-network-shares/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="The same bug, five times: offline network locations · DeskDrawer" />
+<meta property="og:description" content="One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood." />
+<meta property="og:url" content="https://deskdrawer.pages.dev/notes/offline-network-shares/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The same bug, five times: offline network locations — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The same bug, five times: offline network locations · DeskDrawer" />
+<meta name="twitter:description" content="One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta name="twitter:image:alt" content="The same bug, five times: offline network locations — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/notes/offline-network-shares/#webpage","url":"https://deskdrawer.pages.dev/notes/offline-network-shares/","name":"The same bug, five times: offline network locations","description":"One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-08-07","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-notes.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/notes/offline-network-shares/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/notes/offline-network-shares/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://deskdrawer.pages.dev/notes/"},{"@type":"ListItem","position":3,"name":"The same bug, five times: offline network locations","item":"https://deskdrawer.pages.dev/notes/offline-network-shares/"}]},{"@type":"TechArticle","@id":"https://deskdrawer.pages.dev/notes/offline-network-shares/#article","headline":"The same bug, five times: offline network locations","description":"One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.","datePublished":"2026-08-07","dateModified":"2026-08-07","keywords":"Windows file system, network timeout, UI thread, freeze","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"image":"https://deskdrawer.pages.dev/assets/og-notes.png","inLanguage":"en"}]}</script>
+</head>
+<body data-section="notes">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link" href="/docs/">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link is-active" href="/notes/" aria-current="page">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell">
+
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/notes/">Engineering notes</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">The same bug, five times: offline network locations</span></nav><h1>The same bug, five times: offline network locations</h1><p class="lede">One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.</p><div class="meta"><span>Engineering lesson</span><span>7 August 2026</span><span>by Shipeng Ouyang</span></div><p>If you had asked me after 1.1.4 whether the freeze problem was solved, I would have said yes. I would have said it again after 1.2.2, after 1.2.3, and after 1.2.4.</p>
+<p>It shipped again in 1.2.5.</p>
+<h2 id="the-bug-class">The bug class<a class="hlink" href="#the-bug-class" aria-label="Link to this section">#</a></h2>
+<p>On Windows, a file-system call against a location that is unreachable does not fail quickly. It blocks until the network stack gives up, which can be tens of seconds. Make that call on the thread that pumps window messages and the entire application stops — no repaint, no clicks, and distinctively, <strong>no mouse wheel</strong>, because wheel messages queue behind the blocked call like everything else.</p>
+<p>A desktop organizer is unusually exposed to this. Desktops collect shortcuts to network shares, mapped drives that are only sometimes present, VPN paths, and NAS folders that sleep. Every one of them is a call waiting to block.</p>
+<h2 id="the-five-occurrences">The five occurrences<a class="hlink" href="#the-five-occurrences" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Release</th><th>The blocking call</th></tr></thead><tbody><tr><td>1.1.4</td><td>Building a hover info tip for a file on an offline share or an un-downloaded cloud file</td></tr><tr><td>1.2.2</td><td>A board holding a shortcut whose target was an offline network location</td></tr><tr><td>1.2.3</td><td>Large paste and drag operations</td></tr><tr><td>1.2.4</td><td>Dragging onto a shortcut that reached an offline location <em>through a local symbolic link</em></td></tr><tr><td>1.2.5</td><td>Asking the Recycle Bin for its state across <strong>all</strong> drives, from a notification thread</td></tr></tbody></table></div>
+<p>Each was a real fix. None was the last one.</p>
+<h2 id="why-move-it-to-a-background-thread-was-not-enough">Why &quot;move it to a background thread&quot; was not enough<a class="hlink" href="#why-move-it-to-a-background-thread-was-not-enough" aria-label="Link to this section">#</a></h2>
+<p>The first fix was the obvious one: move info-tip resolution off the interface thread. Correct, and it solved the reported symptom completely.</p>
+<p>It did not generalise, because the problem is not one call site. It is that <em>a large number of ordinary-looking operations end in a file-system call</em>, and the dangerous ones are not obviously dangerous when you read them. Resolving an icon reads the file. Building a tooltip reads the file. Deciding whether a drop target is a folder reads the file. Deciding whether a drag should copy or move reads the file, to find out which volume it is on. None of those look like network code.</p>
+<p>1.2.4 is the clearest example. The shortcut pointed at a local path, so it passed every &quot;is this remote?&quot; check — but that local path was a symbolic link that redirected to an offline share. The remoteness was one level of indirection away, and every check was looking at the wrong level.</p>
+<p>1.2.5 is the other shape of it. The Recycle Bin query was not about a file the user had touched at all; it asked Windows about the bin <em>across every drive</em>, which includes mapped network drives. A sleeping NAS in a drive letter you had forgotten about would stall the application when you deleted an unrelated desktop file. The fix was to scope the query to local fixed drives.</p>
+<h2 id="what-actually-changed">What actually changed<a class="hlink" href="#what-actually-changed" aria-label="Link to this section">#</a></h2>
+<p>The rule stopped being &quot;move known-slow calls off the interface thread&quot; and became:</p>
+<blockquote><p><strong>The interface thread never touches the file system.</strong> Not for icons, not for tooltips, not for drop-target tests, not for volume checks, not for Recycle Bin state. If a code path on the interface thread ends in a file-system call, that path is a bug, whether or not anyone has reported a freeze from it.</p></blockquote>
+<p>That is a stronger and much less comfortable rule, because it condemns code that currently works. It is also the only version of the rule that generalises, since the whole difficulty is that you cannot tell by reading whether a given path will be fast.</p>
+<h2 id="the-uncomfortable-part">The uncomfortable part<a class="hlink" href="#the-uncomfortable-part" aria-label="Link to this section">#</a></h2>
+<p>Five releases is not a story about one difficult bug. It is a story about repeatedly fixing the instance in front of me instead of the class behind it, and being satisfied each time because the reported symptom went away.</p>
+<p>The reported symptom going away is very weak evidence that a bug class is closed. It mostly means nobody has hit the next instance yet — and with no <a href="/glossary/telemetry/">Telemetry</a> in this product, &quot;nobody has reported it&quot; is even weaker evidence than usual. See <a href="/notes/no-telemetry-by-default/">Shipping with no telemetry, and what it costs</a>.</p>
+<p>If DeskDrawer freezes on your machine, it is almost certainly this, it is almost certainly a path I have not found, and the report genuinely matters. <a href="/docs/troubleshooting/">Troubleshooting</a> has the diagnosis steps.</p><nav class="pager" aria-label="Pagination"><a class="prev" href="/notes/hiding-the-desktop-icon-layer/"><div class="dir">Previous</div><div class="t">Hiding the desktop icon layer without breaking the desktop</div></a><a class="next" href="/notes/reparse-points-and-onedrive/"><div class="dir">Next</div><div class="t">Three attempts at one check: reparse points, OneDrive and the desktop</div></a></nav></article>
+<nav class="doc-toc" aria-label="On this page"><h2>On this page</h2><a class="lvl-2" href="#the-bug-class">The bug class</a><a class="lvl-2" href="#the-five-occurrences">The five occurrences</a><a class="lvl-2" href="#why-move-it-to-a-background-thread-was-not-enough">Why &quot;move it to a background thread&quot; was not enough</a><a class="lvl-2" href="#what-actually-changed">What actually changed</a><a class="lvl-2" href="#the-uncomfortable-part">The uncomfortable part</a></nav>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

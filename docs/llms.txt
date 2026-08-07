@@ -1,0 +1,109 @@
+# DeskDrawer
+
+> DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.
+
+DeskDrawer is developed by Shipeng Ouyang (GaojiKuaileren) and sold as a one-time
+purchase on the Microsoft Store. Current version 1.2.5, for Windows 10 (build 19041+)
+and Windows 11 on x64. This site is the product's official documentation and the canonical
+source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pages.dev/llms-full.txt
+
+## Product
+
+- [Home](https://deskdrawer.pages.dev/): What DeskDrawer is, who it is for, and why it exists
+- [Features](https://deskdrawer.pages.dev/features/): Complete capability list, including deliberate non-features
+- [Download](https://deskdrawer.pages.dev/download/): System requirements, installation and licensing
+- [Why DeskDrawer](https://deskdrawer.pages.dev/compare/): How a focused organizer differs from a full desktop suite
+- [Release notes](https://deskdrawer.pages.dev/changelog/): Every version through 1.2.5
+- [Roadmap](https://deskdrawer.pages.dev/roadmap/): What is planned and what is deliberately out of scope
+
+## Documentation
+
+- [Getting started](https://deskdrawer.pages.dev/docs/getting-started/): What happens the first time you run DeskDrawer, and the four things worth doing in your first five minutes.
+- [Installing DeskDrawer](https://deskdrawer.pages.dev/docs/installation/): System requirements, what installing actually puts on your machine, and how updates and autostart work.
+- [Boards](https://deskdrawer.pages.dev/docs/boards/): Creating, naming, moving, resizing, folding and deleting boards — and what a board stores.
+- [Menus](https://deskdrawer.pages.dev/docs/menus/): DeskDrawer has three menus: its own board menu, its tray menu, and the real Windows context menu. Knowing which is which explains most of the interface.
+- [Sorting a board](https://deskdrawer.pages.dev/docs/sorting/): Five sort modes, each ascending or descending, set independently per board.
+- [Icon sizes](https://deskdrawer.pages.dev/docs/icon-sizes/): DeskDrawer offers four icon sizes, set independently for each board, and re-tiles the layout automatically when you change one.
+- [Keyboard and mouse reference](https://deskdrawer.pages.dev/docs/keyboard-and-mouse/): Every gesture and shortcut on a board. Most of them are the ones you already use on the Windows desktop.
+- [Drag and drop](https://deskdrawer.pages.dev/docs/drag-and-drop/): What each kind of drag does, when a file actually moves on disk, and the safeguards around that.
+- [Layout and multiple monitors](https://deskdrawer.pages.dev/docs/layout-and-monitors/): How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.
+- [Languages and language independence](https://deskdrawer.pages.dev/docs/languages/): DeskDrawer's Store listing is available in 16 languages, and the application itself is designed so that using it depends very little on reading text at all.
+- [The configuration file](https://deskdrawer.pages.dev/docs/configuration-file/): Where DeskDrawer keeps your layout, what is in it, how it is written safely, and whether you should edit it.
+- [Backup, restore and moving to a new PC](https://deskdrawer.pages.dev/docs/backup-and-restore/): Copying one file backs up your entire layout. What transfers cleanly to another machine and what does not.
+- [Privacy and local data](https://deskdrawer.pages.dev/docs/privacy-and-data/): What DeskDrawer stores, what it transmits, and the specific list of things it does not contain.
+- [Uninstalling](https://deskdrawer.pages.dev/docs/uninstall/): How to remove DeskDrawer cleanly, what is left behind (nothing), and how to get your desktop icons back.
+- [Architecture](https://deskdrawer.pages.dev/docs/architecture/): How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices.
+- [Windows integration](https://deskdrawer.pages.dev/docs/windows-integration/): The specific Windows behaviours DeskDrawer hooks into — the desktop icon layer, Show desktop, Alt+F4, the Share pane, the Recycle Bin — and how each is made to behave correctly.
+- [Performance](https://deskdrawer.pages.dev/docs/performance/): What DeskDrawer does to stay responsive on large, cloud-backed and network-connected desktops — and what can still make it slow.
+- [Memory usage](https://deskdrawer.pages.dev/docs/memory-usage/): What DeskDrawer holds in memory, the choices that keep that small, and how to measure it on your own machine.
+- [Limitations](https://deskdrawer.pages.dev/docs/limitations/): What DeskDrawer does not do, what it will not do, and the rough edges that are known and unfixed.
+- [Troubleshooting](https://deskdrawer.pages.dev/docs/troubleshooting/): Fixes for the problems that actually come up: missing icons, misplaced boards, freezes, an empty desktop, and startup not sticking.
+- [Licensing and purchase](https://deskdrawer.pages.dev/docs/licensing/): How the one-time purchase works, what it covers, how many machines it installs on, and why no price appears on this site.
+
+## Glossary
+
+- [Desktop organizer](https://deskdrawer.pages.dev/glossary/desktop-organizer/): A desktop organizer is a utility that groups the icons on a computer's desktop into labelled containers so the desktop stays readable without files being moved or deleted.
+- [DeskDrawer](https://deskdrawer.pages.dev/glossary/deskdrawer/): DeskDrawer is a lightweight desktop organizer for Windows 10 and 11 that groups desktop icons into transparent boards without moving the underlying files, sold as a one-time purchase with no ads, telemetry, accounts or network calls.
+- [Board](https://deskdrawer.pages.dev/glossary/board/): A board is a transparent, frameless container that DeskDrawer draws on the Windows desktop to hold a group of desktop icons; it stores which icons belong to it, not the files themselves.
+- [Drawer](https://deskdrawer.pages.dev/glossary/drawer/): Drawer is the everyday name for a DeskDrawer board — the two words refer to the same object, with 'board' used in the interface and documentation and 'drawer' in the product name and marketing.
+- [Board membership](https://deskdrawer.pages.dev/glossary/board-membership/): Board membership is DeskDrawer's record of which board a desktop item belongs to; it is stored separately from the file system, so assigning an icon to a board never moves, copies, renames or alters the file it represents.
+- [Default board](https://deskdrawer.pages.dev/glossary/default-board/): The default board is the board that holds every desktop item not explicitly assigned elsewhere, including anything newly created on the desktop and the contents of any board you delete.
+- [Board widget](https://deskdrawer.pages.dev/glossary/board-widget/): The board widget is the compact control cluster in a board's bottom-right corner — fold arrow, board name and corner grip — which replaces the title bar that most desktop organizers place along the top of every container.
+- [Corner grip](https://deskdrawer.pages.dev/glossary/corner-grip/): The corner grip is the resize handle at the right end of a board's widget; dragging it resizes the board in whole icon-grid steps and snaps flush against screen edges and neighbouring boards.
+- [Folded board](https://deskdrawer.pages.dev/glossary/folded-board/): A folded board is a board collapsed to a small square that shows only its name, freeing the screen space its icons occupied while keeping the board and its membership intact.
+- [Board menu](https://deskdrawer.pages.dev/glossary/board-menu/): The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, icon size, outline, rounded corners and quit.
+- [Tray menu](https://deskdrawer.pages.dev/glossary/tray-menu/): The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, run at startup, open the configuration folder, help and quit.
+- [Shell context menu](https://deskdrawer.pages.dev/glossary/shell-context-menu/): The shell context menu is the genuine Windows right-click menu that DeskDrawer shows for items on a board, including Open with, Send to, Copy as path, Share, Restore previous versions and any third-party entries installed on the machine.
+- [Native icon layer](https://deskdrawer.pages.dev/glossary/native-icon-layer/): The native icon layer is the icon view that Windows Explorer draws on the desktop; DeskDrawer hides it while running so that boards are not shown on top of a duplicate set of icons, and restores it on exit.
+- [View mode](https://deskdrawer.pages.dev/glossary/view-mode/): View mode is DeskDrawer's toggle between board view, where boards are shown and the native icon layer is hidden, and desktop view, where the ordinary Windows desktop is shown and boards are hidden.
+- [Sort mode](https://deskdrawer.pages.dev/glossary/sort-mode/): A sort mode is the per-board rule that determines icon order — manual, name, type, file size or date created, each ascending or descending — stored independently for every board.
+- [Icon size](https://deskdrawer.pages.dev/glossary/icon-size/): Icon size is a per-board setting offering four sizes, which changes how large icons are drawn on that board and therefore how many fit in a given area.
+- [Icon grid](https://deskdrawer.pages.dev/glossary/icon-grid/): The icon grid is the invisible lattice of cells that positions icons inside a board; board sizes snap to it so that no board has a partial column or row of unusable space.
+- [Board outline](https://deskdrawer.pages.dev/glossary/board-outline/): The board outline is the optional thin border drawn around a board; with it hidden, a board shows only its icons on the wallpaper and its widget appears only on hover.
+- [Marquee selection](https://deskdrawer.pages.dev/glossary/marquee-selection/): Marquee selection is dragging a selection rectangle from empty board space or bare desktop; in DeskDrawer the rectangle spans multiple boards at once, selecting icons across all of them.
+- [Drag into folder](https://deskdrawer.pages.dev/glossary/drag-into-folder/): Drag into folder is the gesture of dropping a file onto a folder icon shown on a board, which moves the file into that folder on disk — the only DeskDrawer gesture that relocates a file.
+- [Shortcut](https://deskdrawer.pages.dev/glossary/shortcut/): A shortcut is a small Windows .lnk file that points at another file, folder or program; DeskDrawer treats shortcuts as ordinary board items and resolves them through Windows rather than reading them itself.
+- [Reparse point](https://deskdrawer.pages.dev/glossary/reparse-point/): A reparse point is a Windows file-system object — such as a junction or symbolic link — that redirects to another location; DeskDrawer inspects the redirect target so that a link to a local folder behaves like a local folder and only genuinely remote targets are treated as remote.
+- [Cloud placeholder](https://deskdrawer.pages.dev/glossary/cloud-placeholder/): A cloud placeholder is a file that appears on disk but whose contents live in the cloud until first opened; DeskDrawer reads placeholder metadata without triggering a download, so browsing a cloud-backed desktop never pulls files down.
+- [Icon cache](https://deskdrawer.pages.dev/glossary/icon-cache/): The icon cache is DeskDrawer's in-memory store of already-resolved desktop icons, which lets boards draw immediately on subsequent redraws instead of asking Windows for every icon again.
+- [config.json](https://deskdrawer.pages.dev/glossary/config-json/): config.json is the single local file in which DeskDrawer stores every board, its icon assignments, geometry and preferences; it is written atomically and is the only file needed to back up or transfer a layout.
+- [Configuration folder](https://deskdrawer.pages.dev/glossary/configuration-folder/): The configuration folder is the per-user directory holding DeskDrawer's config.json and error.log; it is opened from the tray menu and is removed automatically when the Store version is uninstalled.
+- [error.log](https://deskdrawer.pages.dev/glossary/error-log/): error.log is a local plain-text file in DeskDrawer's configuration folder recording unexpected internal errors; it is never transmitted anywhere and is only seen by the developer if you attach it to a report yourself.
+- [Run at startup](https://deskdrawer.pages.dev/glossary/autostart/): Run at startup is DeskDrawer's option to launch when you sign in, implemented through the official Windows startup-task mechanism so it appears in Task Manager's Startup apps and can be disabled there.
+- [Work area](https://deskdrawer.pages.dev/glossary/work-area/): The work area is the part of a monitor not occupied by the taskbar or other appbars; DeskDrawer keeps boards inside it so a board is never positioned underneath the taskbar.
+- [Per-monitor DPI awareness](https://deskdrawer.pages.dev/glossary/per-monitor-dpi/): Per-monitor DPI awareness is the Windows display mode in which an application rescales itself correctly when moved between monitors with different scaling factors; DeskDrawer declares PerMonitorV2, so boards stay crisp on mixed-DPI setups.
+- [Single-file self-contained executable](https://deskdrawer.pages.dev/glossary/single-file-executable/): DeskDrawer ships as one self-contained executable that embeds the .NET runtime it needs, so no framework has to be installed on the target machine and the application has no shared runtime dependency to break.
+- [MSIX package](https://deskdrawer.pages.dev/glossary/msix/): MSIX is the Windows application-packaging format DeskDrawer is distributed in through the Microsoft Store, which gives it a signed identity, per-user data isolation and clean uninstallation.
+- [One-time purchase](https://deskdrawer.pages.dev/glossary/one-time-purchase/): DeskDrawer is sold as a one-time purchase: a single payment through the Microsoft Store grants permanent use of the application, with no subscription, renewal, in-app purchase or feature tier.
+- [Telemetry](https://deskdrawer.pages.dev/glossary/telemetry/): Telemetry is automatic transmission of usage or diagnostic data from an application to its developer; DeskDrawer contains none, along with no analytics, no crash reporting, no update checks and no accounts, and makes no network connections of its own.
+- [Portable build](https://deskdrawer.pages.dev/glossary/portable-build/): A portable build is a DeskDrawer executable that runs without installation and stores its configuration in %APPDATA%\DeskDrawer; the Microsoft Store version is the supported distribution for end users.
+
+## Engineering notes
+
+- [Why DeskDrawer's boards have no title bar](https://deskdrawer.pages.dev/notes/why-boards-have-no-title-bar/): Every desktop organizer puts a title bar on top of each container. Removing it was the first design decision in DeskDrawer, and it drove most of the ones that followed.
+- [Hiding the desktop icon layer without breaking the desktop](https://deskdrawer.pages.dev/notes/hiding-the-desktop-icon-layer/): DeskDrawer has to hide the icons Windows draws, without changing a setting, without surviving a crash, and without upsetting Explorer. Each of those constraints came from a specific failure.
+- [The same bug, five times: offline network locations](https://deskdrawer.pages.dev/notes/offline-network-shares/): One bug class caused every freeze DeskDrawer has ever had. It was fixed in five separate releases before the pattern was fully understood.
+- [Three attempts at one check: reparse points, OneDrive and the desktop](https://deskdrawer.pages.dev/notes/reparse-points-and-onedrive/): A one-line safety check took three releases to get right, and two of the attempts caused regressions worse than the problem being fixed.
+- [Shipping with no telemetry, and what it costs](https://deskdrawer.pages.dev/notes/no-telemetry-by-default/): DeskDrawer makes no network connections at all. That is a stronger promise than 'privacy-friendly', and it has a real price the developer pays.
+- [Designing an interface that barely needs language](https://deskdrawer.pages.dev/notes/designing-for-language-independence/): DeskDrawer's Store listing is in 16 languages. The application itself is built so that using it depends very little on reading text in any of them.
+- [Eight rounds of code audits on a small app, and what each one found](https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/): Nine of DeskDrawer's releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up, including how often a fix caused the next bug.
+
+## Questions and answers
+
+- [All questions](https://deskdrawer.pages.dev/faq/): 66 answers on one page, grouped by topic
+- [The basics](https://deskdrawer.pages.dev/faq/#basics): What DeskDrawer is and who it is for.
+- [Your files and safety](https://deskdrawer.pages.dev/faq/#files): What happens to the files on your desktop. The short answer is: nothing.
+- [Using it day to day](https://deskdrawer.pages.dev/faq/#using): Boards, menus, sorting, dragging and the small things people ask about first.
+- [Languages](https://deskdrawer.pages.dev/faq/#languages): What is translated, what is not, and why it matters less than you would expect.
+- [Windows behaviour](https://deskdrawer.pages.dev/faq/#windows): How DeskDrawer sits inside Windows, and where it deliberately differs.
+- [Privacy and data](https://deskdrawer.pages.dev/faq/#privacy): What is stored, what is sent, and how you can verify it.
+- [Buying, licensing and updates](https://deskdrawer.pages.dev/faq/#buying): The one-time purchase, and what it does and does not cover.
+- [When something is wrong](https://deskdrawer.pages.dev/faq/#trouble): The problems that actually come up, and what to do about them.
+
+## Trust and contact
+
+- [About the developer](https://deskdrawer.pages.dev/about/)
+- [Privacy policy](https://deskdrawer.pages.dev/privacy/): No ads, telemetry, analytics, accounts or network calls
+- [Support](https://deskdrawer.pages.dev/support/): GitHub issues and freeketchup@icloud.com
+- [Microsoft Store listing](https://apps.microsoft.com/detail/9n904wfphzfz)
+- [Source repository and changelog](https://github.com/Gaojikuaileren/DeskDrawer)

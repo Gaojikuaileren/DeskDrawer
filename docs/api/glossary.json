@@ -1,0 +1,302 @@
+{
+  "updated": "2026-08-07",
+  "count": 35,
+  "items": [
+    {
+      "slug": "desktop-organizer",
+      "term": "Desktop organizer",
+      "aka": [
+        "desktop organiser",
+        "desktop icon organizer"
+      ],
+      "definition": "A desktop organizer is a utility that groups the icons on a computer's desktop into labelled containers so the desktop stays readable without files being moved or deleted.",
+      "url": "https://deskdrawer.pages.dev/glossary/desktop-organizer/"
+    },
+    {
+      "slug": "deskdrawer",
+      "term": "DeskDrawer",
+      "aka": [
+        "DeskDrawer - Desktop Organizer"
+      ],
+      "definition": "DeskDrawer is a lightweight desktop organizer for Windows 10 and 11 that groups desktop icons into transparent boards without moving the underlying files, sold as a one-time purchase with no ads, telemetry, accounts or network calls.",
+      "url": "https://deskdrawer.pages.dev/glossary/deskdrawer/"
+    },
+    {
+      "slug": "board",
+      "term": "Board",
+      "aka": [
+        "drawer",
+        "desktop board"
+      ],
+      "definition": "A board is a transparent, frameless container that DeskDrawer draws on the Windows desktop to hold a group of desktop icons; it stores which icons belong to it, not the files themselves.",
+      "url": "https://deskdrawer.pages.dev/glossary/board/"
+    },
+    {
+      "slug": "drawer",
+      "term": "Drawer",
+      "aka": [],
+      "definition": "Drawer is the everyday name for a DeskDrawer board — the two words refer to the same object, with 'board' used in the interface and documentation and 'drawer' in the product name and marketing.",
+      "url": "https://deskdrawer.pages.dev/glossary/drawer/"
+    },
+    {
+      "slug": "board-membership",
+      "term": "Board membership",
+      "aka": [
+        "icon assignment"
+      ],
+      "definition": "Board membership is DeskDrawer's record of which board a desktop item belongs to; it is stored separately from the file system, so assigning an icon to a board never moves, copies, renames or alters the file it represents.",
+      "url": "https://deskdrawer.pages.dev/glossary/board-membership/"
+    },
+    {
+      "slug": "default-board",
+      "term": "Default board",
+      "aka": [],
+      "definition": "The default board is the board that holds every desktop item not explicitly assigned elsewhere, including anything newly created on the desktop and the contents of any board you delete.",
+      "url": "https://deskdrawer.pages.dev/glossary/default-board/"
+    },
+    {
+      "slug": "board-widget",
+      "term": "Board widget",
+      "aka": [
+        "board controls"
+      ],
+      "definition": "The board widget is the compact control cluster in a board's bottom-right corner — fold arrow, board name and corner grip — which replaces the title bar that most desktop organizers place along the top of every container.",
+      "url": "https://deskdrawer.pages.dev/glossary/board-widget/"
+    },
+    {
+      "slug": "corner-grip",
+      "term": "Corner grip",
+      "aka": [],
+      "definition": "The corner grip is the resize handle at the right end of a board's widget; dragging it resizes the board in whole icon-grid steps and snaps flush against screen edges and neighbouring boards.",
+      "url": "https://deskdrawer.pages.dev/glossary/corner-grip/"
+    },
+    {
+      "slug": "folded-board",
+      "term": "Folded board",
+      "aka": [
+        "compact mode",
+        "collapsed board"
+      ],
+      "definition": "A folded board is a board collapsed to a small square that shows only its name, freeing the screen space its icons occupied while keeping the board and its membership intact.",
+      "url": "https://deskdrawer.pages.dev/glossary/folded-board/"
+    },
+    {
+      "slug": "board-menu",
+      "term": "Board menu",
+      "aka": [],
+      "definition": "The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, icon size, outline, rounded corners and quit.",
+      "url": "https://deskdrawer.pages.dev/glossary/board-menu/"
+    },
+    {
+      "slug": "tray-menu",
+      "term": "Tray menu",
+      "aka": [
+        "notification area menu"
+      ],
+      "definition": "The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, run at startup, open the configuration folder, help and quit.",
+      "url": "https://deskdrawer.pages.dev/glossary/tray-menu/"
+    },
+    {
+      "slug": "shell-context-menu",
+      "term": "Shell context menu",
+      "aka": [
+        "Windows right-click menu",
+        "real context menu"
+      ],
+      "definition": "The shell context menu is the genuine Windows right-click menu that DeskDrawer shows for items on a board, including Open with, Send to, Copy as path, Share, Restore previous versions and any third-party entries installed on the machine.",
+      "url": "https://deskdrawer.pages.dev/glossary/shell-context-menu/"
+    },
+    {
+      "slug": "native-icon-layer",
+      "term": "Native icon layer",
+      "aka": [
+        "native desktop icons",
+        "the real desktop icons"
+      ],
+      "definition": "The native icon layer is the icon view that Windows Explorer draws on the desktop; DeskDrawer hides it while running so that boards are not shown on top of a duplicate set of icons, and restores it on exit.",
+      "url": "https://deskdrawer.pages.dev/glossary/native-icon-layer/"
+    },
+    {
+      "slug": "view-mode",
+      "term": "View mode",
+      "aka": [
+        "board view",
+        "desktop view",
+        "switch view"
+      ],
+      "definition": "View mode is DeskDrawer's toggle between board view, where boards are shown and the native icon layer is hidden, and desktop view, where the ordinary Windows desktop is shown and boards are hidden.",
+      "url": "https://deskdrawer.pages.dev/glossary/view-mode/"
+    },
+    {
+      "slug": "sort-mode",
+      "term": "Sort mode",
+      "aka": [
+        "sorting",
+        "board sort order"
+      ],
+      "definition": "A sort mode is the per-board rule that determines icon order — manual, name, type, file size or date created, each ascending or descending — stored independently for every board.",
+      "url": "https://deskdrawer.pages.dev/glossary/sort-mode/"
+    },
+    {
+      "slug": "icon-size",
+      "term": "Icon size",
+      "aka": [],
+      "definition": "Icon size is a per-board setting offering four sizes, which changes how large icons are drawn on that board and therefore how many fit in a given area.",
+      "url": "https://deskdrawer.pages.dev/glossary/icon-size/"
+    },
+    {
+      "slug": "icon-grid",
+      "term": "Icon grid",
+      "aka": [],
+      "definition": "The icon grid is the invisible lattice of cells that positions icons inside a board; board sizes snap to it so that no board has a partial column or row of unusable space.",
+      "url": "https://deskdrawer.pages.dev/glossary/icon-grid/"
+    },
+    {
+      "slug": "board-outline",
+      "term": "Board outline",
+      "aka": [],
+      "definition": "The board outline is the optional thin border drawn around a board; with it hidden, a board shows only its icons on the wallpaper and its widget appears only on hover.",
+      "url": "https://deskdrawer.pages.dev/glossary/board-outline/"
+    },
+    {
+      "slug": "marquee-selection",
+      "term": "Marquee selection",
+      "aka": [
+        "rubber-band selection"
+      ],
+      "definition": "Marquee selection is dragging a selection rectangle from empty board space or bare desktop; in DeskDrawer the rectangle spans multiple boards at once, selecting icons across all of them.",
+      "url": "https://deskdrawer.pages.dev/glossary/marquee-selection/"
+    },
+    {
+      "slug": "drag-into-folder",
+      "term": "Drag into folder",
+      "aka": [],
+      "definition": "Drag into folder is the gesture of dropping a file onto a folder icon shown on a board, which moves the file into that folder on disk — the only DeskDrawer gesture that relocates a file.",
+      "url": "https://deskdrawer.pages.dev/glossary/drag-into-folder/"
+    },
+    {
+      "slug": "shortcut",
+      "term": "Shortcut",
+      "aka": [
+        ".lnk file"
+      ],
+      "definition": "A shortcut is a small Windows .lnk file that points at another file, folder or program; DeskDrawer treats shortcuts as ordinary board items and resolves them through Windows rather than reading them itself.",
+      "url": "https://deskdrawer.pages.dev/glossary/shortcut/"
+    },
+    {
+      "slug": "reparse-point",
+      "term": "Reparse point",
+      "aka": [
+        "junction",
+        "symbolic link"
+      ],
+      "definition": "A reparse point is a Windows file-system object — such as a junction or symbolic link — that redirects to another location; DeskDrawer inspects the redirect target so that a link to a local folder behaves like a local folder and only genuinely remote targets are treated as remote.",
+      "url": "https://deskdrawer.pages.dev/glossary/reparse-point/"
+    },
+    {
+      "slug": "cloud-placeholder",
+      "term": "Cloud placeholder",
+      "aka": [
+        "online-only file",
+        "OneDrive placeholder"
+      ],
+      "definition": "A cloud placeholder is a file that appears on disk but whose contents live in the cloud until first opened; DeskDrawer reads placeholder metadata without triggering a download, so browsing a cloud-backed desktop never pulls files down.",
+      "url": "https://deskdrawer.pages.dev/glossary/cloud-placeholder/"
+    },
+    {
+      "slug": "icon-cache",
+      "term": "Icon cache",
+      "aka": [],
+      "definition": "The icon cache is DeskDrawer's in-memory store of already-resolved desktop icons, which lets boards draw immediately on subsequent redraws instead of asking Windows for every icon again.",
+      "url": "https://deskdrawer.pages.dev/glossary/icon-cache/"
+    },
+    {
+      "slug": "config-json",
+      "term": "config.json",
+      "aka": [
+        "configuration file",
+        "layout file"
+      ],
+      "definition": "config.json is the single local file in which DeskDrawer stores every board, its icon assignments, geometry and preferences; it is written atomically and is the only file needed to back up or transfer a layout.",
+      "url": "https://deskdrawer.pages.dev/glossary/config-json/"
+    },
+    {
+      "slug": "configuration-folder",
+      "term": "Configuration folder",
+      "aka": [],
+      "definition": "The configuration folder is the per-user directory holding DeskDrawer's config.json and error.log; it is opened from the tray menu and is removed automatically when the Store version is uninstalled.",
+      "url": "https://deskdrawer.pages.dev/glossary/configuration-folder/"
+    },
+    {
+      "slug": "error-log",
+      "term": "error.log",
+      "aka": [],
+      "definition": "error.log is a local plain-text file in DeskDrawer's configuration folder recording unexpected internal errors; it is never transmitted anywhere and is only seen by the developer if you attach it to a report yourself.",
+      "url": "https://deskdrawer.pages.dev/glossary/error-log/"
+    },
+    {
+      "slug": "autostart",
+      "term": "Run at startup",
+      "aka": [
+        "autostart",
+        "startup task"
+      ],
+      "definition": "Run at startup is DeskDrawer's option to launch when you sign in, implemented through the official Windows startup-task mechanism so it appears in Task Manager's Startup apps and can be disabled there.",
+      "url": "https://deskdrawer.pages.dev/glossary/autostart/"
+    },
+    {
+      "slug": "work-area",
+      "term": "Work area",
+      "aka": [],
+      "definition": "The work area is the part of a monitor not occupied by the taskbar or other appbars; DeskDrawer keeps boards inside it so a board is never positioned underneath the taskbar.",
+      "url": "https://deskdrawer.pages.dev/glossary/work-area/"
+    },
+    {
+      "slug": "per-monitor-dpi",
+      "term": "Per-monitor DPI awareness",
+      "aka": [
+        "PerMonitorV2"
+      ],
+      "definition": "Per-monitor DPI awareness is the Windows display mode in which an application rescales itself correctly when moved between monitors with different scaling factors; DeskDrawer declares PerMonitorV2, so boards stay crisp on mixed-DPI setups.",
+      "url": "https://deskdrawer.pages.dev/glossary/per-monitor-dpi/"
+    },
+    {
+      "slug": "single-file-executable",
+      "term": "Single-file self-contained executable",
+      "aka": [],
+      "definition": "DeskDrawer ships as one self-contained executable that embeds the .NET runtime it needs, so no framework has to be installed on the target machine and the application has no shared runtime dependency to break.",
+      "url": "https://deskdrawer.pages.dev/glossary/single-file-executable/"
+    },
+    {
+      "slug": "msix",
+      "term": "MSIX package",
+      "aka": [],
+      "definition": "MSIX is the Windows application-packaging format DeskDrawer is distributed in through the Microsoft Store, which gives it a signed identity, per-user data isolation and clean uninstallation.",
+      "url": "https://deskdrawer.pages.dev/glossary/msix/"
+    },
+    {
+      "slug": "one-time-purchase",
+      "term": "One-time purchase",
+      "aka": [
+        "buy once",
+        "perpetual licence"
+      ],
+      "definition": "DeskDrawer is sold as a one-time purchase: a single payment through the Microsoft Store grants permanent use of the application, with no subscription, renewal, in-app purchase or feature tier.",
+      "url": "https://deskdrawer.pages.dev/glossary/one-time-purchase/"
+    },
+    {
+      "slug": "telemetry",
+      "term": "Telemetry",
+      "aka": [],
+      "definition": "Telemetry is automatic transmission of usage or diagnostic data from an application to its developer; DeskDrawer contains none, along with no analytics, no crash reporting, no update checks and no accounts, and makes no network connections of its own.",
+      "url": "https://deskdrawer.pages.dev/glossary/telemetry/"
+    },
+    {
+      "slug": "portable-build",
+      "term": "Portable build",
+      "aka": [],
+      "definition": "A portable build is a DeskDrawer executable that runs without installation and stores its configuration in %APPDATA%\\DeskDrawer; the Microsoft Store version is the supported distribution for end users.",
+      "url": "https://deskdrawer.pages.dev/glossary/portable-build/"
+    }
+  ]
+}

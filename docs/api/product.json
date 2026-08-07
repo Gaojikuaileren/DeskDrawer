@@ -1,0 +1,35 @@
+{
+  "name": "DeskDrawer",
+  "version": "1.2.5",
+  "description": "DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.",
+  "developer": {
+    "name": "Shipeng Ouyang",
+    "url": "https://github.com/Gaojikuaileren"
+  },
+  "publisher": "GaojiKuaileren",
+  "licence": "Proprietary, one-time purchase",
+  "platform": {
+    "os": "Windows 10 version 2004 (build 19041) or newer, and Windows 11",
+    "arch": "x64",
+    "runtime": "None — the app ships as a single self-contained executable",
+    "ram": "No minimum beyond the operating system's own"
+  },
+  "store": "https://apps.microsoft.com/detail/9n904wfphzfz",
+  "repository": "https://github.com/Gaojikuaileren/DeskDrawer",
+  "support": "freeketchup@icloud.com",
+  "privacy": {
+    "telemetry": false,
+    "ads": false,
+    "accounts": false,
+    "analytics": false,
+    "networkCalls": false
+  },
+  "urls": {
+    "home": "https://deskdrawer.pages.dev/",
+    "docs": "https://deskdrawer.pages.dev/docs/",
+    "faq": "https://deskdrawer.pages.dev/faq/",
+    "glossary": "https://deskdrawer.pages.dev/glossary/",
+    "changelog": "https://deskdrawer.pages.dev/changelog/",
+    "llms": "https://deskdrawer.pages.dev/llms.txt"
+  }
+}

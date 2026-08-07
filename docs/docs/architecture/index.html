@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Architecture · DeskDrawer</title>
+<meta name="description" content="How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices." />
+<link rel="canonical" href="https://deskdrawer.pages.dev/docs/architecture/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Architecture · DeskDrawer" />
+<meta property="og:description" content="How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices." />
+<meta property="og:url" content="https://deskdrawer.pages.dev/docs/architecture/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-docs.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Architecture — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Architecture · DeskDrawer" />
+<meta name="twitter:description" content="How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-docs.png" />
+<meta name="twitter:image:alt" content="Architecture — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/docs/architecture/#webpage","url":"https://deskdrawer.pages.dev/docs/architecture/","name":"Architecture","description":"How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-docs.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/docs/architecture/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/docs/architecture/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://deskdrawer.pages.dev/docs/"},{"@type":"ListItem","position":3,"name":"Architecture","item":"https://deskdrawer.pages.dev/docs/architecture/"}]},{"@type":"TechArticle","@id":"https://deskdrawer.pages.dev/docs/architecture/#article","headline":"Architecture","description":"How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices.","articleSection":"Under the hood","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"dateModified":"2026-08-07","isPartOf":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","proficiencyLevel":"Advanced"}]}</script>
+</head>
+<body data-section="docs">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link is-active" href="/docs/" aria-current="page">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link" href="/notes/">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell has-side">
+<nav class="doc-side" aria-label="Documentation"><h2>Start here</h2><a href="/docs/getting-started/">Getting started</a><a href="/docs/installation/">Installation</a><a href="/docs/boards/">Boards</a><h2>Using DeskDrawer</h2><a href="/docs/menus/">Menus</a><a href="/docs/sorting/">Sorting</a><a href="/docs/icon-sizes/">Icon sizes</a><a href="/docs/keyboard-and-mouse/">Keyboard &amp; mouse</a><a href="/docs/drag-and-drop/">Drag &amp; drop</a><a href="/docs/layout-and-monitors/">Layout &amp; monitors</a><a href="/docs/languages/">Languages</a><h2>Your data</h2><a href="/docs/configuration-file/">Configuration file</a><a href="/docs/backup-and-restore/">Backup &amp; restore</a><a href="/docs/privacy-and-data/">Privacy &amp; data</a><a href="/docs/uninstall/">Uninstalling</a><h2>Under the hood</h2><a href="/docs/architecture/" class="is-active" aria-current="page">Architecture</a><a href="/docs/windows-integration/">Windows integration</a><a href="/docs/performance/">Performance</a><a href="/docs/memory-usage/">Memory usage</a><a href="/docs/limitations/">Limitations</a><h2>Help</h2><a href="/docs/troubleshooting/">Troubleshooting</a><a href="/docs/licensing/">Licensing</a></nav>
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/docs/">Documentation</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Architecture</span></nav><h1>Architecture</h1><p class="lede">How DeskDrawer is put together: one process, no services, WinForms over the Windows shell, and the reasoning behind each of those choices.</p><div class="meta"><span>Under the hood</span><span>Updated 7 August 2026</span><span>DeskDrawer 1.2.5</span></div><p>This page describes how DeskDrawer is actually built. It is here because &quot;lightweight&quot; is a claim, and a claim about software should be checkable.</p>
+<h2 id="shape-of-the-application">Shape of the application<a class="hlink" href="#shape-of-the-application" aria-label="Link to this section">#</a></h2>
+<p>One process. No services, no drivers, no shell extensions, no helper processes, no plugin host.</p>
+<pre><code>DeskDrawer.exe  (one self-contained executable)
+├── tray context          — the application; there is no main window
+├── board windows         — one per board, drawn at desktop level
+├── desktop scanner       — watches the desktop folder for changes
+├── icon cache            — background icon resolution, in memory
+├── config store          — atomic reads and writes of config.json
+└── shell interop         — context menus, clipboard, info tips, links, share, execute</code></pre>
+<h2 id="platform-choices">Platform choices<a class="hlink" href="#platform-choices" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Choice</th><th>Reason</th></tr></thead><tbody><tr><td>.NET 9, Windows-targeted</td><td>Access to the packaged startup-task API and modern shell projections</td></tr><tr><td>Windows Forms</td><td>Thin over Win32. A board is close to a window with custom painting; a heavier UI framework would add a rendering stack for no benefit</td></tr><tr><td><a href="/glossary/single-file-executable/">Single-file self-contained executable</a>, self-contained</td><td>No runtime to install, nothing shared to break</td></tr><tr><td><strong>Not</strong> trimmed</td><td>Trimming breaks COM interop and late-bound calls — see below</td></tr><tr><td>Workstation GC, non-concurrent</td><td>A background collector thread costs memory and CPU for an application that allocates very little</td></tr><tr><td>Per-monitor v2 DPI</td><td>Correct rendering on mixed-scaling setups — see <a href="/glossary/per-monitor-dpi/">Per-monitor DPI awareness</a></td></tr></tbody></table></div>
+<h3 id="why-not-trimmed">Why not trimmed<a class="hlink" href="#why-not-trimmed" aria-label="Link to this section">#</a></h3>
+<p>Trimming would shrink the download considerably. It is deliberately off because DeskDrawer&#39;s most important behaviour — showing the real <a href="/glossary/shell-context-menu/">Shell context menu</a> — runs through COM interop, and some shell work is late-bound. A trimmer cannot see those call paths, would remove the types they need, and the failure would appear at runtime in the exact features that matter most, with nothing at build time to catch it. A larger file is the correct trade.</p>
+<h2 id="delegate-to-the-shell">Delegate to the shell<a class="hlink" href="#delegate-to-the-shell" aria-label="Link to this section">#</a></h2>
+<p>The design rule that shapes most of the code: <strong>where Windows already has behaviour, call Windows rather than reimplementing it.</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Behaviour</th><th>Provided by</th></tr></thead><tbody><tr><td>Context menus</td><td>The shell — real menus, real extensions</td></tr><tr><td>Copy, cut, paste, drag payloads</td><td>Shell clipboard and data objects</td></tr><tr><td>Hover info tips</td><td>The shell</td></tr><tr><td>Opening files and shortcuts</td><td>The shell</td></tr><tr><td>Resolving <code>.lnk</code> targets</td><td>The shell link interface</td></tr><tr><td>The Windows 11 Share pane</td><td>The shell share UI</td></tr><tr><td>Icon names for system items</td><td>The shell, in your Windows display language</td></tr></tbody></table></div>
+<p>The cost is a lot of interop code and a lot of care about threading. The benefit is that DeskDrawer inherits correct behaviour it did not write, including the parts nobody remembers to implement: <a href="/glossary/shortcut/">Shortcut</a> repair prompts, &quot;how do you want to open this file&quot;, per-extension menu entries, and localisation. See <a href="/docs/languages/">Languages</a>.</p>
+<h2 id="threading">Threading<a class="hlink" href="#threading" aria-label="Link to this section">#</a></h2>
+<p>The rule is that the interface thread never waits on the file system.</p>
+<p>Anything that can be slow — resolving an icon, reading a <a href="/glossary/cloud-placeholder/">Cloud placeholder</a>, following a <a href="/glossary/shortcut/">Shortcut</a> to a network share, building an info tip — happens on a background thread and updates the board when it completes. Boards draw a placeholder immediately rather than blocking.</p>
+<p>This is the single largest source of past bugs in the product, and the reason for it is worth stating plainly: on Windows, a file-system call against an unreachable location does not fail quickly, it blocks until a network timeout. One such call on the interface thread freezes the whole application — including, memorably, the mouse wheel. See <a href="/notes/offline-network-shares/">The same bug, five times: offline network locations</a>.</p>
+<h2 id="boards-are-not-ordinary-windows">Boards are not ordinary windows<a class="hlink" href="#boards-are-not-ordinary-windows" aria-label="Link to this section">#</a></h2>
+<p>Board windows sit at desktop level rather than in the normal window stack. That is what produces the behaviours in <a href="/docs/boards/">Boards</a>: &lt;kbd&gt;Win&lt;/kbd&gt;+&lt;kbd&gt;D&lt;/kbd&gt; does not hide them, &quot;minimise all&quot; does not minimise them, &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F4&lt;/kbd&gt; gives the shutdown dialog, and applications launched over them still come to the front.</p>
+<h2 id="state">State<a class="hlink" href="#state" aria-label="Link to this section">#</a></h2>
+<p>One file, <a href="/glossary/config-json/">config.json</a>, written atomically. No database, no cache on disk, no index. The entire persistent state of the application is a layout description small enough to read.</p>
+<h2 id="what-this-buys">What this buys<a class="hlink" href="#what-this-buys" aria-label="Link to this section">#</a></h2>
+<p>An application with no background services, no network access, no disk cache and one small state file has a small failure surface. It is also why the honest description of most releases since 1.1.4 is &quot;stability release, no new features&quot; — see <a href="/notes/eight-rounds-of-audits/">Eight rounds of code audits on a small app, and what each one found</a>.</p><section class="related"><h2>Related</h2><ul><li><a href="/docs/performance/">Performance</a></li><li><a href="/docs/memory-usage/">Memory usage</a></li><li><a href="/docs/windows-integration/">Windows integration</a></li></ul></section><nav class="pager" aria-label="Pagination"><a class="prev" href="/docs/uninstall/"><div class="dir">Previous</div><div class="t">Uninstalling</div></a><a class="next" href="/docs/windows-integration/"><div class="dir">Next</div><div class="t">Windows integration</div></a></nav></article>
+<nav class="doc-toc" aria-label="On this page"><h2>On this page</h2><a class="lvl-2" href="#shape-of-the-application">Shape of the application</a><a class="lvl-2" href="#platform-choices">Platform choices</a><a class="lvl-3" href="#why-not-trimmed">Why not trimmed</a><a class="lvl-2" href="#delegate-to-the-shell">Delegate to the shell</a><a class="lvl-2" href="#threading">Threading</a><a class="lvl-2" href="#boards-are-not-ordinary-windows">Boards are not ordinary windows</a><a class="lvl-2" href="#state">State</a><a class="lvl-2" href="#what-this-buys">What this buys</a></nav>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

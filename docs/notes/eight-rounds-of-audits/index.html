@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js"</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eight rounds of code audits on a small app, and what each one found</title>
+<meta name="description" content="Nine of DeskDrawer&#39;s releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up" />
+<link rel="canonical" href="https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
+
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Eight rounds of code audits on a small app, and what each one found" />
+<meta property="og:description" content="Nine of DeskDrawer&#39;s releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up" />
+<meta property="og:url" content="https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Eight rounds of code audits on a small app, and what each one found — DeskDrawer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Eight rounds of code audits on a small app, and what each one found" />
+<meta name="twitter:description" content="Nine of DeskDrawer&#39;s releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up" />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og-notes.png" />
+<meta name="twitter:image:alt" content="Eight rounds of code audits on a small app, and what each one found — DeskDrawer" />
+
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/#webpage","url":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/","name":"Eight rounds of code audits on a small app, and what each one found","description":"Nine of DeskDrawer's releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up, including how often a fix caused the next bug.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-08-07","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og-notes.png"},"breadcrumb":{"@id":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deskdrawer.pages.dev/"},{"@type":"ListItem","position":2,"name":"Engineering notes","item":"https://deskdrawer.pages.dev/notes/"},{"@type":"ListItem","position":3,"name":"Eight rounds of code audits on a small app, and what each one found","item":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/"}]},{"@type":"TechArticle","@id":"https://deskdrawer.pages.dev/notes/eight-rounds-of-audits/#article","headline":"Eight rounds of code audits on a small app, and what each one found","description":"Nine of DeskDrawer's releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up, including how often a fix caused the next bug.","datePublished":"2026-08-07","dateModified":"2026-08-07","keywords":"code review, software quality, regression, audit","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"image":"https://deskdrawer.pages.dev/assets/og-notes.png","inLanguage":"en"}]}</script>
+</head>
+<body data-section="notes">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link" href="/docs/">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link is-active" href="/notes/" aria-current="page">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap doc-shell">
+
+<article class="doc-body"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/notes/">Engineering notes</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Eight rounds of code audits on a small app, and what each one found</span></nav><h1>Eight rounds of code audits on a small app, and what each one found</h1><p class="lede">Nine of DeskDrawer&#39;s releases were stability releases with no new features. This is what eight successive full-codebase reviews actually turned up, including how often a fix caused the next bug.</p><div class="meta"><span>Development history</span><span>7 August 2026</span><span>by Shipeng Ouyang</span></div><p>Look at DeskDrawer&#39;s <a href="/changelog/">release notes</a> and a pattern is hard to miss. From 1.1.4 onward, most entries begin with some version of <em>&quot;a stability release — no new features&quot;</em>.</p>
+<p>That is not modesty. It is what the work was.</p>
+<h2 id="the-rounds">The rounds<a class="hlink" href="#the-rounds" aria-label="Link to this section">#</a></h2>
+<p>Eight full reviews of the same codebase, each looking through a different lens.</p>
+<div class="table-wrap"><table><thead><tr><th>Round</th><th>Shipped in</th><th>Character of what it found</th></tr></thead><tbody><tr><td>1–2</td><td>1.1.5, 1.1.6</td><td>Blocking the interface thread on icon and thumbnail work; rename and drop targeting the wrong item; configuration safety</td></tr><tr><td>3–4</td><td>1.2.0, 1.2.1</td><td>The desktop <strong>New</strong> menu misbehaving while icons were hidden; the full shell context menu being truncated; Windows&#39; own dialogs being swallowed</td></tr><tr><td>5</td><td>1.2.2</td><td>Freezes from offline network targets; <strong>New</strong> item creation on every code path</td></tr><tr><td>6</td><td>1.2.3</td><td>Click-target bugs on board controls; an interrupted save mistaken for a first run; autostart state disagreeing with Task Manager</td></tr><tr><td>7</td><td>1.2.4</td><td>A cross-process object-lifetime bug that could crash <strong>explorer.exe</strong></td></tr><tr><td>8</td><td>1.2.5</td><td>A Recycle Bin query stalling on offline network drives; two regressions from round 7&#39;s own fix</td></tr></tbody></table></div>
+<p>Round 7 is the one worth dwelling on. It found a use-after-free across a process boundary that could take Windows Explorer down and restart the desktop. It had been written during <strong>round 4</strong>, and rounds 5 and 6 had both read that code and not seen it.</p>
+<h2 id="what-you-find-is-what-you-were-looking-for">What you find is what you were looking for<a class="hlink" href="#what-you-find-is-what-you-were-looking-for" aria-label="Link to this section">#</a></h2>
+<p>That is the central lesson, and it is uncomfortable.</p>
+<p>Rounds 5 and 6 were competent reviews that fixed real bugs. They read past the Explorer crash because they were examining threading and configuration integrity, and the bug was neither — it was an object lifetime question spanning two processes. It was found in round 7 because round 7 was specifically about COM interop lifetimes. Nothing else would have surfaced it.</p>
+<p>The practical consequence: <em>&quot;the code has been reviewed&quot;</em> is close to meaningless as a quality claim. The useful question is <em>&quot;reviewed for what?&quot;</em> — and the way to find a new class of bug is to pick a lens you have not used yet, not to look harder through one you have.</p>
+<h2 id="fixes-cause-bugs-at-an-uncomfortable-rate">Fixes cause bugs at an uncomfortable rate<a class="hlink" href="#fixes-cause-bugs-at-an-uncomfortable-rate" aria-label="Link to this section">#</a></h2>
+<p>Round 8 found four issues. <strong>Two of them were regressions from round 7&#39;s fixes.</strong></p>
+<p>Round 7 had narrowed a check about redirected folders to solve a real problem — a OneDrive-backed desktop losing its live file watcher. The narrowed version was still asking the wrong question, and it broke two other cases. That check took three releases to settle, and the story is in <a href="/notes/reparse-points-and-onedrive/">Three attempts at one check: reparse points, OneDrive and the desktop</a>.</p>
+<p>The <a href="/notes/hiding-the-desktop-icon-layer/">Explorer crash</a> was itself introduced by a hardening change in round 4. A change made to improve reliability produced the least reliable moment in the product&#39;s history.</p>
+<p>Across eight rounds, a fix causing the next bug was not the exception. It was common enough that verification became a separate step rather than something folded into the fix.</p>
+<h2 id="why-this-got-done-at-all">Why this got done at all<a class="hlink" href="#why-this-got-done-at-all" aria-label="Link to this section">#</a></h2>
+<p>Because there is no <a href="/glossary/telemetry/">telemetry</a> in this product, and no way to learn about failures except by finding them — see <a href="/notes/no-telemetry-by-default/">Shipping with no telemetry, and what it costs</a>. With no crash reports and no usage data, reading the code repeatedly from different angles is not a supplement to the feedback loop. It is the feedback loop.</p>
+<p>It is a poor substitute in one specific way: it finds bugs that exist, not bugs that <em>matter</em>. Telemetry tells you which of a hundred rare bugs is hitting a thousand people. Code review tells you there are a hundred rare bugs.</p>
+<h2 id="what-it-means-for-the-product">What it means for the product<a class="hlink" href="#what-it-means-for-the-product" aria-label="Link to this section">#</a></h2>
+<p>Nine consecutive releases of a small utility with no new features is either a warning sign or a statement of priorities. Here it is the second: DeskDrawer paints over the whole desktop, hides the icon layer Explorer owns, and handles your files. The cost of being wrong is high, and shaped like &quot;the user&#39;s desktop is broken and they do not know why&quot;.</p>
+<p>The <a href="/docs/limitations/">Limitations</a> page lists what is still known and unfixed. It is a short page, but it is not empty, and it will not become empty.</p><nav class="pager" aria-label="Pagination"><a class="prev" href="/notes/designing-for-language-independence/"><div class="dir">Previous</div><div class="t">Designing an interface that barely needs language</div></a><span></span></nav></article>
+<nav class="doc-toc" aria-label="On this page"><h2>On this page</h2><a class="lvl-2" href="#the-rounds">The rounds</a><a class="lvl-2" href="#what-you-find-is-what-you-were-looking-for">What you find is what you were looking for</a><a class="lvl-2" href="#fixes-cause-bugs-at-an-uncomfortable-rate">Fixes cause bugs at an uncomfortable rate</a><a class="lvl-2" href="#why-this-got-done-at-all">Why this got done at all</a><a class="lvl-2" href="#what-it-means-for-the-product">What it means for the product</a></nav>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
+      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
+    </div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

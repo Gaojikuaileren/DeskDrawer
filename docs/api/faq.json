@@ -1,0 +1,510 @@
+{
+  "updated": "2026-08-07",
+  "count": 66,
+  "categories": [
+    {
+      "id": "basics",
+      "title": "The basics",
+      "description": "What DeskDrawer is and who it is for."
+    },
+    {
+      "id": "files",
+      "title": "Your files and safety",
+      "description": "What happens to the files on your desktop. The short answer is: nothing."
+    },
+    {
+      "id": "using",
+      "title": "Using it day to day",
+      "description": "Boards, menus, sorting, dragging and the small things people ask about first."
+    },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "description": "What is translated, what is not, and why it matters less than you would expect."
+    },
+    {
+      "id": "windows",
+      "title": "Windows behaviour",
+      "description": "How DeskDrawer sits inside Windows, and where it deliberately differs."
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy and data",
+      "description": "What is stored, what is sent, and how you can verify it."
+    },
+    {
+      "id": "buying",
+      "title": "Buying, licensing and updates",
+      "description": "The one-time purchase, and what it does and does not cover."
+    },
+    {
+      "id": "trouble",
+      "title": "When something is wrong",
+      "description": "The problems that actually come up, and what to do about them."
+    }
+  ],
+  "items": [
+    {
+      "slug": "what-is-deskdrawer",
+      "question": "What is DeskDrawer?",
+      "category": "basics",
+      "answer": "DeskDrawer is a lightweight desktop organizer for Windows 10 and 11. It groups the icons on your desktop into transparent boards — labelled containers drawn straight onto your wallpaper — so a crowded desktop becomes readable without anything being moved into folders. It is a single-purpose tool. It does not launch things, theme anything, manage windows or replace Explorer. It groups desktop icons, and it is sold as a One-time purchase with no ads, telemetry or subscription.",
+      "url": "https://deskdrawer.pages.dev/faq/#what-is-deskdrawer"
+    },
+    {
+      "slug": "who-is-it-for",
+      "question": "Who is DeskDrawer for?",
+      "category": "basics",
+      "answer": "People whose desktop is a working surface rather than an empty wallpaper: current projects, downloads in progress, files that will be dealt with this week, tools reached daily. It fits if you want a cleaner desktop but do not want to install a large personalisation suite, and if you would rather your files stayed exactly where they are. It does not fit if you want automatic filing rules, a launcher, widgets or theming — those are all deliberately out of scope, as listed in Limitations.",
+      "url": "https://deskdrawer.pages.dev/faq/#who-is-it-for"
+    },
+    {
+      "slug": "how-is-it-different",
+      "question": "How is DeskDrawer different from other desktop organizers?",
+      "category": "basics",
+      "answer": "Three concrete differences. No title bars. Board controls sit in one small widget in the bottom-right corner instead of a strip along the top of every board. With six boards on screen, that is roughly a tenth of your display returned to you. The reasoning is in Why DeskDrawer's boards have no title bar. One process, no services. DeskDrawer runs from the tray with no background services, no shell extension and no plugin host. See Architecture. No network access at all. Not reduced telemetry — none, and no code that could send anything. See Privacy & data. A fuller comparison against the \"full desktop suite\" category is on the Why DeskDrawer page.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-is-it-different"
+    },
+    {
+      "slug": "is-it-free",
+      "question": "Is DeskDrawer free?",
+      "category": "basics",
+      "answer": "No. It is a paid application sold as a one-time purchase on the Microsoft Store — you buy it once and keep it, with no subscription, no renewal and no in-app purchases. There is no advertising-supported version, because there is no advertising. See Licensing.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-it-free"
+    },
+    {
+      "slug": "does-it-slow-down-my-pc",
+      "question": "Will DeskDrawer slow down my PC?",
+      "category": "basics",
+      "answer": "It is designed not to. At rest it runs no polling loop and no timer — it waits on change notifications for your desktop folder and the Recycle Bin and otherwise does nothing. There are no background services; the whole application is one tray process. Rather than trust a number from someone else's machine, check yours: Task Manager → Details → DeskDrawer.exe. Performance and Memory usage explain what drives those figures.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-slow-down-my-pc"
+    },
+    {
+      "slug": "does-it-move-my-files",
+      "question": "Does DeskDrawer move or change my files?",
+      "category": "files",
+      "answer": "No. Your files stay in your desktop folder, at their original paths. DeskDrawer stores only Board membership — a record of which board each icon belongs to — in its own configuration file. Dragging an icon between boards changes that record and nothing else. No file is moved, copied, renamed or altered. Every shortcut, script, backup rule and recent-files entry that pointed at a file still points at it. The one exception is deliberate and matches the real desktop: dropping a file onto a folder icon moves it into that folder. See Drag & drop.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-move-my-files"
+    },
+    {
+      "slug": "what-happens-if-i-uninstall",
+      "question": "What happens to my files if I uninstall DeskDrawer?",
+      "category": "files",
+      "answer": "Nothing. Every file is exactly where it always was, because DeskDrawer never moved anything. Uninstalling a desktop organizer should not be a data decision, and with DeskDrawer it is not. If the desktop looks empty immediately after uninstalling while DeskDrawer was still running, the icons return at your next sign-in — or right away via right-click the desktop → View → Show desktop icons. The full procedure is in Uninstalling.",
+      "url": "https://deskdrawer.pages.dev/faq/#what-happens-if-i-uninstall"
+    },
+    {
+      "slug": "does-deleting-a-board-delete-files",
+      "question": "If I delete a board, do I lose the files in it?",
+      "category": "files",
+      "answer": "No. Deleting a board is purely organisational: its icons return to the Default board and not one file is touched. A board never contained your files in the first place — it contained a list of which icons belong to it. There is no way for deleting a board to lose data.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-deleting-a-board-delete-files"
+    },
+    {
+      "slug": "what-if-deskdrawer-crashes",
+      "question": "What happens to my files if DeskDrawer crashes?",
+      "category": "files",
+      "answer": "Nothing happens to your files — DeskDrawer does not hold them and does not have them open. Your board layout is protected separately: config.json is written to a temporary file and swapped into place atomically, so an interrupted save cannot leave a half-written configuration. Your desktop icons reappear at the next sign-in even if DeskDrawer stopped without cleaning up, because hiding them is session-scoped and never written to a Windows setting.",
+      "url": "https://deskdrawer.pages.dev/faq/#what-if-deskdrawer-crashes"
+    },
+    {
+      "slug": "can-i-recover-my-layout",
+      "question": "Can I back up or move my board layout?",
+      "category": "files",
+      "answer": "Yes — copy one file. config.json in the Configuration folder holds every board, its geometry, its settings and its icon assignments. Tray menu → Open the configuration folder takes you there. Restoring is the same in reverse: quit DeskDrawer, put the file back, start it again. Moving to a PC with a different display arrangement works too, though board positions will need Fix misplaced boards afterwards. See Backup & restore.",
+      "url": "https://deskdrawer.pages.dev/faq/#can-i-recover-my-layout"
+    },
+    {
+      "slug": "does-it-work-with-onedrive",
+      "question": "Does DeskDrawer work with a OneDrive-backed desktop?",
+      "category": "files",
+      "answer": "Yes, and it is a case the product has been specifically fixed for more than once. A OneDrive-backed Desktop folder is a redirected folder full of online-only placeholders. DeskDrawer reads placeholder metadata without forcing files to download, and shows a generic icon for a file that is still downloading, swapping in the real one when it arrives. Getting the redirected-folder detection right took three attempts — the story, including a version where OneDrive desktops stopped refreshing, is in Three attempts at one check: reparse points, OneDrive and the desktop.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-work-with-onedrive"
+    },
+    {
+      "slug": "network-drives",
+      "question": "Can I put shortcuts to network locations on a board?",
+      "category": "files",
+      "answer": "Yes. Be aware that a target which is offline — a disconnected VPN, a sleeping NAS, a mapped drive that is gone — cannot produce an icon or a tooltip until Windows gives up waiting for it. DeskDrawer does that work off the interface thread so the application stays responsive, but that one item will be slow. If you are seeing outright freezes, make sure you are on the current version: The same bug, five times: offline network locations lists five separate fixes in this area.",
+      "url": "https://deskdrawer.pages.dev/faq/#network-drives"
+    },
+    {
+      "slug": "how-do-i-create-a-board",
+      "question": "How do I create a new board?",
+      "category": "using",
+      "answer": "Right-click the DeskDrawer tray icon and choose New board, or right-click any board's name block and choose the same. An empty board appears, and you can drag icons into it straight away. New boards are numbered rather than named — see Why are new boards called 1, 2, 3 instead of having a name?.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-create-a-board"
+    },
+    {
+      "slug": "how-do-i-rename-a-board",
+      "question": "How do I rename a board?",
+      "category": "using",
+      "answer": "Double-click its name in the bottom-right Board widget, or right-click the name and choose Rename. It edits in place.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-rename-a-board"
+    },
+    {
+      "slug": "how-do-i-move-a-board",
+      "question": "How do I move or resize a board?",
+      "category": "using",
+      "answer": "Drag the name block in the bottom-right corner to move it. Drag the Corner grip beside it to resize. Both snap — to the Icon grid, to screen edges and to other boards — so boards line up without pixel-nudging and never end up a fraction of an icon too narrow.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-move-a-board"
+    },
+    {
+      "slug": "where-are-the-controls",
+      "question": "Where are a board's controls? I do not see a title bar.",
+      "category": "using",
+      "answer": "There is not one. Every control is in a compact widget in the board's bottom-right corner: fold arrow, name block, resize grip. If you have turned outlines off, the widget appears only when your pointer is over the board. That is the intended resting state — the tool disappears and your icons remain. See Boards, and Why DeskDrawer's boards have no title bar for why the title bar was removed.",
+      "url": "https://deskdrawer.pages.dev/faq/#where-are-the-controls"
+    },
+    {
+      "slug": "how-do-i-fold-a-board",
+      "question": "What does folding a board do?",
+      "category": "using",
+      "answer": "The ▾ arrow collapses the board to a small square showing only its name, freeing the space its icons used. Nothing is lost: a Folded board keeps every icon assigned to it and unfolds to its previous size and position. It is the right state for a board you want to keep organised but rarely open.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-fold-a-board"
+    },
+    {
+      "slug": "can-i-sort-boards-differently",
+      "question": "Can different boards be sorted differently?",
+      "category": "using",
+      "answer": "Yes — sorting is per board, which is the point. An installers board is best by date descending, a projects board by name, a scratch board left in manual order. Five modes: manual, name, type, size and date, each ascending or descending. Manual is a real stored order, not \"unsorted\" — switching to an automatic mode and back returns the arrangement you had. See Sorting.",
+      "url": "https://deskdrawer.pages.dev/faq/#can-i-sort-boards-differently"
+    },
+    {
+      "slug": "how-many-boards",
+      "question": "How many boards can I have?",
+      "category": "using",
+      "answer": "There is no fixed limit. In practice the useful number is set by your screen: boards are meant to be visible at once, so most layouts settle at somewhere between three and eight.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-many-boards"
+    },
+    {
+      "slug": "do-i-get-the-real-right-click-menu",
+      "question": "Do I get the real Windows right-click menu on a board?",
+      "category": "using",
+      "answer": "Yes — the genuine one, not an imitation. DeskDrawer asks the Windows shell for each item's context menu and shows that, so every extension you have installed appears: 7-Zip, Git, your editor, your antivirus, your cloud client, Open with, Send to, Copy as path, Share, Restore previous versions. Since 1.2.1 it is the full menu — the equivalent of Windows 11's Show more options — rather than a subset. See Menus.",
+      "url": "https://deskdrawer.pages.dev/faq/#do-i-get-the-real-right-click-menu"
+    },
+    {
+      "slug": "can-i-create-new-files-on-a-board",
+      "question": "Can I create a new file or folder directly on a board?",
+      "category": "using",
+      "answer": "Yes. Right-click empty space on a board and you get the desktop's own context menu, including New. The item is created on your desktop and assigned to the board you clicked in. This path was hardened considerably in 1.2.0 and 1.2.2 — creating several items in a row now works reliably on every route, including the classic \"Show more options\" menu.",
+      "url": "https://deskdrawer.pages.dev/faq/#can-i-create-new-files-on-a-board"
+    },
+    {
+      "slug": "keyboard-shortcuts",
+      "question": "What keyboard shortcuts does DeskDrawer support?",
+      "category": "using",
+      "answer": "The ones you already use on the desktop: <kbdEnter</kbd to open, <kbdF2</kbd to rename, <kbdDelete</kbd to recycle, <kbdCtrl</kbd+<kbdA</kbd, <kbdCtrl</kbd+<kbdC</kbd, <kbdCtrl</kbd+<kbdX</kbd, <kbdCtrl</kbd+<kbdV</kbd and <kbdEsc</kbd. There are no DeskDrawer-specific shortcuts to learn, and no global hotkeys — see Is there a global hotkey to show or hide boards?. The full table is in Keyboard & mouse.",
+      "url": "https://deskdrawer.pages.dev/faq/#keyboard-shortcuts"
+    },
+    {
+      "slug": "select-across-boards",
+      "question": "Can I select icons across several boards at once?",
+      "category": "using",
+      "answer": "Yes. Start a drag on empty space — inside a board or on bare desktop between boards — and the selection band crosses board boundaries, selecting everything it touches. Hold <kbdCtrl</kbd to add to an existing selection. The mixed selection can then be dragged, copied, cut or deleted as one unit.",
+      "url": "https://deskdrawer.pages.dev/faq/#select-across-boards"
+    },
+    {
+      "slug": "drag-into-a-folder",
+      "question": "Can I drag a file into a folder shown on a board?",
+      "category": "using",
+      "answer": "Yes, and this is the one gesture that actually moves a file, exactly as on the real desktop. The target folder highlights while you drag over it so the intent is never ambiguous, and dragging across drives copies rather than moves — matching Explorer, so nothing is silently removed from a USB stick. Folder shortcuts work as targets too, not only real folders. See Drag into folder.",
+      "url": "https://deskdrawer.pages.dev/faq/#drag-into-a-folder"
+    },
+    {
+      "slug": "drag-out-to-explorer",
+      "question": "Can I drag files from a board into other applications?",
+      "category": "using",
+      "answer": "Yes. Drag icons off a board into File Explorer, an email, a chat window or anything else that accepts files, and the real files are transferred with normal Windows semantics. Dragging in from Explorer works too — the files land on your desktop and join the board you dropped them on.",
+      "url": "https://deskdrawer.pages.dev/faq/#drag-out-to-explorer"
+    },
+    {
+      "slug": "hide-boards-temporarily",
+      "question": "Can I see the plain Windows desktop without quitting DeskDrawer?",
+      "category": "using",
+      "answer": "Yes. Tray menu → Switch view. Boards hide, the native icons come back, and DeskDrawer keeps running. Switch again to return. The two are never shown at once, because that would display every desktop item twice. See View mode.",
+      "url": "https://deskdrawer.pages.dev/faq/#hide-boards-temporarily"
+    },
+    {
+      "slug": "change-icon-size",
+      "question": "Can I change how big the icons are?",
+      "category": "using",
+      "answer": "Yes — four sizes, set per board, from the Icon size submenu of the Board menu. Because icon size changes how many icons fit per row, DeskDrawer re-tiles afterwards so boards stay inside the visible work area and do not overlap. See Icon sizes.",
+      "url": "https://deskdrawer.pages.dev/faq/#change-icon-size"
+    },
+    {
+      "slug": "hide-board-outlines",
+      "question": "Can I hide the board outlines?",
+      "category": "using",
+      "answer": "Yes, per board, from the Board menu. With outlines off, a board is just your icons on your wallpaper and the control widget fades in only on hover. Rounded corners are a separate toggle in the same menu.",
+      "url": "https://deskdrawer.pages.dev/faq/#hide-board-outlines"
+    },
+    {
+      "slug": "multiple-monitors",
+      "question": "Does DeskDrawer work with multiple monitors?",
+      "category": "using",
+      "answer": "Yes. Boards can be placed on any display and dragged between displays, and each is kept inside that monitor's work area so it is never positioned under the taskbar. Mixed DPI is handled properly: DeskDrawer declares per-monitor v2 DPI awareness, so a laptop at 150% next to an external display at 100% stays crisp on both, including mid-drag. See Layout & monitors.",
+      "url": "https://deskdrawer.pages.dev/faq/#multiple-monitors"
+    },
+    {
+      "slug": "why-are-boards-numbered",
+      "question": "Why are new boards called 1, 2, 3 instead of having a name?",
+      "category": "using",
+      "answer": "Deliberate, since 1.0.5. A number reads the same in every language, so a layout never contains a word its owner does not read. Double-click the name to change it to whatever you like. It is part of a broader decision described in Designing an interface that barely needs language.",
+      "url": "https://deskdrawer.pages.dev/faq/#why-are-boards-numbered"
+    },
+    {
+      "slug": "automatic-sorting-rules",
+      "question": "Can DeskDrawer file new files into boards automatically?",
+      "category": "using",
+      "answer": "No, and this is a deliberate exclusion rather than a missing feature. There are no rules that sort by type, name or age — new desktop items go to the Default board and you decide where they belong. Rule engines are how an organizer quietly becomes a filing system its owner did not design, and then files end up somewhere nobody chose. See Limitations.",
+      "url": "https://deskdrawer.pages.dev/faq/#automatic-sorting-rules"
+    },
+    {
+      "slug": "why-no-global-hotkey",
+      "question": "Is there a global hotkey to show or hide boards?",
+      "category": "using",
+      "answer": "No. A global hotkey means a keyboard hook running for every keystroke on the machine, which is a large permanent cost — in memory, in CPU and in trust — for a utility that is meant to be invisible. Switch view in the tray menu does the same job without that cost.",
+      "url": "https://deskdrawer.pages.dev/faq/#why-no-global-hotkey"
+    },
+    {
+      "slug": "what-languages-does-it-support",
+      "question": "What languages does DeskDrawer support?",
+      "category": "languages",
+      "answer": "The DeskDrawer listing on the Microsoft Store is available in 16 languages, so you can read about the product in your own language before buying. The application itself is a different matter, and a more interesting one: its interface is icon-only, so there is very little text in it to translate in the first place. Most of the words you do see — system icon names, the whole right-click menu — come from Windows in your own display language. The distinction is explained in Languages.",
+      "url": "https://deskdrawer.pages.dev/faq/#what-languages-does-it-support"
+    },
+    {
+      "slug": "can-i-use-it-if-my-language-is-not-supported",
+      "question": "Can I use DeskDrawer if my language is not one of the 16?",
+      "category": "languages",
+      "answer": "Yes, comfortably. DeskDrawer is built so that using it barely depends on reading text at all. Its two menus contain no sentences — every command is a glyph. New boards are numbered rather than named. System items like This PC and Recycle Bin are named by Windows in your display language, and the right-click menu on a file is Windows' own menu, so it arrives already translated including third-party entries. What remains in English is error text and the log file — things you meet only when something has gone wrong. See Languages.",
+      "url": "https://deskdrawer.pages.dev/faq/#can-i-use-it-if-my-language-is-not-supported"
+    },
+    {
+      "slug": "does-it-need-much-reading",
+      "question": "Does using DeskDrawer require much reading?",
+      "category": "languages",
+      "answer": "Very little. The interactions are visual: drag an icon to a board, drag a corner to resize, click an arrow to fold, right-click a name for an icon-only menu. That was originally a decision about menu size — a menu of eight text commands is a large opaque rectangle sitting on top of your desktop, while an icon menu is about a third of that. The language-independence turned out to be the bigger benefit. See Designing an interface that barely needs language.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-need-much-reading"
+    },
+    {
+      "slug": "is-the-store-page-localized",
+      "question": "Is the Microsoft Store page translated?",
+      "category": "languages",
+      "answer": "Yes — the Store listing, including its description and feature list, is available in 16 languages. If your Store is set to one of them, you see it in your own language. This website and its documentation are English only.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-the-store-page-localized"
+    },
+    {
+      "slug": "is-the-app-fully-translated",
+      "question": "Is the application itself fully translated into 16 languages?",
+      "category": "languages",
+      "answer": "No, and it is worth being precise rather than letting the Store figure imply more than it should. The Store listing is available in 16 languages. The application ships English-only strings — but it owns very few strings, because its interface is icons and because the text-heavy parts (context menus, system icon names) are provided by Windows in your display language. So the accurate claim is not \"DeskDrawer supports 16 languages\" but \"the Store listing is in 16 languages, and using the app depends very little on language at all.\" Languages has the full breakdown of what comes from where.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-the-app-fully-translated"
+    },
+    {
+      "slug": "which-windows-versions",
+      "question": "Which versions of Windows does DeskDrawer run on?",
+      "category": "windows",
+      "answer": "Windows 10 version 2004 (build 19041) or newer, and Windows 11, on x64. The build floor is not arbitrary — DeskDrawer uses the packaged startup-task API for Run at startup, which is only available from that version. There is no ARM64 build today; see Limitations.",
+      "url": "https://deskdrawer.pages.dev/faq/#which-windows-versions"
+    },
+    {
+      "slug": "do-i-need-net-runtime",
+      "question": "Do I need to install .NET or any other runtime?",
+      "category": "windows",
+      "answer": "No. DeskDrawer ships as a Single-file self-contained executable containing everything it needs, including the runtime. Nothing is shared with other applications, so no framework update can break it.",
+      "url": "https://deskdrawer.pages.dev/faq/#do-i-need-net-runtime"
+    },
+    {
+      "slug": "does-it-install-services",
+      "question": "Does DeskDrawer install background services or shell extensions?",
+      "category": "windows",
+      "answer": "No. No services, no drivers, no shell extensions, no scheduled tasks other than the startup task you enable yourself, and no registry Run key. It is one tray process. That also means DeskDrawer adds nothing to your right-click menus anywhere else in Windows. See Architecture.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-install-services"
+    },
+    {
+      "slug": "win-d-does-not-hide-boards",
+      "question": "Why does Win+D not hide my boards?",
+      "category": "windows",
+      "answer": "Because your boards are the desktop now, so showing the desktop shows them — hiding them would be the opposite of what you asked for. This changed in 1.1.2. To bring minimised windows back, use the taskbar or <kbdAlt</kbd+<kbdTab</kbd. See Windows integration.",
+      "url": "https://deskdrawer.pages.dev/faq/#win-d-does-not-hide-boards"
+    },
+    {
+      "slug": "alt-f4-behaviour",
+      "question": "Why does Alt+F4 open the shutdown dialog?",
+      "category": "windows",
+      "answer": "Because that is what <kbdAlt</kbd+<kbdF4</kbd does on the Windows desktop, and boards are the desktop. Since 1.1.0 a board behaves the same way rather than closing. Closing a board with a system-wide window shortcut would be a destructive-feeling action triggered by muscle memory, which is exactly the kind of surprise the product tries to avoid.",
+      "url": "https://deskdrawer.pages.dev/faq/#alt-f4-behaviour"
+    },
+    {
+      "slug": "does-it-replace-explorer",
+      "question": "Does DeskDrawer replace Windows Explorer?",
+      "category": "windows",
+      "answer": "No. Explorer keeps running and keeps owning the desktop; DeskDrawer hides Explorer's icon view while it runs and draws its own boards. Quit DeskDrawer and Explorer's view comes straight back. Everything file-related is still done by the Windows shell — menus, clipboard, opening files, resolving shortcuts. See Architecture.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-replace-explorer"
+    },
+    {
+      "slug": "recycle-bin-on-a-board",
+      "question": "Do This PC and the Recycle Bin work on a board?",
+      "category": "windows",
+      "answer": "Yes. Special shell items appear on boards and behave normally, and the Recycle Bin's icon updates the moment the bin changes rather than on a timer — a change made in 1.1.0 that also lowered idle CPU. Their names come from Windows in your display language. Note that since 1.1.1, deleting a special icon from a board no longer also hides it on the real Windows desktop.",
+      "url": "https://deskdrawer.pages.dev/faq/#recycle-bin-on-a-board"
+    },
+    {
+      "slug": "multiple-users",
+      "question": "Does DeskDrawer work on a shared PC with several user accounts?",
+      "category": "windows",
+      "answer": "Yes. Configuration is per user, so each account gets its own boards, layout and startup setting — which is correct, since each account has its own desktop.",
+      "url": "https://deskdrawer.pages.dev/faq/#multiple-users"
+    },
+    {
+      "slug": "does-it-start-with-windows",
+      "question": "Can DeskDrawer start automatically with Windows?",
+      "category": "windows",
+      "answer": "Yes, off by default. Turn it on from the tray menu → Run at startup. It registers as a proper Windows startup task, so it appears in Task Manager → Startup apps and can be disabled there — and since 1.2.3 the tray toggle and Task Manager agree in both directions. See Run at startup.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-start-with-windows"
+    },
+    {
+      "slug": "does-it-collect-data",
+      "question": "Does DeskDrawer collect any data?",
+      "category": "privacy",
+      "answer": "No. There is no analytics SDK, no telemetry, no crash reporting, no account system, no advertising identifier and no licence phone-home. Stronger than that: DeskDrawer opens no network connections of its own at all. That is a claim you can verify yourself with any firewall or network monitor, which is precisely why it was built that way rather than as \"anonymised analytics\". See Privacy & data.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-collect-data"
+    },
+    {
+      "slug": "does-it-show-ads",
+      "question": "Does DeskDrawer show ads?",
+      "category": "privacy",
+      "answer": "No. No ads, no sponsored entries, no upsell prompts, no bundled software and no notifications trying to sell you anything. It is a paid application and that is the whole business model.",
+      "url": "https://deskdrawer.pages.dev/faq/#does-it-show-ads"
+    },
+    {
+      "slug": "what-does-it-store-locally",
+      "question": "What does DeskDrawer store on my machine?",
+      "category": "privacy",
+      "answer": "Two files in its Configuration folder: - config.json — your boards, their geometry and settings, and which icon belongs to which board. - error.log — a plain-text record of unexpected internal errors. Neither leaves your device. There is no cache, no file index, no thumbnail database and no history of what you have opened.",
+      "url": "https://deskdrawer.pages.dev/faq/#what-does-it-store-locally"
+    },
+    {
+      "slug": "can-it-read-my-files",
+      "question": "Can DeskDrawer read the contents of my files?",
+      "category": "privacy",
+      "answer": "It does not. DeskDrawer needs names, types, sizes, dates and icons to draw a board — it has no reason to open a document and does not. And since it makes no network connections, there is no mechanism by which anything it can see could leave your machine.",
+      "url": "https://deskdrawer.pages.dev/faq/#can-it-read-my-files"
+    },
+    {
+      "slug": "why-no-telemetry",
+      "question": "Why does DeskDrawer have no telemetry at all, not even anonymous?",
+      "category": "privacy",
+      "answer": "Because a desktop organizer sees the name of every file on your desktop, and that is a surprisingly complete picture of what someone is working on. No anonymisation scheme makes that harmless. So the rule is not \"collect less\" but \"have no mechanism\" — there is no code that opens a socket, so there is nothing to misconfigure or leak later. The cost is real and paid by the developer: no crash reports, no usage data, no idea when something breaks. That trade is written up honestly in Shipping with no telemetry, and what it costs.",
+      "url": "https://deskdrawer.pages.dev/faq/#why-no-telemetry"
+    },
+    {
+      "slug": "how-do-i-report-a-bug-privately",
+      "question": "If there is no crash reporting, how does the developer learn about bugs?",
+      "category": "privacy",
+      "answer": "Only from you. That is the direct cost of having no telemetry, and it means a bug report here carries far more weight than it would for a typical product. Attach error.log from the configuration folder — it is plain text and you can read it before sending. See Support.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-report-a-bug-privately"
+    },
+    {
+      "slug": "is-it-one-time-purchase",
+      "question": "Is DeskDrawer really a one-time purchase?",
+      "category": "buying",
+      "answer": "Yes. Buy it once on the Microsoft Store and use it permanently. No subscription, no renewal, no expiry, no in-app purchases, no \"pro\" tier — every feature is included. See Licensing.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-it-one-time-purchase"
+    },
+    {
+      "slug": "how-much-does-it-cost",
+      "question": "How much does DeskDrawer cost?",
+      "category": "buying",
+      "answer": "The current price is on the Microsoft Store listing, which is the authoritative source. No figure is printed on this site because Store pricing varies by market and changes over time, and a stale number here would disagree with the page you actually buy from.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-much-does-it-cost"
+    },
+    {
+      "slug": "how-many-pcs",
+      "question": "Can I install DeskDrawer on more than one PC?",
+      "category": "buying",
+      "answer": "Your licence is tied to your Microsoft account and handled by the Store, so installing on another PC from your Store library works as it does for any Store application. Microsoft's Store terms are authoritative on the specifics.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-many-pcs"
+    },
+    {
+      "slug": "how-do-updates-work",
+      "question": "How do updates work, and do they cost anything?",
+      "category": "buying",
+      "answer": "Updates arrive through the Microsoft Store and are included — there is no upgrade fee. DeskDrawer contains no update checker of its own, because it makes no network connections; updating is entirely the Store's job.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-updates-work"
+    },
+    {
+      "slug": "is-there-a-trial",
+      "question": "Is there a free trial?",
+      "category": "buying",
+      "answer": "There is no trial build. Microsoft Store purchases are covered by Microsoft's refund policy, and refunds are requested through your Microsoft account rather than from the developer. The most useful thing to read before buying is Limitations, which lists plainly what DeskDrawer does not do.",
+      "url": "https://deskdrawer.pages.dev/faq/#is-there-a-trial"
+    },
+    {
+      "slug": "portable-version",
+      "question": "Is there a portable version?",
+      "category": "buying",
+      "answer": "Not for end users. A Portable build exists for development and testing, but the Store version is the supported route: it is signed, it updates itself, its startup integration works properly with Task Manager, and it uninstalls cleanly.",
+      "url": "https://deskdrawer.pages.dev/faq/#portable-version"
+    },
+    {
+      "slug": "who-makes-deskdrawer",
+      "question": "Who makes DeskDrawer?",
+      "category": "buying",
+      "answer": "It is developed by Shipeng Ouyang and published as GaojiKuaileren — an independent product, not affiliated with Microsoft. See About the developer.",
+      "url": "https://deskdrawer.pages.dev/faq/#who-makes-deskdrawer"
+    },
+    {
+      "slug": "desktop-is-empty",
+      "question": "My desktop is empty and DeskDrawer is not running. How do I get my icons back?",
+      "category": "trouble",
+      "answer": "Right-click the desktop → View → Show desktop icons. If it already shows a check mark, click it twice. Or simply sign out and back in: DeskDrawer's hiding of the native icons is session-scoped and never written to a Windows setting, so your icons return by themselves. See Uninstalling.",
+      "url": "https://deskdrawer.pages.dev/faq/#desktop-is-empty"
+    },
+    {
+      "slug": "boards-off-screen",
+      "question": "My boards are off-screen or hidden behind the taskbar.",
+      "category": "trouble",
+      "answer": "Tray menu → Fix misplaced boards. It re-places only boards that are genuinely off-screen, covered by the taskbar or overlapping; boards that are fine are left exactly where they are, and contents, names and sizes are never changed. This usually happens after a resolution change, unplugging a monitor, or moving the taskbar. See Layout & monitors.",
+      "url": "https://deskdrawer.pages.dev/faq/#boards-off-screen"
+    },
+    {
+      "slug": "it-freezes",
+      "question": "DeskDrawer freezes and my mouse wheel stops working.",
+      "category": "trouble",
+      "answer": "That specific pair of symptoms almost always means one thing: something on a board points at a network location that is offline — a disconnected VPN, a sleeping NAS, a mapped drive that is gone. Reconnect it or remove that item, and make sure you are on the current version: five separate cases of this were fixed across 1.1.4, 1.2.2, 1.2.3, 1.2.4 and 1.2.5. The pattern is described in The same bug, five times: offline network locations.",
+      "url": "https://deskdrawer.pages.dev/faq/#it-freezes"
+    },
+    {
+      "slug": "icons-are-grey",
+      "question": "Some icons are grey placeholders.",
+      "category": "trouble",
+      "answer": "Expected briefly on a large or cloud-backed desktop — boards draw first and icons fill in behind them, so the interface never blocks. A cloud file that is still downloading shows a generic icon and updates when it finishes. If placeholders persist for a long time, something is pointing at a location Windows cannot reach. See Troubleshooting.",
+      "url": "https://deskdrawer.pages.dev/faq/#icons-are-grey"
+    },
+    {
+      "slug": "shortcut-does-nothing",
+      "question": "Clicking a shortcut does nothing.",
+      "category": "trouble",
+      "answer": "Its target has been deleted. Since 1.2.1 Windows' own \"Problem with Shortcut — do you want to delete it?\" prompt appears, exactly as on the real desktop; earlier versions swallowed it.",
+      "url": "https://deskdrawer.pages.dev/faq/#shortcut-does-nothing"
+    },
+    {
+      "slug": "startup-does-not-stick",
+      "question": "\"Run at startup\" keeps turning itself off.",
+      "category": "trouble",
+      "answer": "Check Task Manager → Startup apps. DeskDrawer registers as a proper Windows startup task, so a disable there wins — which is correct behaviour, just not obvious. Re-enable it in either place; since 1.2.3 the two stay in agreement.",
+      "url": "https://deskdrawer.pages.dev/faq/#startup-does-not-stick"
+    },
+    {
+      "slug": "how-do-i-get-help",
+      "question": "How do I report a bug or ask for a feature?",
+      "category": "trouble",
+      "answer": "Open an issue on GitHub, or email the developer — both are on the Support page. Attaching error.log from the configuration folder (tray menu → Open the configuration folder) makes a fix far more likely. Because DeskDrawer has no telemetry, your report may genuinely be the only signal that a problem exists.",
+      "url": "https://deskdrawer.pages.dev/faq/#how-do-i-get-help"
+    }
+  ]
+}

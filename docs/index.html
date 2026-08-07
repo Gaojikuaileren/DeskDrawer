@@ -1,503 +1,253 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>document.documentElement.className+=" js"</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DeskDrawer — Lightweight Windows Desktop Organizer</title>
-<meta name="description" content="Lightweight Windows desktop organizer that groups desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, no subscription, no telemetry." />
-<meta name="theme-color" content="#090a0e" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
 <link rel="canonical" href="https://deskdrawer.pages.dev/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#090a0e" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="Shipeng Ouyang" />
+<meta name="generator" content="DeskDrawer site builder" />
 
-<!-- Open Graph / social -->
+<!-- Real icon files at real URLs. Google's favicon crawler cannot use a data: URI,
+     which is why search results previously fell back to a generic icon. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#090a0e" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
+<meta name="application-name" content="DeskDrawer" />
+<meta name="apple-mobile-web-app-title" content="DeskDrawer" />
+
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="DeskDrawer" />
+<meta property="og:locale" content="en" />
 <meta property="og:title" content="DeskDrawer — Lightweight Windows Desktop Organizer" />
-<meta property="og:description" content="Organize Windows desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, lifetime use — a lightweight alternative to heavy desktop suites." />
+<meta property="og:description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
 <meta property="og:url" content="https://deskdrawer.pages.dev/" />
-<meta property="og:image" content="https://deskdrawer.pages.dev/before-after.png" />
-<meta property="og:image:alt" content="DeskDrawer reorganizing a cluttered Windows desktop into clean, transparent drawers of icons" />
+<meta property="og:image" content="https://deskdrawer.pages.dev/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="DeskDrawer reorganising a cluttered Windows desktop into clean transparent drawers" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="DeskDrawer — Lightweight Windows Desktop Organizer" />
-<meta name="twitter:description" content="Organize Windows desktop icons, files, folders, and shortcuts into clean drawers. Buy once, use for life." />
-<meta name="twitter:image" content="https://deskdrawer.pages.dev/before-after.png" />
-<meta name="twitter:image:alt" content="DeskDrawer reorganizing a cluttered Windows desktop into clean, transparent drawers of icons" />
+<meta name="twitter:description" content="DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files." />
+<meta name="twitter:image" content="https://deskdrawer.pages.dev/assets/og.png" />
+<meta name="twitter:image:alt" content="DeskDrawer reorganising a cluttered Windows desktop into clean transparent drawers" />
 
-<!-- Favicon: the DeskDrawer two-board glyph, inline so there are no extra requests -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23090a0e'/%3E%3Crect x='6' y='7' width='8.5' height='18' rx='2.4' fill='none' stroke='%237aa9ff' stroke-width='2'/%3E%3Crect x='17.5' y='7' width='8.5' height='18' rx='2.4' fill='none' stroke='%2357cfa2' stroke-width='2'/%3E%3C/svg%3E" />
+<link rel="alternate" type="application/rss+xml" title="DeskDrawer — engineering notes and releases" href="/rss.xml" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="/assets/site.css" />
 
-<!-- Structured data: this is software, not an article. No aggregateRating is declared
-     because there are no real ratings yet (adding a fake one violates Google's guidelines).
-     No price is declared in the Offer: the Store price varies by market and over time, and
-     the visible page shows no price, so a hardcoded figure would go stale / mismatch content.
-     The Microsoft Store listing is the single source of truth for price. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "DeskDrawer",
-  "alternateName": "DeskDrawer - Desktop Organizer",
-  "applicationCategory": "ProductivityApplication",
-  "operatingSystem": "Windows 10, Windows 11",
-  "description": "DeskDrawer is a lightweight Windows desktop organizer for grouping desktop icons, files, folders, and shortcuts into clean drawers. One-time purchase, lifetime use — no subscription, no telemetry.",
-  "url": "https://deskdrawer.pages.dev/",
-  "downloadUrl": "https://apps.microsoft.com/detail/9n904wfphzfz",
-  "installUrl": "https://apps.microsoft.com/detail/9n904wfphzfz",
-  "softwareVersion": "1.2.5",
-  "screenshot": "https://deskdrawer.pages.dev/hero-desktop.png",
-  "featureList": [
-    "Group desktop icons, files, folders, and shortcuts into drawers",
-    "One-time purchase, no subscription",
-    "Lightweight — no heavy background services",
-    "Native Windows right-click menu, drag, rename, delete",
-    "No ads, no telemetry, no accounts"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "url": "https://apps.microsoft.com/detail/9n904wfphzfz"
-  },
-  "author": { "@type": "Person", "name": "Shipeng Ouyang" },
-  "publisher": { "@type": "Organization", "name": "GaojiKuaileren" }
-}
-</script>
-
-<style>
-  :root{
-    --bg:#090a0e; --bg2:#0d0f16;
-    --card:rgba(255,255,255,.035); --card-hi:rgba(255,255,255,.06);
-    --border:rgba(255,255,255,.09); --border-hi:rgba(255,255,255,.16);
-    --text:#f4f6fa; --muted:#9aa2b2; --muted2:#828a9a;
-    --a1:#7aa9ff; --a2:#57cfa2; --glow:rgba(122,169,255,.30);
-    --grad:linear-gradient(125deg,#7aa9ff 0%,#57cfa2 100%);
-    --radius:20px; --radius-sm:12px;
-    --maxw:1120px;
-    --shadow:0 30px 80px -30px rgba(0,0,0,.75);
-    --font:"Segoe UI Variable Display","Segoe UI Variable","Segoe UI",system-ui,-apple-system,"SF Pro Display",Roboto,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:var(--font); background:var(--bg); color:var(--text);
-    line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  /* height:auto so the width/height attributes act only as an aspect-ratio hint (no stretching) */
-  img{max-width:100%;display:block;height:auto}
-  ::selection{background:rgba(122,169,255,.28)}
-  /* keyboard focus: visible, high-contrast ring on the dark custom UI */
-  :focus-visible{outline:2px solid var(--a1);outline-offset:3px;border-radius:inherit}
-  /* offset anchored sections so the sticky nav doesn't cover their headings */
-  section[id]{scroll-margin-top:84px}
-
-  /* atmospheric background glows */
-  body::before{
-    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 78% -8%, rgba(122,169,255,.14), transparent 60%),
-      radial-gradient(760px 620px at 12% 8%, rgba(87,207,162,.10), transparent 58%),
-      radial-gradient(1000px 800px at 50% 120%, rgba(122,169,255,.08), transparent 60%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.5;
-    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-    background-size:64px 64px;
-    mask-image:radial-gradient(circle at 50% 0%, #000 0%, transparent 70%);
-  }
-
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;
-    color:var(--muted);text-transform:uppercase;padding:7px 14px;border:1px solid var(--border);
-    border-radius:999px;background:var(--card);backdrop-filter:blur(8px);
-  }
-  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--a2);box-shadow:0 0 12px var(--a2)}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  /* buttons */
-  .btn{
-    --pad:14px 24px;
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:var(--pad);border-radius:var(--radius-sm);font-weight:600;font-size:15.5px;
-    border:1px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,border-color .25s;
-    white-space:nowrap;
-  }
-  .btn svg{width:18px;height:18px;flex:none}
-  .btn-primary{background:var(--grad);color:#06120c;box-shadow:0 10px 30px -8px var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px -10px var(--glow),inset 0 1px 0 rgba(255,255,255,.45)}
-  .btn-ghost{background:var(--card);border-color:var(--border-hi);color:var(--text)}
-  .btn-ghost:hover{background:var(--card-hi);transform:translateY(-2px);border-color:rgba(255,255,255,.28)}
-  .btn-lg{--pad:17px 32px;font-size:17px;border-radius:14px}
-
-  /* nav */
-  header.nav{
-    position:sticky;top:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;
-    border-bottom:1px solid transparent;
-  }
-  header.nav.scrolled{background:rgba(9,10,14,.72);backdrop-filter:blur(14px) saturate(140%);border-bottom-color:var(--border)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:18px;letter-spacing:-.01em}
-  .brand .mark{width:30px;height:30px;flex:none}
-  .nav-links{display:flex;align-items:center;gap:6px}
-  .nav-links a.link{padding:9px 14px;border-radius:9px;color:var(--muted);font-weight:500;font-size:14.5px;transition:color .2s,background .2s}
-  .nav-links a.link:hover{color:var(--text);background:var(--card)}
-  .nav-cta{margin-left:8px}
-  @media(max-width:760px){.nav-links a.link{display:none}}
-
-  /* hero */
-  .hero{position:relative;padding:78px 0 40px;text-align:center}
-  h1{font-size:clamp(38px,6.4vw,72px);line-height:1.03;letter-spacing:-.035em;font-weight:800;margin:22px auto 0;max-width:15ch}
-  .hero .sub{font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:64ch;margin:24px auto 0;line-height:1.62}
-  .hero .sub b{color:var(--text);font-weight:600}
-  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-  .trust{display:flex;gap:10px 22px;justify-content:center;flex-wrap:wrap;margin-top:30px;color:var(--muted2);font-size:13.5px;font-weight:500}
-  .trust span{display:inline-flex;align-items:center;gap:7px}
-  .trust svg{width:15px;height:15px;color:var(--a2)}
-
-  /* framed showcase image */
-  .frame{
-    position:relative;margin:56px auto 0;max-width:1000px;border-radius:var(--radius);
-    border:1px solid var(--border-hi);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
-    padding:10px;box-shadow:var(--shadow);
-  }
-  .frame::before{
-    content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
-    background:linear-gradient(120deg,rgba(122,169,255,.5),transparent 40%,transparent 60%,rgba(87,207,162,.4));
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-  }
-  .frame img{border-radius:12px;width:100%;height:auto}
-  .float{animation:float 7s ease-in-out infinite}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-
-  /* section scaffolding */
-  section{padding:88px 0}
-  /* every content section also carries class="wrap", whose `padding:0 24px` shorthand was
-     overriding the vertical padding above (headings crowded the previous section). Restore it
-     with higher specificity; keep .wrap's 24px sides; leave the hero's own padding intact. */
-  section.wrap:not(.hero){padding-top:88px;padding-bottom:88px}
-  .sec-head{text-align:center;max-width:60ch;margin:0 auto 52px}
-  .sec-head h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.03em;font-weight:800}
-  .sec-head p{color:var(--muted);font-size:17px;margin-top:16px}
-
-  /* feature grid */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .card{
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
-    transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,background .3s;position:relative;overflow:hidden;
-  }
-  .card:hover{transform:translateY(-4px);background:var(--card-hi);border-color:var(--border-hi)}
-  .card .ic{
-    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
-    background:linear-gradient(135deg,rgba(122,169,255,.16),rgba(87,207,162,.12));border:1px solid var(--border-hi);
-  }
-  .card .ic svg{width:23px;height:23px;color:var(--a1)}
-  .card h3{font-size:19px;letter-spacing:-.01em;margin-bottom:8px}
-  .card p{color:var(--muted);font-size:15px;line-height:1.6}
-
-  /* showcase strip */
-  .shots{display:grid;grid-template-columns:1.7fr 1fr;gap:18px;align-items:start}
-  /* single column on tablet/mobile; cap the small menu shot so it never upscales past its native 460px */
-  @media(max-width:820px){.shots{grid-template-columns:1fr}.shot:nth-child(2){max-width:460px;margin-inline:auto}}
-  .shot{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--card);position:relative}
-  /* keep each shot at its natural aspect ratio — never crop/stretch the screenshot */
-  .shot img{width:100%;height:auto;display:block}
-  .shot .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;font-size:14px;color:var(--text);
-    background:linear-gradient(0deg,rgba(6,7,10,.9),transparent);font-weight:500}
-
-  /* comparison */
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:0 auto}
-  @media(max-width:680px){.compare{grid-template-columns:1fr}}
-  .compare .col{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px}
-  .compare .col.hi{border-color:rgba(122,169,255,.4);background:linear-gradient(180deg,rgba(122,169,255,.07),var(--card))}
-  .compare h3{font-size:20px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-  .compare .tag{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:6px;background:var(--grad);color:#06120c}
-  .compare .col > p{color:var(--muted);font-size:14.5px;margin:6px 0 18px}
-  .compare ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-  .compare li{display:flex;gap:11px;font-size:15px;color:var(--text)}
-  .compare li svg{width:19px;height:19px;flex:none;margin-top:2px;color:var(--a2)}
-  .compare li.neutral svg{color:var(--muted2)}
-
-  /* faq */
-  .faq{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-  details{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .25s,background .25s}
-  details[open]{border-color:var(--border-hi);background:var(--card-hi)}
-  summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:600;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-  summary::-webkit-details-marker{display:none}
-  summary .chev{width:20px;height:20px;flex:none;color:var(--muted);transition:transform .3s}
-  details[open] summary .chev{transform:rotate(180deg);color:var(--a1)}
-  details .body{padding:0 22px 22px;color:var(--muted);font-size:15.5px;line-height:1.66}
-
-  /* final cta */
-  .cta-band{position:relative;text-align:center;border:1px solid var(--border-hi);border-radius:28px;padding:64px 28px;overflow:hidden;
-    background:radial-gradient(700px 340px at 50% -30%,rgba(122,169,255,.20),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.01))}
-  .cta-band h2{font-size:clamp(28px,4.4vw,46px);letter-spacing:-.03em;line-height:1.08;font-weight:800;max-width:18ch;margin:0 auto}
-  .cta-band p{color:var(--muted);font-size:17px;margin:18px auto 0;max-width:52ch}
-
-  /* footer */
-  footer{border-top:1px solid var(--border);padding:52px 0 46px;margin-top:40px}
-  .foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
-  .foot .brand{margin-bottom:14px}
-  .foot .tagline{color:var(--muted);font-size:14.5px;max-width:44ch;line-height:1.6}
-  .foot-links{display:flex;gap:30px;flex-wrap:wrap}
-  .foot-links .grp h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted2);margin-bottom:12px}
-  .foot-links a{display:block;color:var(--muted);font-size:14.5px;padding:4px 0;transition:color .2s}
-  .foot-links a:hover{color:var(--text)}
-  .copy{margin-top:38px;color:var(--muted2);font-size:13px;border-top:1px solid var(--border);padding-top:22px}
-
-  /* scroll reveal */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.06s}.reveal.d2{transition-delay:.12s}.reveal.d3{transition-delay:.18s}
-  .reveal.d4{transition-delay:.24s}.reveal.d5{transition-delay:.30s}
-
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important}
-    .reveal{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
-</style>
-<!-- If JS is disabled/blocked, the scroll-reveal never runs — show everything so the page is never blank. -->
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deskdrawer.pages.dev/#organization","name":"GaojiKuaileren","url":"https://deskdrawer.pages.dev","logo":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/icon-512.png","width":512,"height":512},"founder":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"email":"freeketchup@icloud.com","sameAs":["https://github.com/Gaojikuaileren/DeskDrawer","https://apps.microsoft.com/detail/9n904wfphzfz"]},{"@type":"WebSite","@id":"https://deskdrawer.pages.dev/#website","url":"https://deskdrawer.pages.dev","name":"DeskDrawer","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://deskdrawer.pages.dev/faq/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"SoftwareApplication","@id":"https://deskdrawer.pages.dev/#software","name":"DeskDrawer","alternateName":"DeskDrawer - Desktop Organizer","applicationCategory":"ProductivityApplication","applicationSubCategory":"Desktop organizer","operatingSystem":"Windows 10, Windows 11","processorRequirements":"x64","memoryRequirements":"No minimum beyond the operating system's own","softwareVersion":"1.2.5","description":"DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.","url":"https://deskdrawer.pages.dev","author":{"@type":"Person","name":"Shipeng Ouyang","url":"https://github.com/Gaojikuaileren"},"publisher":{"@id":"https://deskdrawer.pages.dev/#organization"},"isAccessibleForFree":false,"datePublished":"2026-06-20","dateModified":"2026-07-25","downloadUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","installUrl":"https://apps.microsoft.com/detail/9n904wfphzfz","releaseNotes":"https://deskdrawer.pages.dev/changelog/","screenshot":"https://deskdrawer.pages.dev/hero-desktop.png","softwareHelp":{"@id":"https://deskdrawer.pages.dev/docs/#webpage"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock","url":"https://apps.microsoft.com/detail/9n904wfphzfz","seller":{"@id":"https://deskdrawer.pages.dev/#organization"}},"featureList":["Group desktop icons, files, folders and shortcuts into transparent boards","Files never move — boards store membership, not locations","Native Windows right-click menu, drag and drop, rename, delete","Sort each board by name, type, size, date or manual order","Fold a board into a compact square","Four icon sizes per board","Runs from the system tray with no background services","One-time purchase, no subscription","No ads, no telemetry, no accounts, no network calls"]},{"@type":"WebPage","@id":"https://deskdrawer.pages.dev/#webpage","url":"https://deskdrawer.pages.dev/","name":"DeskDrawer — Lightweight Windows Desktop Organizer","description":"DeskDrawer groups Windows desktop icons, files and shortcuts into clean transparent drawers without moving your files. One-time purchase, no telemetry, 16 languages on the Microsoft Store.","isPartOf":{"@id":"https://deskdrawer.pages.dev/#website"},"about":{"@id":"https://deskdrawer.pages.dev/#software"},"inLanguage":"en","datePublished":"2026-06-20","dateModified":"2026-08-07","primaryImageOfPage":{"@type":"ImageObject","url":"https://deskdrawer.pages.dev/assets/og.png"}}]}</script>
 </head>
-<body>
-
-<!-- svg brand mark reused via <use> -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo" viewBox="0 0 32 32">
-    <rect width="32" height="32" rx="7" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)"/>
-    <rect x="6.5" y="7.5" width="8" height="17" rx="2.2" fill="none" stroke="#7aa9ff" stroke-width="1.9"/>
-    <rect x="17.5" y="7.5" width="8" height="17" rx="2.2" fill="none" stroke="#57cfa2" stroke-width="1.9"/>
-  </symbol>
-</svg>
-
+<body data-section="home">
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="DeskDrawer home">
-      <svg class="mark"><use href="#logo"/></svg> DeskDrawer
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="#features">Features</a>
-      <a class="link" href="#showcase">Screenshots</a>
-      <a class="link" href="#compare">Why DeskDrawer</a>
-      <a class="link" href="#faq">FAQ</a>
-      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get it</a>
-    </nav>
+    <a class="brand" href="/" aria-label="DeskDrawer home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></a>
+    <nav class="nav-links" aria-label="Primary"><a class="link" href="/features/">Features</a><a class="link" href="/docs/">Docs</a><a class="link" href="/faq/">FAQ</a><a class="link" href="/glossary/">Glossary</a><a class="link" href="/notes/">Notes</a></nav>
+    <div class="nav-end">
+      <a class="btn btn-primary nav-cta" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+      <details class="menu">
+        <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a href="/features/">Features</a><a href="/docs/">Docs</a><a href="/faq/">FAQ</a><a href="/glossary/">Glossary</a><a href="/notes/">Notes</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/about/">About</a><a href="/support/">Support</a>
+          <a class="btn btn-primary" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Get DeskDrawer</a>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
+<main id="main">
 
-<main id="top">
-
-  <!-- HERO -->
   <section class="hero wrap">
     <span class="eyebrow reveal"><span class="dot"></span> Windows desktop organizer · One-time purchase</span>
-    <h1 class="reveal d1">Lightweight <span class="grad-text">Windows Desktop Organizer</span></h1>
-    <p class="sub reveal d2">DeskDrawer helps you organize Windows desktop icons, files, folders, and shortcuts into clean drawers. <b>Buy once and use it for life</b> — no subscription, no heavy background services.</p>
+    <h1 class="reveal d1">A tidy desktop, <span class="grad-text">without moving a single file</span></h1>
+    <p class="sub reveal d2">DeskDrawer groups your Windows desktop icons into clean transparent drawers. Your files stay exactly where they are, your desktop still works like your desktop. <b>Buy once, keep it for life.</b></p>
     <div class="cta-row reveal d3">
-      <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>
-        Get it on the Microsoft Store
-      </a>
-      <a class="btn btn-ghost btn-lg" href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.94.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.78-4.57 5.04.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-        View on GitHub
-      </a>
+      <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg> Get it on the Microsoft Store</a>
+      <a class="btn btn-ghost btn-lg" href="/download/">Requirements &amp; details</a>
     </div>
     <div class="trust reveal d4">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> One-time purchase</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> No ads · No telemetry</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 &amp; 11</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One-time purchase</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No ads · no telemetry</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 &amp; 11</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 16 languages on the Store</span>
     </div>
-
     <div class="frame float reveal d5">
-      <img src="before-after.png" width="2612" height="850" fetchpriority="high"
-           alt="DeskDrawer before and after — a cluttered Windows desktop reorganized into clean, transparent drawers of icons" />
+      <img src="/before-after.png" width="2612" height="850" fetchpriority="high"
+           alt="A cluttered Windows desktop on the left, and the same desktop on the right organised into clean transparent DeskDrawer boards" />
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <section class="wrap">
+    <div class="grid reveal" style="gap:18px">
+      <article class="card">
+        <h3>What it is</h3>
+        <p>A single-purpose Windows utility that draws transparent boards on your desktop and lets you decide which icons go in which board. It runs from the system tray and nothing else.</p>
+      </article>
+      <article class="card">
+        <h3>Who it is for</h3>
+        <p>People whose desktop is a working surface — current projects, downloads, this week's files — who want it readable without installing a large personalisation suite.</p>
+      </article>
+      <article class="card">
+        <h3>What it deliberately is not</h3>
+        <p>Not a launcher, dock, theming engine or file manager. No automatic filing rules, no plugins. <a href="/docs/limitations/">The full list of limitations</a> is public.</p>
+      </article>
+    </div>
+  </section>
+
   <section id="features" class="wrap">
     <div class="sec-head reveal">
       <h2>A desktop organizer that stays out of the way</h2>
-      <p>Group your desktop icons into transparent boards while your files stay exactly where they are. Your desktop still works like your desktop.</p>
+      <p>Six things it does well, and a great many it deliberately does not do at all.</p>
     </div>
     <div class="grid">
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1.5"/><rect x="14" y="3" width="7" height="11" rx="1.5"/></svg></div>
+      <a class="card reveal" href="/docs/boards/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="18" rx="1.5"/><rect x="14" y="3" width="7" height="11" rx="1.5"/></svg></div>
         <h3>Drawers for everything</h3>
-        <p>Sort desktop icons, files, folders, and shortcuts into clean, labeled drawers. Drag to move, fold a drawer to a compact square when you need room.</p>
-      </article>
-      <article class="card reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M4 6l8-4 8 4M4 6v9c0 2 8 6 8 6s8-4 8-6V6"/></svg></div>
-        <h3>Buy once, use for life</h3>
-        <p>A single one-time purchase. No subscription, no renewals, no upsells — you own it. Delivered and updated through the Microsoft Store.</p>
-      </article>
-      <article class="card reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <p>Group desktop icons, files, folders and shortcuts into clean boards. Drag to move them, fold a board to a compact square when you need the room.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d1" href="/docs/boards/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Your files never move</h3>
+        <p>A board stores which icons belong to it — not the files. Every path, shortcut and backup rule keeps working, and uninstalling changes nothing.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d2" href="/docs/menus/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>The real Windows menu</h3>
+        <p>Right-click an icon and you get the genuine shell menu — Open with, Send to, Share, and every extension you have installed. Not an imitation.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal" href="/docs/languages/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h9M5 16h5"/><path d="m17 14 3 3 3-3"/></svg></div>
+        <h3>16 languages, almost no language barrier</h3>
+        <p>The Store listing is available in 16 languages — and the app itself is icon-driven, so using it barely depends on reading text in any of them.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d1" href="/docs/architecture/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
         <h3>Genuinely lightweight</h3>
-        <p>Runs quietly from the system tray with no heavy background services. Near-zero idle CPU and a small footprint — it organizes your desktop, nothing else.</p>
-      </article>
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
-        <h3>Native desktop feel</h3>
-        <p>Open, rename, delete, copy, paste, drag, and use the <em>real</em> Windows right-click menu — with a familiar, desktop-like experience.</p>
-      </article>
-      <article class="card reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Private &amp; local</h3>
-        <p>No ads, no telemetry, no analytics, no accounts. DeskDrawer runs entirely on your device and never phones home.</p>
-      </article>
-      <article class="card reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
-        <h3>No wasted space</h3>
-        <p>Compact controls instead of bulky board title bars. More of each drawer is used for your icons, not for the tool itself.</p>
-      </article>
+        <p>One tray process. No background services, no shell extensions, no plugin host, no polling loop. It organises your desktop and does nothing else.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d2" href="/notes/why-boards-have-no-title-bar/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+        <h3>No wasted height</h3>
+        <p>Board controls live in one small widget in the corner instead of a title bar on every board. With six boards open, that is a tenth of your screen back.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </section>
 
-  <!-- SHOWCASE -->
   <section id="showcase" class="wrap">
     <div class="sec-head reveal">
       <h2>See it on a real desktop</h2>
       <p>Transparent boards sit on your wallpaper. Your files never move — DeskDrawer just remembers which drawer each icon belongs to.</p>
     </div>
     <div class="frame reveal" style="margin-top:0">
-      <img src="hero-desktop.png" width="2560" height="1380" loading="lazy"
-           alt="DeskDrawer organizing a Windows 11 desktop's icons into several transparent boards" />
+      <img src="/hero-desktop.png" width="2560" height="1380" loading="lazy"
+           alt="DeskDrawer organising a Windows 11 desktop's icons into several transparent boards" />
     </div>
     <div class="shots" style="margin-top:18px">
       <div class="shot reveal">
-        <img src="boards-closeup.png" width="1200" height="740" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders, and shortcuts" />
+        <img src="/boards-closeup.png" width="1200" height="740" loading="lazy" alt="Close-up of DeskDrawer drawers grouping desktop icons, folders and shortcuts" />
         <div class="cap">Clean drawers, up close — grouped icons, folders and shortcuts</div>
       </div>
       <div class="shot reveal d1">
-        <img src="menu-dark.png" width="460" height="470" loading="lazy" alt="DeskDrawer's compact icon-only dark context menu for sorting and arranging" />
-        <div class="cap">Compact, icon-only menus</div>
+        <img src="/menu-dark.png" width="460" height="470" loading="lazy" alt="DeskDrawer's compact icon-only dark menu for sorting and arranging boards" />
+        <div class="cap">Icon-only menus — nothing to translate, nothing to read</div>
       </div>
     </div>
   </section>
 
-  <!-- COMPARE: lightweight organizer vs. the general "heavy suite" category — no competitor is named -->
   <section id="compare" class="wrap">
     <div class="sec-head reveal">
       <h2>A lightweight alternative to heavy desktop suites</h2>
-      <p>Most desktop-organizing tools are big all-in-one suites. DeskDrawer does one job well. Here's an honest way to choose.</p>
+      <p>Most desktop-organising tools are large all-in-one suites. DeskDrawer does one job. Here is an honest way to choose.</p>
     </div>
     <div class="compare">
       <div class="col hi reveal">
         <h3>DeskDrawer <span class="tag">One-time</span></h3>
-        <p>Pick DeskDrawer if you want a simple, lightweight way to group your desktop icons — bought once.</p>
+        <p>Choose it if you want a quiet, focused way to group desktop icons — bought once.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> One-time purchase, lifetime use</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Lightweight, tray-only, no heavy services</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> No ads, no telemetry, files never move</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Real Windows right-click menu &amp; drag</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One-time purchase, lifetime use</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One tray process, no background services</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No ads, no telemetry, no network access at all</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Real Windows right-click menu and drag-and-drop</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Files never move</li>
         </ul>
       </div>
       <div class="col reveal d1">
         <h3>Full desktop suites</h3>
-        <p>Pick a full suite if you want deep customization and a broad toolkit that goes beyond grouping icons.</p>
+        <p>Choose one if you want deep customisation and a toolkit that goes well beyond grouping icons.</p>
         <ul>
-          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg> Large, feature-rich all-in-one tools</li>
-          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg> Deep customization &amp; auto-organizing rules</li>
-          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg> A broader toolkit beyond icon grouping</li>
+          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Large, feature-rich all-in-one tools</li>
+          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Deep customisation and auto-organising rules</li>
+          <li class="neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg> Theming, docks, widgets and more</li>
         </ul>
       </div>
     </div>
+    <p style="text-align:center;margin-top:28px"><a class="btn btn-ghost" href="/compare/">Read the full comparison <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="wrap">
-    <div class="sec-head reveal"><h2>Frequently asked questions</h2></div>
-    <div class="faq">
-      <details class="reveal" open>
-        <summary>Is DeskDrawer a one-time purchase? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="body">Yes. DeskDrawer is a one-time purchase — buy it once on the Microsoft Store and use it for life. There is no subscription, no renewal, and no in-app purchases.</div>
-      </details>
-      <details class="reveal">
-        <summary>Does it move or change my files? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="body">No. Your files stay in their original desktop location. DeskDrawer only remembers which drawer each icon, folder, or shortcut belongs to. If you uninstall it, your files remain untouched.</div>
-      </details>
-      <details class="reveal">
-        <summary>Does it work on Windows 11 and Windows 10? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="body">Yes. DeskDrawer runs on Windows 10 and Windows 11 (version 10.0.19041 or newer), and uses the native Windows desktop icon operations you already know.</div>
-      </details>
-      <details class="reveal">
-        <summary>Does it collect my data or show ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div class="body">No. DeskDrawer has no ads, no telemetry, no analytics, and no accounts. It runs entirely on your device and makes no network connections of its own.</div>
-      </details>
+  <section class="wrap">
+    <div class="sec-head reveal">
+      <h2>Written down, in public</h2>
+      <p>Documentation, honest limitations, and engineering notes about how it is built and what has gone wrong.</p>
+    </div>
+    <div class="grid grid-4">
+      <a class="card reveal" href="/docs/">
+        <h3>Documentation</h3><p>21 pages covering every board, menu, gesture and setting.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d1" href="/faq/">
+        <h3>Questions & answers</h3><p>66 straight answers about files, privacy, licensing and Windows behaviour.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d2" href="/glossary/">
+        <h3>Glossary</h3><p>35 canonical definitions for every concept in the app.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a><a class="card reveal d3" href="/notes/">
+        <h3>Engineering notes</h3><p>Why it is built this way, what broke, and what that taught.</p><span class="more">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
   <section class="wrap">
     <div class="cta-band reveal">
       <h2>Clean up your Windows desktop today</h2>
-      <p>Group your cluttered desktop icons into clean drawers in seconds. Buy once, keep it for life — no subscription.</p>
+      <p>Group your cluttered desktop into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
       <div class="cta-row" style="margin-top:30px">
-        <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>
-          Get DeskDrawer on the Microsoft Store
-        </a>
-        <a class="btn btn-ghost btn-lg" href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">Docs &amp; support</a>
+        <a class="btn btn-primary btn-lg" href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg> Get DeskDrawer on the Microsoft Store</a>
+        <a class="btn btn-ghost btn-lg" href="/docs/getting-started/">Read the docs</a>
       </div>
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div style="max-width:360px">
-        <div class="brand"><svg class="mark"><use href="#logo"/></svg> DeskDrawer</div>
-        <p class="tagline">DeskDrawer is a lightweight Windows desktop organizer for icons, files, folders, and shortcuts — one-time purchase, lifetime use.</p>
+      <div class="foot-brand">
+        <div class="brand"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+<rect width="32" height="32" rx="7" fill="#0e1118" stroke="rgba(255,255,255,.14)"/>
+<rect x="6.8" y="7" width="7.6" height="18" rx="2.3" fill="#7aa9ff"/>
+<rect x="17.6" y="7" width="7.6" height="11.6" rx="2.3" fill="#57cfa2"/>
+</svg><span>DeskDrawer</span></div>
+        <p class="tagline">DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</p>
+        <p class="verline">Version 1.2.5 · Windows 10 &amp; 11 · <a href="/changelog/">Release notes</a></p>
       </div>
-      <div class="foot-links">
-        <div class="grp">
-          <h4>Product</h4>
-          <a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a>
-          <a href="#features">Features</a>
-          <a href="#compare">Why DeskDrawer</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="grp">
-          <h4>Resources</h4>
-          <a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://github.com/Gaojikuaileren/DeskDrawer/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
-          <a href="https://github.com/Gaojikuaileren/DeskDrawer/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy</a>
-          <a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Support</a>
-        </div>
-      </div>
+      <div class="foot-links"><div class="grp"><h2>Product</h2><a href="/features/">Features</a><a href="/download/">Download</a><a href="/compare/">Why DeskDrawer</a><a href="/changelog/">Release notes</a><a href="/roadmap/">Roadmap</a></div><div class="grp"><h2>Learn</h2><a href="/docs/">Documentation</a><a href="/docs/getting-started/">Getting started</a><a href="/faq/">Questions &amp; answers</a><a href="/glossary/">Glossary</a><a href="/notes/">Engineering notes</a></div><div class="grp"><h2>Trust</h2><a href="/about/">About the developer</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="/docs/architecture/">Architecture</a><a href="/docs/troubleshooting/">Troubleshooting</a></div><div class="grp"><h2>Elsewhere</h2><a href="https://apps.microsoft.com/detail/9n904wfphzfz" target="_blank" rel="noopener">Microsoft Store</a><a href="https://github.com/Gaojikuaileren/DeskDrawer" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Gaojikuaileren/DeskDrawer/issues" target="_blank" rel="noopener">Report an issue</a><a href="mailto:freeketchup@icloud.com" target="_blank" rel="noopener">Email the developer</a><a href="/llms.txt">llms.txt</a></div></div>
     </div>
-    <div class="copy">© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer. Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by any other company.</div>
+    <div class="copy">
+      <p>© <span id="yr">2026</span> GaojiKuaileren · DeskDrawer — a lightweight Windows desktop organizer by Shipeng Ouyang.</p>
+      <p>Windows is a trademark of the Microsoft group of companies. DeskDrawer is an independent product, not affiliated with or endorsed by Microsoft or any other company.</p>
+    </div>
   </div>
 </footer>
-
-<script>
-  // nav background on scroll
-  var nav = document.getElementById('nav');
-  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-  // current year
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // scroll reveal
-  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var els = document.querySelectorAll('.reveal');
-  var showAll = function(){ els.forEach(function(e){ e.classList.add('in'); }); };
-  if (reduce || !('IntersectionObserver' in window)) {
-    showAll();
-  } else {
-    try {
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-      }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
-      els.forEach(function(e){ io.observe(e); });
-    } catch (err) { showAll(); }  // never leave content stuck at opacity:0
-  }
-</script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
