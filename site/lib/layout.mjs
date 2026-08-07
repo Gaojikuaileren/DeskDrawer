@@ -159,7 +159,8 @@ function graph(page) {
 
   if (page.schema) nodes.push(...(Array.isArray(page.schema) ? page.schema : [page.schema]));
 
-  return JSON.stringify({ "@context": "https://schema.org", "@graph": nodes });
+  // `<` is escaped so no string in the graph can terminate the enclosing <script> element.
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": nodes }).replace(/</g, "\\u003c");
 }
 
 /* ------------------------------------------------------------------ chrome */

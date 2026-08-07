@@ -195,14 +195,14 @@
       "slug": "keyboard-shortcuts",
       "question": "What keyboard shortcuts does DeskDrawer support?",
       "category": "using",
-      "answer": "The ones you already use on the desktop: <kbdEnter</kbd to open, <kbdF2</kbd to rename, <kbdDelete</kbd to recycle, <kbdCtrl</kbd+<kbdA</kbd, <kbdCtrl</kbd+<kbdC</kbd, <kbdCtrl</kbd+<kbdX</kbd, <kbdCtrl</kbd+<kbdV</kbd and <kbdEsc</kbd. There are no DeskDrawer-specific shortcuts to learn, and no global hotkeys — see Is there a global hotkey to show or hide boards?. The full table is in Keyboard & mouse.",
+      "answer": "The ones you already use on the desktop: Enter to open, F2 to rename, Delete to recycle, Ctrl+A, Ctrl+C, Ctrl+X, Ctrl+V and Esc. There are no DeskDrawer-specific shortcuts to learn, and no global hotkeys — see Is there a global hotkey to show or hide boards?. The full table is in Keyboard & mouse.",
       "url": "https://deskdrawer.pages.dev/faq/#keyboard-shortcuts"
     },
     {
       "slug": "select-across-boards",
       "question": "Can I select icons across several boards at once?",
       "category": "using",
-      "answer": "Yes. Start a drag on empty space — inside a board or on bare desktop between boards — and the selection band crosses board boundaries, selecting everything it touches. Hold <kbdCtrl</kbd to add to an existing selection. The mixed selection can then be dragged, copied, cut or deleted as one unit.",
+      "answer": "Yes. Start a drag on empty space — inside a board or on bare desktop between boards — and the selection band crosses board boundaries, selecting everything it touches. Hold Ctrl to add to an existing selection. The mixed selection can then be dragged, copied, cut or deleted as one unit.",
       "url": "https://deskdrawer.pages.dev/faq/#select-across-boards"
     },
     {
@@ -328,14 +328,14 @@
       "slug": "win-d-does-not-hide-boards",
       "question": "Why does Win+D not hide my boards?",
       "category": "windows",
-      "answer": "Because your boards are the desktop now, so showing the desktop shows them — hiding them would be the opposite of what you asked for. This changed in 1.1.2. To bring minimised windows back, use the taskbar or <kbdAlt</kbd+<kbdTab</kbd. See Windows integration.",
+      "answer": "Because your boards are the desktop now, so showing the desktop shows them — hiding them would be the opposite of what you asked for. This changed in 1.1.2. To bring minimised windows back, use the taskbar or Alt+Tab. See Windows integration.",
       "url": "https://deskdrawer.pages.dev/faq/#win-d-does-not-hide-boards"
     },
     {
       "slug": "alt-f4-behaviour",
       "question": "Why does Alt+F4 open the shutdown dialog?",
       "category": "windows",
-      "answer": "Because that is what <kbdAlt</kbd+<kbdF4</kbd does on the Windows desktop, and boards are the desktop. Since 1.1.0 a board behaves the same way rather than closing. Closing a board with a system-wide window shortcut would be a destructive-feeling action triggered by muscle memory, which is exactly the kind of surprise the product tries to avoid.",
+      "answer": "Because that is what Alt+F4 does on the Windows desktop, and boards are the desktop. Since 1.1.0 a board behaves the same way rather than closing. Closing a board with a system-wide window shortcut would be a destructive-feeling action triggered by muscle memory, which is exactly the kind of surprise the product tries to avoid.",
       "url": "https://deskdrawer.pages.dev/faq/#alt-f4-behaviour"
     },
     {

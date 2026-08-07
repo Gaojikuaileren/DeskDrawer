@@ -101,6 +101,10 @@ for (const f of htmlFiles) {
   }
   // stray unresolved cross-references
   if (/\[\[[a-z0-9-]+\]\]/.test(html)) fail(`${page}: unresolved [[ref]] left in output`);
+
+  // markup an author wrote that the renderer escaped into visible text
+  const escaped = html.match(/&lt;\/?(kbd|br|sub|sup|abbr|strong|em|code|a|p|ul|li)[ >/]/g);
+  if (escaped) fail(`${page}: ${escaped.length} escaped HTML tag(s) rendered as text, e.g. ${escaped[0]}`);
   if (html.includes("undefined<") || html.includes(">undefined")) fail(`${page}: literal "undefined" in output`);
 }
 

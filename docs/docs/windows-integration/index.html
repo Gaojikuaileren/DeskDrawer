@@ -77,12 +77,12 @@
 <p>Windows draws desktop icons through an Explorer-owned view. DeskDrawer reads the same items and hides that view while it runs, so icons are not shown twice. See <a href="/glossary/native-icon-layer/">Native icon layer</a>.</p>
 <p>The hiding is <strong>session-scoped</strong>: it is not written into your Windows settings. Quitting restores it; so does signing out. This constraint exists because the failure mode of the alternative is a user whose desktop icons are gone and who has no idea which setting to change.</p>
 <h2 id="show-desktop">Show desktop<a class="hlink" href="#show-desktop" aria-label="Link to this section">#</a></h2>
-<p>&lt;kbd&gt;Win&lt;/kbd&gt;+&lt;kbd&gt;D&lt;/kbd&gt; and the taskbar&#39;s &quot;Show desktop&quot; corner minimise everything to reveal the desktop. For DeskDrawer that is backwards: the boards <em>are</em> the desktop, so hiding them is the opposite of what was asked. Since 1.1.2 both gestures leave boards in place.</p>
-<p>The trade is stated in the changelog: use the taskbar or &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Tab&lt;/kbd&gt; to restore minimised windows.</p>
+<p><kbd>Win</kbd>+<kbd>D</kbd> and the taskbar&#39;s &quot;Show desktop&quot; corner minimise everything to reveal the desktop. For DeskDrawer that is backwards: the boards <em>are</em> the desktop, so hiding them is the opposite of what was asked. Since 1.1.2 both gestures leave boards in place.</p>
+<p>The trade is stated in the changelog: use the taskbar or <kbd>Alt</kbd>+<kbd>Tab</kbd> to restore minimised windows.</p>
 <h2 id="minimise-all">Minimise all<a class="hlink" href="#minimise-all" aria-label="Link to this section">#</a></h2>
 <p>Boards do not minimise with other windows either, for the same reason — fixed in 1.0.8.</p>
 <h2 id="alt-f4">Alt+F4<a class="hlink" href="#alt-f4" aria-label="Link to this section">#</a></h2>
-<p>Pressing &lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;F4&lt;/kbd&gt; with the desktop focused opens <strong>Shut Down Windows</strong>. Since 1.1.0 a board does the same, rather than closing the board. Closing a board with a system-wide window shortcut would be a destructive-feeling action triggered by muscle memory.</p>
+<p>Pressing <kbd>Alt</kbd>+<kbd>F4</kbd> with the desktop focused opens <strong>Shut Down Windows</strong>. Since 1.1.0 a board does the same, rather than closing the board. Closing a board with a system-wide window shortcut would be a destructive-feeling action triggered by muscle memory.</p>
 <h2 id="window-activation">Window activation<a class="hlink" href="#window-activation" aria-label="Link to this section">#</a></h2>
 <p>Applications that open while boards are on screen used to end up stuck behind them. Since 1.1.0 DeskDrawer steps aside so they come to the front. Any tool that paints across the whole desktop has to solve this or it becomes a trap.</p>
 <h2 id="the-recycle-bin">The Recycle Bin<a class="hlink" href="#the-recycle-bin" aria-label="Link to this section">#</a></h2>

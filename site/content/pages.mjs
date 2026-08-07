@@ -21,14 +21,16 @@ export function buildPages(ctx) {
   const pages = [];
 
   /** A simple prose page: markdown in, standard document layout out. */
-  const prose = ({ path, title, description, section, lede, body, crumbs, schema, updated, wideToc = true }) => {
+  const prose = ({ path, title, description, section, lede, body, crumbs, schema, updated, cta = "", wideToc = true }) => {
     const source = resolveRefs(body, path);
     const { html, toc } = md(source);
     pages.push({
       path, title, description, section, updated: updated || SITE.updated,
       crumbs: crumbs || [{ name: title, href: `/${path}` }],
       aside: wideToc ? tocHtml(toc) : "",
-      body: docHeader({ title, lede: lede || description, meta: [`Updated ${fmtDate(updated || SITE.updated)}`] }) + html,
+      body:
+        docHeader({ title, lede: lede || description, meta: [`Updated ${fmtDate(updated || SITE.updated)}`] }) +
+        cta + html,
       schema, plain: plain(source),
     });
   };
@@ -309,9 +311,8 @@ The reasoning for each, and the known rough edges, is in [[limitations]].`,
     description:
       "Get DeskDrawer from the Microsoft Store. System requirements, what installing puts on your machine, licensing, and the 16 languages the Store listing is available in.",
     lede: "DeskDrawer is distributed through the Microsoft Store as a one-time purchase.",
-    body: `<a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">Get it on the Microsoft Store</a>
-
-## Requirements
+    cta: `<p style="margin:0 0 34px"><a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get it on the Microsoft Store</a></p>`,
+    body: `## Requirements
 
 | | |
 |---|---|
