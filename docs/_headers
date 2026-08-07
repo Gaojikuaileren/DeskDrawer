@@ -11,9 +11,13 @@
 /favicon.svg
   Cache-Control: public, max-age=604800
 
+# These carry the site's own text in machine-readable form. They must stay fetchable — that is
+# their whole purpose — but they should not compete with the HTML pages in a search index, and a
+# .txt/.json response cannot declare a canonical or a robots meta of its own.
 /api/*
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
@@ -22,6 +26,7 @@
 /llms-full.txt
   Content-Type: text/plain; charset=utf-8
   Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
 
 /*
   X-Content-Type-Options: nosniff
