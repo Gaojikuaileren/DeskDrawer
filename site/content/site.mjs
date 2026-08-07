@@ -22,6 +22,11 @@ export const SITE = {
     "adding bulky title bars, or changing how your desktop works. One-time purchase. " +
     "No ads, no telemetry, no subscriptions, no bundled plugins.",
 
+  // Second Search Console ownership proof. The HTML-file method still works, but Cloudflare
+  // Pages 308-redirects /google05253daa0cdd748f.html to an extensionless path, and a redirecting
+  // token file is a documented cause of re-verification failure. A meta tag cannot be rewritten.
+  googleSiteVerification: "3-P0Ggj4h_8FEGWjD8w4hryCDer5nWKGT3ZkISDuso",
+
   store: "https://apps.microsoft.com/detail/9n904wfphzfz",
   storeId: "9n904wfphzfz",
   github: "https://github.com/Gaojikuaileren/DeskDrawer",

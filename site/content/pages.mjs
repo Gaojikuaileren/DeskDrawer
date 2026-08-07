@@ -16,7 +16,8 @@ const STORE_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v
 
 export function buildPages(ctx) {
   const { SITE, url, md, plain, esc, resolveRefs, fmtDate, docSidebar, tocHtml, docHeader,
-          DOC_GROUPS, DOCS, FAQ_CATEGORIES, FAQS, TERMS, NOTES, RELEASES } = ctx;
+          DOC_GROUPS, DOCS, FAQ_CATEGORIES, FAQS, TERMS, NOTES, RELEASES,
+          D_PAGES, D_FAQ, D_RELEASES } = ctx;
 
   const pages = [];
 
@@ -25,11 +26,11 @@ export function buildPages(ctx) {
     const source = resolveRefs(body, path);
     const { html, toc } = md(source);
     pages.push({
-      path, title, description, section, updated: updated || SITE.updated,
+      path, title, description, section, updated: updated || D_PAGES(),
       crumbs: crumbs || [{ name: title, href: `/${path}` }],
       aside: wideToc ? tocHtml(toc) : "",
       body:
-        docHeader({ title, lede: lede || description, meta: [`Updated ${fmtDate(updated || SITE.updated)}`] }) +
+        docHeader({ title, lede: lede || description, meta: [`Updated ${fmtDate(updated || D_PAGES())}`] }) +
         cta + html,
       schema, plain: plain(source),
     });

@@ -9,6 +9,7 @@
  *     node site/build.mjs
  */
 
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,6 +31,35 @@ const OUT = path.join(ROOT, "docs");
 const MANIFEST = path.join(HERE, ".build-manifest.json"); // build state, kept out of the published output
 
 const written = new Set();
+
+/**
+ * Last-modified dates come from git, not from a constant.
+ *
+ * Every page previously reported the same hardcoded SITE.updated, which made all 76 sitemap
+ * <lastmod> values identical — the exact pattern Google treats as an unreliable signal and
+ * ignores wholesale. Reading the last commit date of the content module that produced a page
+ * is both truthful and self-maintaining: edit one module and only its pages move.
+ */
+const gitDateCache = new Map();
+function srcDate(rel) {
+  if (!gitDateCache.has(rel)) {
+    let d = null;
+    try {
+      const out = execFileSync("git", ["log", "-1", "--format=%cs", "--", rel], {
+        cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"],
+      }).trim();
+      if (/^\d{4}-\d{2}-\d{2}$/.test(out)) d = out;
+    } catch { /* not a git checkout, or file never committed */ }
+    gitDateCache.set(rel, d || SITE.updated);
+  }
+  return gitDateCache.get(rel);
+}
+const D_DOCS = () => srcDate("site/content/docs.mjs");
+const D_TERMS = () => srcDate("site/content/glossary.mjs");
+const D_FAQ = () => srcDate("site/content/faq.mjs");
+const D_NOTES = () => srcDate("site/content/notes.mjs");
+const D_PAGES = () => srcDate("site/content/pages.mjs");
+const D_RELEASES = () => srcDate("site/content/releases.mjs");
 
 function write(rel, content) {
   const dest = path.join(OUT, rel);
@@ -155,7 +185,7 @@ DOCS.forEach((doc, n) => {
     title: doc.title,
     description: doc.description,
     section: "docs",
-    updated: doc.updated || SITE.updated,
+    updated: doc.updated || D_DOCS(),
     crumbs: [{ name: "Documentation", href: "/docs/" }, { name: doc.nav || doc.title, href: `/docs/${doc.slug}/` }],
     sidebar: docSidebar(doc.slug),
     aside: tocHtml(toc),
@@ -163,7 +193,7 @@ DOCS.forEach((doc, n) => {
       docHeader({
         title: doc.title,
         lede: doc.description,
-        meta: [doc.group, `Updated ${fmtDate(doc.updated || SITE.updated)}`, `DeskDrawer ${SITE.version}`],
+        meta: [doc.group, `Updated ${fmtDate(doc.updated || D_DOCS())}`, `DeskDrawer ${SITE.version}`],
       }) +
       html +
       relatedBlock(
@@ -214,13 +244,13 @@ TERMS.forEach((t) => {
     metaTitle: `${t.term} — DeskDrawer glossary`,
     description: t.short,
     section: "glossary",
-    updated: t.updated || SITE.updated,
+    updated: t.updated || D_TERMS(),
     crumbs: [{ name: "Glossary", href: "/glossary/" }, { name: t.term, href: `/glossary/${t.slug}/` }],
     aside: tocHtml(toc),
     body:
       docHeader({
         title: t.term,
-        meta: ["DeskDrawer glossary", `Updated ${fmtDate(t.updated || SITE.updated)}`].concat(
+        meta: ["DeskDrawer glossary", `Updated ${fmtDate(t.updated || D_TERMS())}`].concat(
           t.aka?.length ? [`Also called: ${esc(t.aka.join(", "))}`] : []
         ),
       }) +
@@ -303,6 +333,7 @@ NOTES.forEach((n, i) => {
 buildPages({
   SITE, url, md, plain, esc, resolveRefs, fmtDate, docSidebar, tocHtml, docHeader,
   MARK, ICONS, DOC_GROUPS, DOCS, FAQ_CATEGORIES, FAQS, TERMS, NOTES, RELEASES,
+  D_PAGES, D_FAQ, D_RELEASES,
 }).forEach(add);
 
 /* ------------------------------------------------------------------ render */
@@ -577,9 +608,13 @@ write("_headers", `/assets/*
 /favicon.svg
   Cache-Control: public, max-age=604800
 
+# These carry the site's own text in machine-readable form. They must stay fetchable — that is
+# their whole purpose — but they should not compete with the HTML pages in a search index, and a
+# .txt/.json response cannot declare a canonical or a robots meta of its own.
 /api/*
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
@@ -588,6 +623,7 @@ write("_headers", `/assets/*
 /llms-full.txt
   Content-Type: text/plain; charset=utf-8
   Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
 
 /*
   X-Content-Type-Options: nosniff

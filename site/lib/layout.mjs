@@ -273,6 +273,8 @@ ${page.aside || ""}
 <meta name="color-scheme" content="dark" />
 <meta name="author" content="${esc(SITE.author.name)}" />
 <meta name="generator" content="DeskDrawer site builder" />
+${page.path === "" ? `<meta name="google-site-verification" content="${SITE.googleSiteVerification}" />
+` : ""}
 
 <!-- Real icon files at real, stable URLs. Google's favicon crawler cannot use a data: URI —
      that is why Search fell back to the pages.dev provider icon. Google resizes whatever it
