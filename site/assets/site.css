@@ -417,8 +417,12 @@ footer{border-top:1px solid var(--border);padding:56px 0 44px;margin-top:20px}
    272px wide, so anything sized for a desktop column — button labels, card padding, table
    cells — has to be re-stated here or it is clipped by body{overflow-x:hidden}. */
 @media(max-width:560px){
-  /* 16px gutters instead of 24px returns 16px of content width on the narrowest phones */
-  .wrap{padding:0 16px}
+  /* 16px gutters instead of 24px returns 16px of content width on the narrowest phones.
+     LONGHANDS ONLY. .wrap is co-classed with .hero (<section class="hero wrap">) and with
+     .doc-shell (<div class="wrap doc-shell">); both set their own vertical padding earlier
+     in this file at the same specificity, so a `padding` SHORTHAND here wins on source
+     order and silently resets their top/bottom to 0 on every phone. */
+  .wrap{padding-left:16px;padding-right:16px}
 
   /* Buttons: allow the label to wrap rather than run off the screen, and stack the CTA
      pairs full-width. "Get DeskDrawer on the Microsoft Store" measured 384px on a 320px
