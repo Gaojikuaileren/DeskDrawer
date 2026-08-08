@@ -491,8 +491,10 @@ footer{border-top:1px solid var(--border);padding:56px 0 44px;margin-top:20px}
      phone; nowrap meant it was simply cut off at both edges. */
   .btn{white-space:normal;text-align:center}
   .btn-lg{--pad:14px 18px;font-size:15.5px}
-  .cta-row{flex-direction:column;align-items:stretch;gap:10px}
-  .cta-row .btn,.doc-body .btn{width:100%}
+  /* Stack, but size to the label rather than stretching edge to edge — a full-bleed
+     primary button reads as a slab on a phone. max-width:100% on .btn still caps
+     anything longer than the column, and it wraps instead of being clipped. */
+  .cta-row{flex-direction:column;align-items:center;gap:10px}
 
   /* Desktop padding, scaled back so the text column is not squeezed twice */
   .card{padding:20px}

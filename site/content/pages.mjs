@@ -233,7 +233,7 @@ export function buildPages(ctx) {
       <h2>Clean up your Windows desktop today</h2>
       <p>Group your cluttered desktop icons into clean drawers in a couple of minutes. Buy once, keep it for life — no subscription, no account, no telemetry.</p>
       <div class="cta-row" style="margin-top:30px">
-        <a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get DeskDrawer on the Microsoft Store</a>
+        <a class="btn btn-primary btn-lg" href="${SITE.store}" target="_blank" rel="noopener">${STORE_SVG} Get it on the Microsoft Store</a>
         <a class="btn btn-ghost btn-lg" href="/docs/getting-started/">Read the docs</a>
       </div>
     </div>
