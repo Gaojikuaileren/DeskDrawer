@@ -74,6 +74,10 @@ section.wrap:not(.hero){padding-top:88px;padding-bottom:88px}
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:var(--pad);border-radius:var(--radius-sm);font-weight:600;font-size:15px;
   border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  /* A label can be longer than the column it sits in — "Get DeskDrawer on the Microsoft
+     Store" is 384px, wider than a 320px phone. Never let a button exceed its container;
+     the phone block below also lets the label wrap instead of being clipped. */
+  max-width:100%;
   transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,border-color .25s;
 }
 .btn svg{width:18px;height:18px;flex:none}
@@ -237,7 +241,13 @@ a.card:hover .more svg{transform:translateX(3px)}
 .crumbs [aria-current]{color:var(--muted)}
 
 /* ------------------------------------------------------------------ prose */
-.doc-body{min-width:0;max-width:var(--prose)}
+/* A bare URL or a long identifier is one unbreakable token. On a 320px screen
+   "github.com/Gaojikuaileren/DeskDrawer" is 278px of unbreakable text and pushed the whole
+   /about/ document to 326px. break-word only kicks in when the word genuinely cannot fit,
+   so ordinary prose is untouched; links and code get `anywhere` because they are the tokens
+   that are actually pathological. */
+.doc-body{min-width:0;max-width:var(--prose);overflow-wrap:break-word}
+.doc-body a,.doc-body code,.doc-body td,.doc-body th{overflow-wrap:anywhere}
 .doc-shell:not(.has-side) .doc-body{margin:0 auto}
 .doc-body h1{font-size:clamp(32px,4.6vw,46px);text-align:left;margin:0 0 18px;max-width:22ch;letter-spacing:-.03em;line-height:1.08}
 .doc-body .lede{font-size:19px;color:var(--muted);line-height:1.6;margin-bottom:14px}
@@ -401,6 +411,41 @@ footer{border-top:1px solid var(--border);padding:56px 0 44px;margin-top:20px}
 .foot-links a{display:block;color:var(--muted);font-size:14px;padding:4px 0;transition:color .2s}
 .foot-links a:hover{color:var(--text)}
 .copy{margin-top:40px;color:var(--faint);font-size:12.5px;border-top:1px solid var(--border);padding-top:22px;display:flex;flex-direction:column;gap:6px}
+
+/* ------------------------------------------------------------------ phones */
+/* Measured against the real pages at 320px and 375px. At 320px the content column is only
+   272px wide, so anything sized for a desktop column — button labels, card padding, table
+   cells — has to be re-stated here or it is clipped by body{overflow-x:hidden}. */
+@media(max-width:560px){
+  /* 16px gutters instead of 24px returns 16px of content width on the narrowest phones */
+  .wrap{padding:0 16px}
+
+  /* Buttons: allow the label to wrap rather than run off the screen, and stack the CTA
+     pairs full-width. "Get DeskDrawer on the Microsoft Store" measured 384px on a 320px
+     phone; nowrap meant it was simply cut off at both edges. */
+  .btn{white-space:normal;text-align:center}
+  .btn-lg{--pad:14px 18px;font-size:15.5px}
+  .cta-row{flex-direction:column;align-items:stretch;gap:10px}
+  .cta-row .btn,.doc-body .btn{width:100%}
+
+  /* Desktop padding, scaled back so the text column is not squeezed twice */
+  .card{padding:20px}
+  .compare .col{padding:22px}
+  .cta-band{padding:42px 18px;border-radius:20px}
+  .note-list a{padding:20px 18px}
+  .term-grid a{padding:16px 18px}
+  .qa-list a{padding:12px 12px}
+  .doc-body pre{padding:14px 15px;font-size:13px}
+
+  /* A narrow table should simply fit. Wide ones still exceed the column and the
+     .table-wrap scroller still takes over — th keeps white-space:nowrap for that. */
+  .doc-body table{min-width:0}
+  .doc-body th,.doc-body td{padding:10px 12px}
+
+  /* Tap targets that are navigation rather than inline prose links */
+  .foot-links a{padding:7px 0}
+  .menu summary{width:44px;height:44px}
+}
 
 /* ------------------------------------------------------------------ motion */
 /* Reveal only when scripting is present — `js` is set by a tiny inline script in <head>.
