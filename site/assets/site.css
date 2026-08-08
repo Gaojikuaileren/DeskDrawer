@@ -229,7 +229,7 @@ a.card:hover .more svg{transform:translateX(3px)}
   display:grid;grid-template-columns:236px minmax(0,1fr) 200px;gap:44px;align-items:start;
 }
 @media(max-width:1100px){.doc-shell.has-side{grid-template-columns:220px minmax(0,1fr);gap:36px}.doc-toc{display:none}}
-@media(max-width:860px){.doc-shell.has-side{grid-template-columns:1fr;gap:0}.doc-side{display:none}}
+@media(max-width:860px){.doc-shell.has-side{grid-template-columns:1fr;gap:0}}
 
 .doc-side{position:sticky;top:calc(var(--nav-h) + 20px);max-height:calc(100vh - var(--nav-h) - 40px);overflow-y:auto;padding-bottom:24px}
 .doc-side::-webkit-scrollbar{width:6px}
@@ -245,6 +245,48 @@ a.card:hover .more svg{transform:translateX(3px)}
 .doc-toc a{display:block;padding:5px 0 5px 12px;border-left:1px solid var(--border);color:var(--muted2);transition:color .2s,border-color .2s}
 .doc-toc a:hover,.doc-toc a.is-active{color:var(--text);border-left-color:var(--a1)}
 .doc-toc a.lvl-3{padding-left:24px;font-size:13px}
+
+/* --- phone: put the two navs back INSIDE the column ------------------------------
+   Below 860px the grid collapsed to one column and both navs were set to display:none,
+   which left a 77-page documentation site with no in-section route on a phone — the
+   hamburger only carries 5 hubs and 5 marketing pages.
+
+   This block must sit AFTER the .doc-side / .doc-toc base rules above: a media query adds
+   no specificity, so an equal-specificity rule later in the file would otherwise win.
+
+   Two things that are not obvious:
+   - `order` needs a flex context, and 18 of the 38 pages that carry a TOC are a plain
+     .doc-shell (display:block), so the flex reset has to cover both shells.
+   - .doc-shell.has-side sets align-items:start, which in a COLUMN flex container is the
+     CROSS axis — left alone it shrink-wraps .doc-body to max-content and blows the page
+     open. It has to be reset to stretch.
+   Page contents becomes a scrollable chip row above the article (~50px) rather than a
+   vertical list, which would otherwise push the <h1> down past 400px. */
+@media(max-width:860px){
+  .doc-shell,.doc-shell.has-side{display:flex;flex-direction:column;align-items:stretch;gap:0}
+
+  .doc-toc{
+    display:flex;order:-1;position:static;align-items:center;gap:8px;
+    margin:0 0 26px;padding:0 0 10px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+  }
+  .doc-toc::-webkit-scrollbar{display:none}
+  .doc-toc h2{margin:0;flex:none}
+  .doc-toc a{
+    flex:none;display:flex;align-items:center;min-height:40px;padding:6px 13px;white-space:nowrap;
+    border:1px solid var(--border);border-left:1px solid var(--border);border-radius:999px;background:var(--card);
+  }
+  .doc-toc a.lvl-3{padding-left:13px;font-size:13.5px}
+  .doc-toc a:hover,.doc-toc a.is-active{border-color:var(--a1);color:var(--text)}
+
+  .doc-side{
+    display:block;order:1;position:static;max-height:none;overflow:visible;
+    margin:44px 0 0;padding:4px 14px 12px;
+    border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--card);
+  }
+  .doc-side h2{margin:16px 0 2px}
+  .doc-side h2:first-child{margin-top:12px}
+  .doc-side a{display:flex;align-items:center;min-height:44px;margin-left:0;padding:6px 10px}
+}
 
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13.5px;color:var(--muted2);margin-bottom:22px}
 .crumbs a{color:var(--muted2);transition:color .2s}
@@ -465,6 +507,11 @@ footer{border-top:1px solid var(--border);padding:56px 0 44px;margin-top:20px}
      .table-wrap scroller still takes over — th keeps white-space:nowrap for that. */
   .doc-body table{min-width:0}
   .doc-body th,.doc-body td{padding:10px 12px}
+  /* Of the 29 tables on the site, 25 are two-column and already fit; only the four
+     three-column ones still exceed a 320px screen. th{white-space:nowrap} is their
+     intrinsic floor, so relax it for those alone — scoped with :has() so the 25 that
+     are fine keep the layout they have. No :has() support just means today's scroller. */
+  .doc-body table:has(tr>:nth-child(3)) th{white-space:normal}
 
   /* Tap targets that are navigation rather than inline prose links. The breadcrumb and
      related links sit in flowed text, so they get a usable box rather than a full 44px —
