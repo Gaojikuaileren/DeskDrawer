@@ -6,6 +6,10 @@ It is designed to be quiet, local-first, and clean: one-time purchase, no ads, n
 
 **Website: [deskdrawer.pages.dev](https://deskdrawer.pages.dev/)** · **[Get it on the Microsoft Store](https://apps.microsoft.com/detail/9n904wfphzfz)**
 
+> **Coming in the next update (1.3.1):** [folder boards](#folder-boards) and the shortcut-arrow toggle
+> are documented below but are not in the Microsoft Store version yet (1.2.9). See the
+> [changelog](CHANGELOG.md).
+
 > **Full documentation is on the website.** This README is a quick visual guide; the site has the
 > complete manual, and it is the canonical source for how DeskDrawer behaves.
 >
@@ -26,7 +30,7 @@ The interface is icon-only. Every button is shown below exactly as it appears in
 
 | Button | Action |
 |:---:|---|
-| ![new](docs/icons/new.png) | **New board** |
+| ![new](docs/icons/new.png) | **New board** — it appears on the monitor your mouse is on |
 | ![rename](docs/icons/rename.png) | **Rename** this board (edits in place) |
 | ![delete](docs/icons/delete.png) | **Delete** this board — its icons return to the default board |
 | ![folderin](docs/icons/folderin.png) | **Make it a folder board** — the arrow points *into* the folder: a real folder named after the board is created on your desktop and the board's files move into it ([folder boards](#folder-boards)). Not available on the default board, or on a board that holds a system icon such as This PC or the Recycle Bin |
@@ -54,7 +58,7 @@ The interface is icon-only. Every button is shown below exactly as it appears in
 
 | Button | Action |
 |:---:|---|
-| ![new](docs/icons/new.png) | **New board** |
+| ![new](docs/icons/new.png) | **New board** — it appears on the monitor your mouse is on |
 | ![reset](docs/icons/reset.png) | **Fix misplaced boards** — boards that are off-screen, under the taskbar, or overlapping get re-placed (snapped next to other boards); well-placed boards are not moved |
 | ![monitor](docs/icons/monitor.png) | **Switch view** — toggle between your boards and the plain Windows desktop. Checked = board view (boards shown, native icons hidden); unchecked = the normal desktop (boards hidden, native icons back). The two are never shown at once, and creating a new board switches back to board view |
 | ![shortcut](docs/icons/shortcut.png) | **Shortcut arrows** — show or hide the small arrow in the corner of shortcut icons, like the one on the Windows desktop. Checked (the default) = shown |
@@ -120,6 +124,8 @@ Each board has a compact widget in its **bottom-right corner**: `[▾ arrow] [na
 
 ### Folder boards
 
+*New in 1.3.1, the next Microsoft Store update.*
+
 An ordinary board only *groups* icons — the files stay loose on your desktop. A **folder board** is
 backed by a real folder instead: `Desktop\<board name>`. The board shows what is inside that folder,
 and the folder itself never appears on any board. Folder boards look like any other board, plus faint
@@ -154,7 +160,7 @@ gets a free name (`name (2)`) if the folder already has one.
 | Drag selected icons | Move them between boards (or reorder within one); drag **out** to an Explorer window to copy/move the real files. Into or out of a folder board, the files move too |
 | Drag files **from** Explorer onto a board | The files land on the desktop and join that board — or, on a folder board, land in its folder |
 | Right-click an icon | The real Windows context menu (Open with, Send to, and extensions included) |
-| Right-click empty board space | The real Windows **desktop** menu — "New" files are created in that board (in a folder board's folder) |
+| Right-click empty board space | The real Windows **desktop** menu — "New" files are created in that board (in a folder board's folder) and open straight into rename |
 | Mouse wheel over a board | Scroll the board |
 | `Enter` / double-click | Open |
 | `F2` | Rename file |

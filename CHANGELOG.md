@@ -1,5 +1,52 @@
 # Changelog
 
+## Next update — 1.3.1 (not on the Microsoft Store yet)
+- **Folder boards** (new). Turn any board except the default one into a real folder on your desktop:
+  board menu → the folder-with-arrow button. The folder is named after the board, the board's files move
+  into it, and the board shows what is inside, marked by faint diagonal stripes. Drag icons in and out
+  to move the files, rename the board to rename the folder, and press the same button again to move the
+  files back onto the desktop and remove the empty folder. Nothing is ever overwritten. A board that
+  holds a system icon (This PC, Recycle Bin) can't be converted.
+- **Shortcut arrows** (new): shortcut icons now carry the small corner arrow, as on the Windows desktop,
+  with a tray-menu toggle to hide it. On by default.
+- A file made with the desktop's **New** menu opens straight into rename on its board, as on the normal
+  desktop, instead of keeping its default name.
+- A new board appears on the monitor your mouse is on, two icons wide and one tall.
+- Resizing a board now snaps flush against a neighbouring board, not only against the screen edge.
+- Fixed: pointing at the Recycle Bin could freeze the mouse and make the whole PC lag when the bin held
+  a very large number of items. (Thank you for the report.)
+- Fixed: the hover info tip could flicker on and off near the bottom-right corner of the screen.
+- Fixed: a file pasted or dropped onto a board, while a file with the same name was already on the
+  desktop, fell to the default board instead of joining the board you chose.
+- The drag preview is no longer drawn darker than the icon, and a line break pasted into a rename box
+  no longer ends up in the name.
+
+## 1.2.9
+- **Item flow, per board** (new): a board can fill rows left to right (the default) or fill columns top
+  to bottom — two new buttons in the board menu. A board that fills columns scrolls sideways.
+- In the Store version, a system icon hidden by an early version of DeskDrawer could stay hidden even
+  after **Bring back system icons**. It now comes back.
+- Smoother right after sign-in on a busy PC: if Windows is slow to let DeskDrawer run, it now backs off
+  instead of competing for the mouse, and repaints icons in smaller steps.
+- Lower memory use in some situations, for example while boards are hidden.
+
+## 1.2.8
+*Also contains the changes of 1.2.7 and its 1.2.7.1 hotfix, which were not released on their own.
+There was no 1.2.6.*
+- New tray button to **bring back system icons** (This PC, Recycle Bin…) that you removed from a board
+  with `Delete`. It appears only while one is hidden.
+- Boards fit back inside the screen when the work area changes — the taskbar set to auto-hide, a
+  toolbar docking, a resolution or scaling change.
+- Signing out or shutting down while DeskDrawer is running now always restores the native desktop
+  icons cleanly.
+- `.url` shortcuts — Steam game shortcuts, browser links — show their real icon instead of a blank page.
+- Icons fill their space properly instead of looking undersized inside a faint grey frame.
+- The rename box grows to fit the name you are editing.
+- Dragging icons over shortcuts is smoother, and copying no longer risks a pause of up to two seconds
+  while another app holds the clipboard.
+- Removing a system icon from a board can no longer be undone by a background refresh that happened at
+  the same moment.
+
 ## 1.2.5
 - A stability release fixing issues found in a further code audit — no new features.
 - Fixed a rare freeze (and mouse-wheel stall) that could happen when a mapped network drive was offline
