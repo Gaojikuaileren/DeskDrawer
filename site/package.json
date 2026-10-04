@@ -1,7 +1,7 @@
 {
   "name": "deskdrawer-site",
   "private": true,
-  "version": "1.2.5",
+  "version": "1.2.9",
   "description": "Static site generator for deskdrawer.pages.dev — no dependencies, output committed to ../docs",
   "type": "module",
   "scripts": {

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-10-04",
   "count": 35,
   "items": [
     {
@@ -84,7 +84,7 @@
       "slug": "board-menu",
       "term": "Board menu",
       "aka": [],
-      "definition": "The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, icon size, outline, rounded corners and quit.",
+      "definition": "The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, fill rows or columns, icon size, outline, rounded corners and quit.",
       "url": "https://deskdrawer.pages.dev/glossary/board-menu/"
     },
     {
@@ -93,7 +93,7 @@
       "aka": [
         "notification area menu"
       ],
-      "definition": "The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, run at startup, open the configuration folder, help and quit.",
+      "definition": "The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, bring back system icons (only while one is hidden), run at startup, open the configuration folder, help and quit.",
       "url": "https://deskdrawer.pages.dev/glossary/tray-menu/"
     },
     {
@@ -141,7 +141,7 @@
       "slug": "icon-size",
       "term": "Icon size",
       "aka": [],
-      "definition": "Icon size is a per-board setting offering four sizes, which changes how large icons are drawn on that board and therefore how many fit in a given area.",
+      "definition": "Icon size is an application-wide setting offering four sizes, which changes how large icons are drawn on every board and therefore how many fit in a given area.",
       "url": "https://deskdrawer.pages.dev/glossary/icon-size/"
     },
     {

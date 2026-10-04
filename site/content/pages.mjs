@@ -159,7 +159,7 @@ export function buildPages(ctx) {
         <div class="cap">Boards up close — one for apps, one for images, one for working files</div>
       </div>
       <div class="shot reveal d1">
-        <img src="/board-menu.png" width="460" height="470" loading="lazy" alt="DeskDrawer's board menu — a narrow dark column of icon-only commands for creating, renaming, deleting, sorting and restyling a board" />
+        <img src="/board-menu.png" width="460" height="470" loading="lazy" alt="DeskDrawer's board menu — a narrow dark column of icon-only commands for creating, renaming, deleting, sorting, laying out and restyling a board" />
         <div class="cap">Icon-only menus — nothing to translate, nothing to read</div>
       </div>
     </div>
@@ -254,10 +254,11 @@ export function buildPages(ctx) {
 - Boards are drawn on the desktop, not as windows: <kbd>Win</kbd>+<kbd>D</kbd> and "Minimize all" leave them alone
 - No title bars — all controls in one compact corner widget
 - Fold any board into a compact square and unfold it again
-- Optional outline and rounded corners, per board
+- Optional outline and rounded corners
 - Drag to move, drag to resize; both snap to the icon grid, screen edges and neighbouring boards
 - Rename by double-clicking the board name
 - Deleting a board returns its icons to the default board and never touches a file
+- Remove This PC or the Recycle Bin from a board, and bring it back from the tray menu
 
 ## Your files
 
@@ -281,8 +282,10 @@ export function buildPages(ctx) {
 
 - Five [[sort-mode|sort modes]] per board — manual, name, type, size, date — each ascending or descending
 - Manual order is stored and survives switching away and back
-- Four [[icon-size|icon sizes]] per board
+- Fill rows or fill columns, per board — a board that fills columns scrolls sideways
+- Four [[icon-size|icon sizes]]
 - Automatic re-tiling after an icon-size change so boards stay inside the work area
+- Boards pulled back inside the screen when the taskbar, resolution or scaling changes
 - **Fix misplaced boards** to rescue a layout after a display change, without touching boards that are fine
 
 ## Windows integration
@@ -477,14 +480,15 @@ connection, which makes its privacy claim checkable instead of promised. See
 
 ## How it is developed
 
-Twenty-three versions have shipped. Twelve of them fixed things rather than adding them, and the
-four most recent — 1.2.2 through 1.2.5 — added no features at all. That is not a stall; it is what a
-program that paints over the whole desktop and handles your files ought to spend its time on. The
-[[changelog|release notes]] list every one of them, so the claim is checkable rather than asserted.
+Twenty-five versions have shipped. Twelve of them fixed things rather than adding them — 1.2.2
+through 1.2.5 added no features at all — and the two since then each added one small feature beside
+a longer list of fixes. That is not a stall; it is what a program that paints over the whole desktop
+and handles your files ought to spend its time on. The [[changelog|release notes]] list every one of
+them, so the claim is checkable rather than asserted.
 
 With no telemetry there are no crash reports and no usage data, so the substitute is repeated
-full-codebase review — eight rounds so far, each through a different lens. What each one found,
-including how often a fix caused the next bug, is written up in [[eight-rounds-of-audits]].
+full-codebase review, each round through a different lens. What the first eight found, including
+how often a fix caused the next bug, is written up in [[eight-rounds-of-audits]].
 
 ## Why this site is unusually detailed
 
@@ -509,9 +513,25 @@ Windows is a trademark of the Microsoft group of companies. DeskDrawer is an ind
     lede: "No dates are given here, because a one-person product cannot honour them and a roadmap with dates it misses is worse than none.",
     body: `## Current priority: correctness over features
 
-The last several releases have been stability work, and that is where the effort still goes. A tool
+Most releases have been stability work, and that is still where most of the effort goes. A tool
 that hides your desktop icon layer and handles your files earns feature work only after it is
 reliable. [[eight-rounds-of-audits]] describes what that has involved.
+
+## In the next update
+
+Built and being tested, not on the Microsoft Store yet. It will ship as **1.3.1** — no date is
+promised here either.
+
+- **Folder boards.** Turn a board into a real folder on your desktop: the folder is named after the
+  board, the board's files move into it, and the board shows what is inside, marked by faint diagonal
+  stripes. Drag icons in and out to move the files; turn it back and they return to the desktop. Files
+  move only when you ask, through the standard Windows file operation, and nothing is overwritten.
+- **Shortcut arrows** on shortcut icons, as on the Windows desktop, with a tray-menu toggle to hide
+  them.
+- A file made with the desktop's **New** menu opens straight into rename on its board.
+- New boards appear on the monitor your mouse is on, and resizing snaps flush against neighbouring
+  boards.
+- Fixes, among them a freeze when pointing at a Recycle Bin that holds a very large number of items.
 
 ## Being considered
 
@@ -701,7 +721,7 @@ Microsoft account rather than from the developer. See [[licensing]].`,
     body:
       docHeader({
         title: "Release notes",
-        lede: `Every released version of DeskDrawer, newest first — ${RELEASES.length} of them, of which ${RELEASES.filter((r) => r.kind === "Fix" || r.kind === "Stability").length} fixed things rather than adding them. Dates come from the public repository, which is why the earliest releases have none — they predate it.`,
+        lede: `Every released version of DeskDrawer, newest first — ${RELEASES.length} of them, of which ${RELEASES.filter((r) => r.kind === "Fix" || r.kind === "Stability").length} fixed things rather than adding them. Dates come from commit history, which is why the earliest releases have none — they predate the public repository. What is built but not yet released is on the roadmap.`,
         meta: [`Current version ${SITE.version}`, `Updated ${fmtDate(SITE.updated)}`],
       }) + `<ul class="rel-list">${relHtml}</ul>`,
     schema: {

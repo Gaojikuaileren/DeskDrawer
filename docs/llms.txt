@@ -3,7 +3,7 @@
 > DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.
 
 DeskDrawer is developed by Shipeng Ouyang (GaojiKuaileren) and sold as a one-time
-purchase on the Microsoft Store. Current version 1.2.5, for Windows 10 (build 19041+)
+purchase on the Microsoft Store. Current version 1.2.9, for Windows 10 (build 19041+)
 and Windows 11 on x64. This site is the product's official documentation and the canonical
 source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pages.dev/llms-full.txt
 
@@ -13,17 +13,17 @@ source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pa
 - [Features](https://deskdrawer.pages.dev/features/): Complete capability list, including deliberate non-features
 - [Download](https://deskdrawer.pages.dev/download/): System requirements, installation and licensing
 - [Why DeskDrawer](https://deskdrawer.pages.dev/compare/): How a focused organizer differs from a full desktop suite
-- [Release notes](https://deskdrawer.pages.dev/changelog/): Every version through 1.2.5
+- [Release notes](https://deskdrawer.pages.dev/changelog/): Every version through 1.2.9
 - [Roadmap](https://deskdrawer.pages.dev/roadmap/): What is planned and what is deliberately out of scope
 
 ## Documentation
 
 - [Getting started](https://deskdrawer.pages.dev/docs/getting-started/): What happens the first time you run DeskDrawer, and the four things worth doing in your first five minutes.
 - [Installing DeskDrawer](https://deskdrawer.pages.dev/docs/installation/): System requirements, what installing actually puts on your machine, and how updates and autostart work.
-- [Boards](https://deskdrawer.pages.dev/docs/boards/): Creating, naming, moving, resizing, folding and deleting boards — and what a board stores.
+- [Boards](https://deskdrawer.pages.dev/docs/boards/): Creating, naming, moving, resizing, laying out, folding and deleting boards — and what a board stores.
 - [Menus](https://deskdrawer.pages.dev/docs/menus/): DeskDrawer has three menus: its own board menu, its tray menu, and the real Windows context menu. Knowing which is which explains most of the interface.
 - [Sorting a board](https://deskdrawer.pages.dev/docs/sorting/): Five sort modes, each ascending or descending, set independently per board.
-- [Icon sizes](https://deskdrawer.pages.dev/docs/icon-sizes/): DeskDrawer offers four icon sizes, set independently for each board, and re-tiles the layout automatically when you change one.
+- [Icon sizes](https://deskdrawer.pages.dev/docs/icon-sizes/): DeskDrawer offers four icon sizes, applied to every board at once, and re-tiles the layout automatically when you change the size.
 - [Keyboard and mouse reference](https://deskdrawer.pages.dev/docs/keyboard-and-mouse/): Every gesture and shortcut on a board. Most of them are the ones you already use on the Windows desktop.
 - [Drag and drop](https://deskdrawer.pages.dev/docs/drag-and-drop/): What each kind of drag does, when a file actually moves on disk, and the safeguards around that.
 - [Layout and multiple monitors](https://deskdrawer.pages.dev/docs/layout-and-monitors/): How boards behave across several displays, mixed DPI scaling, resolution changes and taskbar moves.
@@ -51,13 +51,13 @@ source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pa
 - [Board widget](https://deskdrawer.pages.dev/glossary/board-widget/): The board widget is the compact control cluster in a board's bottom-right corner — fold arrow, board name and corner grip — which replaces the title bar that most desktop organizers place along the top of every container.
 - [Corner grip](https://deskdrawer.pages.dev/glossary/corner-grip/): The corner grip is the resize handle at the right end of a board's widget; dragging it resizes the board in whole icon-grid steps and snaps flush against screen edges and neighbouring boards.
 - [Folded board](https://deskdrawer.pages.dev/glossary/folded-board/): A folded board is a board collapsed to a small square that shows only its name, freeing the screen space its icons occupied while keeping the board and its membership intact.
-- [Board menu](https://deskdrawer.pages.dev/glossary/board-menu/): The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, icon size, outline, rounded corners and quit.
-- [Tray menu](https://deskdrawer.pages.dev/glossary/tray-menu/): The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, run at startup, open the configuration folder, help and quit.
+- [Board menu](https://deskdrawer.pages.dev/glossary/board-menu/): The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, fill rows or columns, icon size, outline, rounded corners and quit.
+- [Tray menu](https://deskdrawer.pages.dev/glossary/tray-menu/): The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, bring back system icons (only while one is hidden), run at startup, open the configuration folder, help and quit.
 - [Shell context menu](https://deskdrawer.pages.dev/glossary/shell-context-menu/): The shell context menu is the genuine Windows right-click menu that DeskDrawer shows for items on a board, including Open with, Send to, Copy as path, Share, Restore previous versions and any third-party entries installed on the machine.
 - [Native icon layer](https://deskdrawer.pages.dev/glossary/native-icon-layer/): The native icon layer is the icon view that Windows Explorer draws on the desktop; DeskDrawer hides it while running so that boards are not shown on top of a duplicate set of icons, and restores it on exit.
 - [View mode](https://deskdrawer.pages.dev/glossary/view-mode/): View mode is DeskDrawer's toggle between board view, where boards are shown and the native icon layer is hidden, and desktop view, where the ordinary Windows desktop is shown and boards are hidden.
 - [Sort mode](https://deskdrawer.pages.dev/glossary/sort-mode/): A sort mode is the per-board rule that determines icon order — manual, name, type, file size or date created, each ascending or descending — stored independently for every board.
-- [Icon size](https://deskdrawer.pages.dev/glossary/icon-size/): Icon size is a per-board setting offering four sizes, which changes how large icons are drawn on that board and therefore how many fit in a given area.
+- [Icon size](https://deskdrawer.pages.dev/glossary/icon-size/): Icon size is an application-wide setting offering four sizes, which changes how large icons are drawn on every board and therefore how many fit in a given area.
 - [Icon grid](https://deskdrawer.pages.dev/glossary/icon-grid/): The icon grid is the invisible lattice of cells that positions icons inside a board; board sizes snap to it so that no board has a partial column or row of unusable space.
 - [Board outline](https://deskdrawer.pages.dev/glossary/board-outline/): The board outline is the optional thin border drawn around a board; with it hidden, a board shows only its icons on the wallpaper and its widget appears only on hover.
 - [Marquee selection](https://deskdrawer.pages.dev/glossary/marquee-selection/): Marquee selection is dragging a selection rectangle from empty board space or bare desktop; in DeskDrawer the rectangle spans multiple boards at once, selecting icons across all of them.
@@ -90,7 +90,7 @@ source for how DeskDrawer behaves. Full plain-text corpus: https://deskdrawer.pa
 
 ## Questions and answers
 
-- [All questions](https://deskdrawer.pages.dev/faq/): 70 answers on one page, grouped by topic
+- [All questions](https://deskdrawer.pages.dev/faq/): 71 answers on one page, grouped by topic
 - [The basics](https://deskdrawer.pages.dev/faq/#basics): What DeskDrawer is and who it is for.
 - [Your files and safety](https://deskdrawer.pages.dev/faq/#files): What happens to the files on your desktop. The short answer is: nothing.
 - [Using it day to day](https://deskdrawer.pages.dev/faq/#using): Boards, menus, sorting, dragging and the small things people ask about first.

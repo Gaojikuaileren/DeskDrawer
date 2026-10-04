@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07",
+  "updated": "2026-10-04",
   "count": 21,
   "items": [
     {
@@ -20,7 +20,7 @@
       "slug": "boards",
       "title": "Boards",
       "group": "Start here",
-      "description": "Creating, naming, moving, resizing, folding and deleting boards — and what a board stores.",
+      "description": "Creating, naming, moving, resizing, laying out, folding and deleting boards — and what a board stores.",
       "url": "https://deskdrawer.pages.dev/docs/boards/"
     },
     {
@@ -41,7 +41,7 @@
       "slug": "icon-sizes",
       "title": "Icon sizes",
       "group": "Using DeskDrawer",
-      "description": "DeskDrawer offers four icon sizes, set independently for each board, and re-tiles the layout automatically when you change one.",
+      "description": "DeskDrawer offers four icon sizes, applied to every board at once, and re-tiles the layout automatically when you change the size.",
       "url": "https://deskdrawer.pages.dev/docs/icon-sizes/"
     },
     {

@@ -334,16 +334,23 @@ The two are never shown at once, because that would display every desktop item t
   {
     slug: "change-icon-size", cat: "using",
     q: "Can I change how big the icons are?",
-    a: `Yes — four sizes, set per board, from the **Icon size** submenu of the [[board-menu]]. Because
-icon size changes how many icons fit per row, DeskDrawer re-tiles afterwards so boards stay inside
-the visible work area and do not overlap. See [[icon-sizes]].`,
+    a: `Yes — four sizes, from the **Icon size** submenu of the [[board-menu]]; the size applies to every
+board. Because icon size changes how many icons fit per row, DeskDrawer re-tiles afterwards so boards
+stay inside the visible work area and do not overlap. See [[icon-sizes]].`,
   },
   {
     slug: "hide-board-outlines", cat: "using",
     q: "Can I hide the board outlines?",
-    a: `Yes, per board, from the [[board-menu]]. With outlines off, a board is just your icons on your
-wallpaper and the control widget fades in only on hover. Rounded corners are a separate toggle in the
-same menu.`,
+    a: `Yes, from the [[board-menu]] — the setting applies to every board. With outlines off, a board is
+just your icons on your wallpaper and the control widget fades in only on hover. Rounded corners are a
+separate toggle in the same menu.`,
+  },
+  {
+    slug: "fill-columns", cat: "using",
+    q: "Can a board fill columns instead of rows?",
+    a: `Yes, since 1.2.9. The [[board-menu]] has a pair of buttons — fill rows, the default, and fill
+columns — set separately for each board. A board that fills columns runs its icons top to bottom and
+scrolls sideways when it is full. See [[boards]].`,
   },
   {
     slug: "multiple-monitors", cat: "using",
@@ -498,7 +505,10 @@ resolving shortcuts. See [[architecture]].`,
 the moment the bin changes rather than on a timer — a change made in 1.1.0 that also lowered idle CPU.
 
 Their names come from Windows in your display language. Note that since 1.1.1, deleting a special icon
-from a board no longer also hides it on the real Windows desktop.`,
+from a board no longer also hides it on the real Windows desktop.
+
+Removed one by accident? While any is hidden, the [[tray-menu]] shows **Bring back system icons**,
+which restores them — added in 1.2.8.`,
   },
   {
     slug: "multiple-users", cat: "windows",
@@ -607,9 +617,9 @@ entirely the Store's job.`,
     slug: "is-it-actively-maintained", cat: "buying",
     q: "Is DeskDrawer actively maintained, and are bug reports welcome?",
     a: `Yes to both, and the [[changelog|release notes]] are the evidence rather than the claim: every
-version is listed there with what changed in it. Twenty-three have shipped so far, twelve of them
-fixing things rather than adding them, and the codebase has been through eight full review rounds —
-what those found is written up in [[eight-rounds-of-audits]].
+version is listed there with what changed in it. Twenty-five have shipped so far, twelve of them
+fixing things rather than adding them, and the codebase goes through repeated full review rounds —
+what the first eight found is written up in [[eight-rounds-of-audits]].
 
 Bug reports and feature requests are genuinely wanted. Because DeskDrawer has no [[telemetry]], the
 developer learns about a problem only when somebody writes in, so your report may be the only signal
@@ -656,8 +666,8 @@ written to a Windows setting, so your icons return by themselves. See [[uninstal
 covered by the taskbar or overlapping; boards that are fine are left exactly where they are, and
 contents, names and sizes are never changed.
 
-This usually happens after a resolution change, unplugging a monitor, or moving the taskbar. See
-[[layout-and-monitors]].`,
+Since 1.2.8 a resolution, scaling or taskbar change pulls boards back inside the screen by itself, so
+this now mostly happens after unplugging a monitor. See [[layout-and-monitors]].`,
   },
   {
     slug: "it-freezes", cat: "trouble",

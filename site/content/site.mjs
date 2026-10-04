@@ -11,9 +11,9 @@ export const SITE = {
   name: "DeskDrawer",
   legalName: "DeskDrawer - Desktop Organizer",
   tagline: "Lightweight Windows desktop organizer",
-  version: "1.2.5",
-  released: "2026-07-25",
-  updated: "2026-08-07",
+  version: "1.2.9",
+  released: "2026-09-01",
+  updated: "2026-10-04",
 
   // The single sentence every surface — page, card, schema, llms.txt — agrees on.
   boilerplate:

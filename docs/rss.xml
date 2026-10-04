@@ -6,7 +6,7 @@
   <atom:link href="https://deskdrawer.pages.dev/rss.xml" rel="self" type="application/rss+xml" />
   <description>DeskDrawer is a lightweight desktop organizer for Windows. It groups desktop icons, files, folders and shortcuts into clean transparent boards without moving your files, adding bulky title bars, or changing how your desktop works. One-time purchase. No ads, no telemetry, no subscriptions, no bundled plugins.</description>
   <language>en</language>
-  <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 04 Oct 2026 00:00:00 GMT</lastBuildDate>
   <item>
     <title>DeskDrawer 1.0.0</title>
     <link>https://deskdrawer.pages.dev/changelog/#v1-0-0</link>
@@ -90,6 +90,20 @@
     <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-1-1</guid>
     <pubDate>Invalid Date</pubDate>
     <description>The Microsoft Store release.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.9</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-9</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-9</guid>
+    <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Fill rows or fill columns, per board — and a fix for system icons the Store version could not bring back.</description>
+  </item>
+  <item>
+    <title>DeskDrawer 1.2.8</title>
+    <link>https://deskdrawer.pages.dev/changelog/#v1-2-8</link>
+    <guid isPermaLink="true">https://deskdrawer.pages.dev/changelog/#v1-2-8</guid>
+    <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+    <description>A way back for removed system icons, boards that follow taskbar and resolution changes, and the icon fixes of 1.2.7.</description>
   </item>
   <item>
     <title>Eight rounds of code audits on a small app, and what each one found</title>

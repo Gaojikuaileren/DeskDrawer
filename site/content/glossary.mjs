@@ -204,7 +204,7 @@ Items arrive on it in three ways:
    to the default board and no file is touched. See [[board-membership]].
 
 The default board is an ordinary board in every other respect. You can rename it, resize it, sort it,
-change its [[icon-size]] and fold it.`,
+lay it out in rows or columns and fold it.`,
   },
 
   {
@@ -244,7 +244,7 @@ so a board at rest is nothing but your icons on your wallpaper.`,
 means a board is always exactly as wide as the icons it can hold.
 
 The grip also snaps to the edges of the [[work-area]] and to the edges of other boards, so a row of
-boards lines up without manual nudging. If boards do end up misplaced — after a resolution change,
+boards lines up without manual nudging. If boards do end up misplaced — after unplugging a monitor,
 for example — the [[tray-menu]] has a **Fix misplaced boards** command that re-tiles only the ones
 that are actually wrong.`,
   },
@@ -271,7 +271,7 @@ Folding is per board and is remembered in [[config-json]] across restarts.`,
     slug: "board-menu",
     term: "Board menu",
     short:
-      "The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, icon size, outline, rounded corners and quit.",
+      "The board menu is DeskDrawer's own icon-only menu, opened by right-clicking a board's name block, containing new board, rename, delete, sorting, fill rows or columns, icon size, outline, rounded corners and quit.",
     related: ["board-widget", "tray-menu", "shell-context-menu", "menus"],
     body: `Right-click the name block in the [[board-widget]] to open it. The menu is icon-only and dark,
 which keeps it small and language-independent.
@@ -282,12 +282,14 @@ which keeps it small and language-independent.
 | Rename | Edits the board name in place |
 | Delete | Removes the board; its icons return to the [[default-board]], files untouched |
 | Sorting | Opens the [[sort-mode]] submenu |
-| Icon size | Four [[icon-size|sizes]] |
-| Outline | Toggles the [[board-outline]] |
-| Rounded corners | Toggles rounded board corners |
+| Fill rows / Fill columns | Lays this board's icons out in rows or in columns ([[boards]]) |
+| Icon size | Four [[icon-size|sizes]], for every board |
+| Outline | Toggles the [[board-outline]] of every board |
+| Rounded corners | Toggles rounded corners on every board |
 | Quit | Exits DeskDrawer and restores the [[native-icon-layer]] |
 
-This is DeskDrawer's own menu and applies to the board. It is a different menu from the
+This is DeskDrawer's own menu and applies to the board — apart from icon size, outline and rounded
+corners, which apply to every board. It is a different menu from the
 [[shell-context-menu]], which is Windows' own and applies to a file. Right-clicking an *icon* gives
 you the Windows menu; right-clicking the board *name* gives you this one.`,
   },
@@ -297,7 +299,7 @@ you the Windows menu; right-clicking the board *name* gives you this one.`,
     term: "Tray menu",
     aka: ["notification area menu"],
     short:
-      "The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, run at startup, open the configuration folder, help and quit.",
+      "The tray menu is DeskDrawer's application-level menu, opened from its system tray icon, containing new board, fix misplaced boards, switch view, bring back system icons (only while one is hidden), run at startup, open the configuration folder, help and quit.",
     related: ["board-menu", "view-mode", "autostart", "configuration-folder", "menus"],
     body: `DeskDrawer has no main window, so the tray icon is the application. Right-click it for:
 
@@ -306,6 +308,7 @@ you the Windows menu; right-clicking the board *name* gives you this one.`,
 | New board | Creates an empty board |
 | Fix misplaced boards | Re-places boards that are off-screen, under the taskbar or overlapping; correctly placed boards are not moved |
 | Switch view | Toggles [[view-mode]] between boards and the plain Windows desktop |
+| Bring back system icons | Restores the system icons (This PC, Recycle Bin…) removed from boards; present only while one is hidden |
 | Run at startup | Toggles [[autostart]] |
 | Open the configuration folder | Opens the [[configuration-folder]] containing [[config-json]] and [[error-log]] |
 | Help & feedback | Opens the documentation |
@@ -423,11 +426,10 @@ order you had.`,
     slug: "icon-size",
     term: "Icon size",
     short:
-      "Icon size is a per-board setting offering four sizes, which changes how large icons are drawn on that board and therefore how many fit in a given area.",
+      "Icon size is an application-wide setting offering four sizes, which changes how large icons are drawn on every board and therefore how many fit in a given area.",
     related: ["board", "icon-grid", "board-menu", "icon-sizes"],
-    body: `Four sizes are available from the [[board-menu]], and the setting applies to one board at a
-time. A board of large project folders and a board of small utility shortcuts can be sized
-independently.
+    body: `Four sizes are available from the [[board-menu]], and the setting applies to every board at
+once, whichever board's menu it is chosen from.
 
 Changing icon size changes the [[icon-grid]], so the number of icons that fit per row changes with
 it. DeskDrawer re-tiles automatically afterwards so that boards stay inside the [[work-area]] and do
@@ -440,7 +442,7 @@ not overlap.`,
     short:
       "The icon grid is the invisible lattice of cells that positions icons inside a board; board sizes snap to it so that no board has a partial column or row of unusable space.",
     related: ["icon-size", "corner-grip", "board", "layout-and-monitors"],
-    body: `Cell size is derived from the board's [[icon-size]]. Icons occupy whole cells and boards
+    body: `Cell size is derived from the [[icon-size]]. Icons occupy whole cells and boards
 resize in whole cells, which is why the [[corner-grip]] snaps.
 
 The alternative — free resizing — reliably produces boards a few pixels too narrow for the next
@@ -454,7 +456,7 @@ meaningful.`,
     short:
       "The board outline is the optional thin border drawn around a board; with it hidden, a board shows only its icons on the wallpaper and its widget appears only on hover.",
     related: ["board", "board-widget", "board-menu"],
-    body: `Toggled from the [[board-menu]], per board.
+    body: `Toggled from the [[board-menu]], for every board at once.
 
 **Outline on** makes board edges explicit, which helps while you are arranging a layout or when
 boards sit close together.
@@ -681,12 +683,13 @@ can be changed from either place at any time.`,
       "The work area is the part of a monitor not occupied by the taskbar or other appbars; DeskDrawer keeps boards inside it so a board is never positioned underneath the taskbar.",
     related: ["layout-and-monitors", "corner-grip", "tray-menu"],
     body: `Windows reports a work area per monitor. DeskDrawer places and re-tiles boards within it,
-which is why a board never ends up half-hidden behind the taskbar even after a resolution change or a
-taskbar move.
+which is why a board does not end up half-hidden behind the taskbar.
 
-When the work area changes — a monitor is unplugged, the resolution changes, the taskbar moves to
-another edge — boards that fall outside it can be corrected with **Fix misplaced boards** in the
-[[tray-menu]]. Boards that are still in a valid position are left exactly where they are.`,
+Since 1.2.8, when the work area changes — the taskbar set to auto-hide or moved, a toolbar docking, a
+resolution or scaling change — boards that would stick out are pulled back inside it automatically.
+A board left outside every monitor, typically after one is unplugged, is corrected with **Fix
+misplaced boards** in the [[tray-menu]]. Boards that are still in a valid position are left exactly
+where they are.`,
   },
 
   {

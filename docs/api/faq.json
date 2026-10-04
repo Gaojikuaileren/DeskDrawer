@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-07",
-  "count": 70,
+  "updated": "2026-10-04",
+  "count": 71,
   "categories": [
     {
       "id": "basics",
@@ -251,15 +251,22 @@
       "slug": "change-icon-size",
       "question": "Can I change how big the icons are?",
       "category": "using",
-      "answer": "Yes — four sizes, set per board, from the Icon size submenu of the Board menu. Because icon size changes how many icons fit per row, DeskDrawer re-tiles afterwards so boards stay inside the visible work area and do not overlap. See Icon sizes.",
+      "answer": "Yes — four sizes, from the Icon size submenu of the Board menu; the size applies to every board. Because icon size changes how many icons fit per row, DeskDrawer re-tiles afterwards so boards stay inside the visible work area and do not overlap. See Icon sizes.",
       "url": "https://deskdrawer.pages.dev/faq/#change-icon-size"
     },
     {
       "slug": "hide-board-outlines",
       "question": "Can I hide the board outlines?",
       "category": "using",
-      "answer": "Yes, per board, from the Board menu. With outlines off, a board is just your icons on your wallpaper and the control widget fades in only on hover. Rounded corners are a separate toggle in the same menu.",
+      "answer": "Yes, from the Board menu — the setting applies to every board. With outlines off, a board is just your icons on your wallpaper and the control widget fades in only on hover. Rounded corners are a separate toggle in the same menu.",
       "url": "https://deskdrawer.pages.dev/faq/#hide-board-outlines"
+    },
+    {
+      "slug": "fill-columns",
+      "question": "Can a board fill columns instead of rows?",
+      "category": "using",
+      "answer": "Yes, since 1.2.9. The Board menu has a pair of buttons — fill rows, the default, and fill columns — set separately for each board. A board that fills columns runs its icons top to bottom and scrolls sideways when it is full. See Boards.",
+      "url": "https://deskdrawer.pages.dev/faq/#fill-columns"
     },
     {
       "slug": "multiple-monitors",
@@ -370,7 +377,7 @@
       "slug": "recycle-bin-on-a-board",
       "question": "Do This PC and the Recycle Bin work on a board?",
       "category": "windows",
-      "answer": "Yes. Special shell items appear on boards and behave normally, and the Recycle Bin's icon updates the moment the bin changes rather than on a timer — a change made in 1.1.0 that also lowered idle CPU. Their names come from Windows in your display language. Note that since 1.1.1, deleting a special icon from a board no longer also hides it on the real Windows desktop.",
+      "answer": "Yes. Special shell items appear on boards and behave normally, and the Recycle Bin's icon updates the moment the bin changes rather than on a timer — a change made in 1.1.0 that also lowered idle CPU. Their names come from Windows in your display language. Note that since 1.1.1, deleting a special icon from a board no longer also hides it on the real Windows desktop. Removed one by accident? While any is hidden, the Tray menu shows Bring back system icons, which restores them — added in 1.2.8.",
       "url": "https://deskdrawer.pages.dev/faq/#recycle-bin-on-a-board"
     },
     {
@@ -461,7 +468,7 @@
       "slug": "is-it-actively-maintained",
       "question": "Is DeskDrawer actively maintained, and are bug reports welcome?",
       "category": "buying",
-      "answer": "Yes to both, and the release notes are the evidence rather than the claim: every version is listed there with what changed in it. Twenty-three have shipped so far, twelve of them fixing things rather than adding them, and the codebase has been through eight full review rounds — what those found is written up in Eight rounds of code audits on a small app, and what each one found. Bug reports and feature requests are genuinely wanted. Because DeskDrawer has no Telemetry, the developer learns about a problem only when somebody writes in, so your report may be the only signal that it exists. Both channels on the Support page go straight to the person who writes the code, and when a report leads to a fix the release notes name the version it landed in.",
+      "answer": "Yes to both, and the release notes are the evidence rather than the claim: every version is listed there with what changed in it. Twenty-five have shipped so far, twelve of them fixing things rather than adding them, and the codebase goes through repeated full review rounds — what the first eight found is written up in Eight rounds of code audits on a small app, and what each one found. Bug reports and feature requests are genuinely wanted. Because DeskDrawer has no Telemetry, the developer learns about a problem only when somebody writes in, so your report may be the only signal that it exists. Both channels on the Support page go straight to the person who writes the code, and when a report leads to a fix the release notes name the version it landed in.",
       "url": "https://deskdrawer.pages.dev/faq/#is-it-actively-maintained"
     },
     {
@@ -496,7 +503,7 @@
       "slug": "boards-off-screen",
       "question": "My boards are off-screen or hidden behind the taskbar.",
       "category": "trouble",
-      "answer": "Tray menu → Fix misplaced boards. It re-places only boards that are genuinely off-screen, covered by the taskbar or overlapping; boards that are fine are left exactly where they are, and contents, names and sizes are never changed. This usually happens after a resolution change, unplugging a monitor, or moving the taskbar. See Layout & monitors.",
+      "answer": "Tray menu → Fix misplaced boards. It re-places only boards that are genuinely off-screen, covered by the taskbar or overlapping; boards that are fine are left exactly where they are, and contents, names and sizes are never changed. Since 1.2.8 a resolution, scaling or taskbar change pulls boards back inside the screen by itself, so this now mostly happens after unplugging a monitor. See Layout & monitors.",
       "url": "https://deskdrawer.pages.dev/faq/#boards-off-screen"
     },
     {

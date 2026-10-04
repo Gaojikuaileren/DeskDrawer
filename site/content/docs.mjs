@@ -140,7 +140,7 @@ layout and their own [[autostart]] setting, because each has their own desktop.`
         title: "Boards",
         nav: "Boards",
         description:
-          "Creating, naming, moving, resizing, folding and deleting boards — and what a board stores.",
+          "Creating, naming, moving, resizing, laying out, folding and deleting boards — and what a board stores.",
         related: ["menus", "sorting", "layout-and-monitors"],
         body: `A [[board]] is a transparent container drawn on your desktop holding a group of icons. It has
 no title bar. All of its controls live in one compact [[board-widget]] in the bottom-right corner.
@@ -184,10 +184,27 @@ Both snap. Boards align to the [[icon-grid]], to the edges of the [[work-area]],
 Resizing in whole grid steps means a board is never 2.4 icons wide with a ragged strip of dead space
 on its right edge.
 
-If boards do end up badly placed — after a resolution change or unplugging a monitor — the tray menu
-has **Fix misplaced boards**, which re-places only the ones that are genuinely off-screen, under the
-taskbar or overlapping. Correctly placed boards are left alone. It is a rescue, not a reset:
+When the [[work-area]] changes — the taskbar set to auto-hide, a toolbar docking, a resolution or
+scaling change — boards that would stick out are pulled back inside it automatically, and the rest
+stay where they are. That arrived in 1.2.8.
+
+If boards do end up badly placed — after unplugging a monitor, say — the tray menu has **Fix
+misplaced boards**, which re-places only the ones that are genuinely off-screen, under the taskbar or
+overlapping. Correctly placed boards are left alone. It is a rescue, not a reset:
 contents, names and sizes are never touched.
+
+## Rows or columns
+
+Each board lays its icons out in one of two directions, chosen per board with a pair of buttons in
+the [[board-menu]]:
+
+| Flow | Icons run… | A full board scrolls… |
+|---|---|---|
+| **Fill rows** (the default) | left to right, then wrap down | up and down |
+| **Fill columns** | top to bottom, then wrap right | sideways |
+
+The choice changes only how the icons are laid out, never their order — that is the job of
+[[sorting]]. Boards made before 1.2.9, when this arrived, keep filling rows.
 
 ## Folding
 
@@ -197,15 +214,18 @@ state for a board you want to keep but rarely open.
 
 ## Appearance
 
-Two toggles in the [[board-menu]], per board:
+Two toggles in the [[board-menu]]. Each applies to every board at once, whichever board's menu you
+use:
 
-- **Outline** — the thin border around the board
+- **Outline** — the thin border around the boards
 - **Rounded corners** — square or rounded
 
 ## What a board stores
 
-Its name, its rectangle, its [[sort-mode]], its [[icon-size]], its two appearance toggles, whether it
-is folded, and the list of items assigned to it. All of it in [[config-json]]. Nothing else.`,
+Its name, its rectangle, its [[sort-mode]] and direction, whether it fills rows or columns, whether
+it is folded (and the size to unfold to), and the list of items assigned to it. All of it in
+[[config-json]], beside the few settings every board shares — [[icon-size]], outline and rounded
+corners. Nothing else.`,
       },
     ],
   },
@@ -233,7 +253,8 @@ The first two are DeskDrawer's own, icon-only and dark. The third is the genuine
 
 ## The board menu
 
-Right-click a board's name. It applies to that board.
+Right-click a board's name. Most of it applies to that board; icon size, outline and rounded
+corners apply to every board.
 
 | Command | Effect |
 |---|---|
@@ -241,9 +262,10 @@ Right-click a board's name. It applies to that board.
 | Rename | Edits the name in place |
 | Delete | Removes the board; icons return to the [[default-board]], files untouched |
 | Sorting | The [[sorting]] submenu |
-| Icon size | Four [[icon-sizes|sizes]] |
-| Outline | Toggles the board border |
-| Rounded corners | Toggles rounded corners |
+| Fill rows / Fill columns | Lays this board's icons out in rows or in columns — see [[boards]] |
+| Icon size | Four [[icon-sizes|sizes]], for every board |
+| Outline | Toggles the border of every board |
+| Rounded corners | Square or rounded corners, on every board |
 | Quit | Exits DeskDrawer, restoring the native desktop icons |
 
 ## The tray menu
@@ -255,6 +277,7 @@ Right-click the tray icon. It applies to the application.
 | New board | Creates an empty board |
 | Fix misplaced boards | Re-places off-screen, taskbar-covered or overlapping boards only |
 | Switch view | Toggles [[view-mode]] between boards and the plain desktop |
+| Bring back system icons | Shows again the system icons (This PC, Recycle Bin…) you removed from boards with <kbd>Delete</kbd>. Present only while one is hidden |
 | Run at startup | Toggles [[autostart]] |
 | Open the configuration folder | Opens the folder holding [[config-json]] and [[error-log]] |
 | Help & feedback | Opens the documentation |
@@ -304,6 +327,9 @@ Open the **Sorting** submenu from the [[board-menu]].
 Each automatic mode has an **ascending** and a **descending** direction, chosen from the same
 submenu.
 
+Whether that order runs along rows or down columns is a separate choice, also per board — see
+[[boards]].
+
 ## Manual order is a real order
 
 **Manual** does not mean unsorted. Dragging an icon within a board sets its position, that position
@@ -329,13 +355,10 @@ any file, and it does not change which board an icon belongs to. See [[board-mem
         title: "Icon sizes",
         nav: "Icon sizes",
         description:
-          "DeskDrawer offers four icon sizes, set independently for each board, and re-tiles the layout automatically when you change one.",
+          "DeskDrawer offers four icon sizes, applied to every board at once, and re-tiles the layout automatically when you change the size.",
         related: ["boards", "sorting", "layout-and-monitors"],
         body: `Four [[icon-size|sizes]] are available from the **Icon size** submenu of the
-[[board-menu]]. The setting is per board.
-
-Per board matters because boards hold different things. A board of project folders you open daily
-reads better large; a board of forty small utility shortcuts fits better small.
+[[board-menu]]. The size applies to every board at once, whichever board's menu you pick it from.
 
 ## What changes with it
 
@@ -347,8 +370,8 @@ change: boards are kept inside the [[work-area]], never under the taskbar, and n
 That behaviour was added in 1.0.5 for exactly this reason.
 
 :::tip
-If a layout still looks wrong after changing sizes on several boards at once, **Fix misplaced boards**
-in the [[tray-menu]] tidies the ones that are actually misplaced without disturbing the rest.
+If a layout still looks wrong after a size change, **Fix misplaced boards** in the [[tray-menu]] tidies
+the boards that are actually misplaced without disturbing the rest.
 :::`,
       },
 
@@ -491,8 +514,12 @@ Declaring PerMonitorV2 means DeskDrawer is told about the DPI change and redraws
 
 ## When the display arrangement changes
 
-Unplugging a monitor, changing resolution, or moving the taskbar can leave boards outside the visible
-area. **Fix misplaced boards** in the [[tray-menu]] handles this:
+Since 1.2.8, a change to a monitor's [[work-area]] — the taskbar set to auto-hide, a toolbar
+docking, a resolution or scaling change — pulls boards that would stick out back inside it
+automatically. Boards that still fit are not moved.
+
+Unplugging a monitor can still leave boards outside the visible area. **Fix misplaced boards** in the
+[[tray-menu]] handles this:
 
 - Boards that are off-screen, under the taskbar or overlapping are re-placed, snapped beside other
   boards.
@@ -1033,6 +1060,10 @@ The last one is instructive: the Recycle Bin query was asking about *all* drives
 thread, so one sleeping NAS could stall the application. Scoping the query to local fixed drives fixed
 it. The full story is in [[offline-network-shares]].
 
+1.2.8 removed two more waits of the same shape on the interface thread, neither of them involving a
+network: dragging icons over shortcuts read each shortcut from disk on every mouse move, and copying
+while another program held the clipboard could wait for up to two seconds.
+
 ## What can still be slow
 
 Honestly:
@@ -1080,11 +1111,14 @@ There is no file index, no thumbnail database, no search cache and no history.
   possible because the interface is icons rather than sentences — see [[languages]].
 - **A bounded, in-memory icon cache.** Never written to disk, so it cannot grow across sessions or go
   stale.
+- **Nothing held for what is not on screen.** Boards hidden in desktop [[view-mode]] release their
+  drawing surfaces, the selection band frees its bitmap when you let go, and all boards share one
+  menu — since 1.2.9.
 - **No plugin host.** Nothing third-party is ever loaded into the process.
 
 ## What makes it bigger
 
-Mostly your desktop. Memory scales with the number of desktop items and their [[icon-size]], because
+Mostly your desktop. Memory scales with the number of desktop items and the [[icon-size]], because
 that is what the icon cache holds. A desktop of 30 items and a desktop of 500 are not the same
 application in memory.
 
@@ -1188,7 +1222,8 @@ return at your next sign-in regardless.
 
 ## My boards are off-screen or under the taskbar
 
-Usually after a resolution change, unplugging a monitor, or moving the taskbar.
+Since 1.2.8 a resolution, scaling or taskbar change is corrected automatically, so this is now mostly
+after unplugging a monitor.
 
 Tray menu → **Fix misplaced boards**. It re-places only boards that are genuinely off-screen, covered
 by the taskbar or overlapping; boards that are fine are left where they are. Contents, names and
