@@ -1,0 +1,3 @@
+# Local Cloudflare cache and account metadata
+/.wrangler/
+.claude/settings.local.json

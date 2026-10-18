@@ -102,3 +102,7 @@ and deliberately says not to hand-write the query string.
 1. Bump `version` and `released` in `content/site.mjs`.
 2. Add the release to `content/releases.mjs` (date from the commit that shipped it).
 3. `node site/build.mjs && node site/check.mjs`, then commit `docs/`.
+
+## Local archive recovery
+
+The generated HTML pages, API JSON, feeds and build-owned text outputs were moved out of `../docs/`. Authored screenshots, image assets and the Google verification file remain there. From this site's repository root run `node site/build.mjs`, then `node site/check.mjs`; the generator has no npm dependencies. Do not remove all of `docs/`: several images are unique inputs kept beside the generated output. The archive cleanup did not deploy the site.
